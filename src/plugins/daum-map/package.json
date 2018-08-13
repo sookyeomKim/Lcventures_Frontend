@@ -1,0 +1,73 @@
+{
+  "_from": "vue-daum-map",
+  "_id": "vue-daum-map@1.0.11",
+  "_inBundle": false,
+  "_integrity": "sha512-ClAVmMkRjQC+QyWVDCfiKjVI6VjexmyzAdkx1By45l59PDV2cGexkRAD5f8YwBGUx8pfQHNBIJbCuYj8kK1BSg==",
+  "_location": "/vue-daum-map",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "vue-daum-map",
+    "name": "vue-daum-map",
+    "escapedName": "vue-daum-map",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/vue-daum-map/-/vue-daum-map-1.0.11.tgz",
+  "_shasum": "e47ad3adddfd6f020fdd43e9d4e8d4a5a6a9aa9b",
+  "_spec": "vue-daum-map",
+  "_where": "/Users/jayseryu/PycharmProjects/Lcventures",
+  "author": {
+    "name": "punchto@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/okchangwon/vue-daum-map/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "load-script-once": "^1.1.2"
+  },
+  "deprecated": false,
+  "description": "다음 지도를 래핑한 Vue.js 컴포넌트입니다.",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.10",
+    "style-loader": "^0.20.2",
+    "vue": "^2.5.13",
+    "vue-loader": "^14.1.1",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^4.1.0",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0"
+  },
+  "homepage": "https://github.com/okchangwon/vue-daum-map#readme",
+  "keywords": [
+    "vuejs",
+    "vue",
+    "daum",
+    "map"
+  ],
+  "license": "ISC",
+  "main": "src/VueDaumMap.vue",
+  "name": "vue-daum-map",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okchangwon/vue-daum-map.git"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack-dev-server --mode development",
+    "start": "npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.11"
+}
