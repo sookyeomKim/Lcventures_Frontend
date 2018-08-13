@@ -1,0 +1,13 @@
+version: 0.0
+os: linux
+files:
+- source: /
+  destination: /home/ubuntu/Projects/Lcventures
+hooks:
+  AfterInstall:
+  - location: deploy-prod.sh
+    timeout: 300
+    runas: root
+  - location: permissions.sh
+    timeout: 300
+    runas: root
