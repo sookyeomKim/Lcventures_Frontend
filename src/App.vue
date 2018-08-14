@@ -552,6 +552,7 @@
     transition: all 350ms cubic-bezier(.83,.01,.46,.86);
   } /* Overall Main Contents Area */
 
+  /*
   .main_image {
     position: fixed;
     top: 0;
@@ -560,7 +561,7 @@
     height: 100vh;
     z-index: -100;
     object-fit: cover;
-  } /* Main Background images */
+  }*/ /* Main Background images */
 
 
   /* Main Text on Video */
@@ -578,6 +579,7 @@
     overflow: hidden;
     font-family: Impact, sans-serif;
     box-shadow: 0px -35px 20px 40px rgba(0,0,0,0.75);
+    transition: all 350ms cubic-bezier(.83,.01,.46,.86);
   }/* Main title area end */
 
   .main_title h2 {
@@ -626,6 +628,10 @@
 
   /* Change Text size belongs to Web width */
   @media (max-width: 835px) {
+    .main_title {
+      height: 100vw;
+      padding-top: calc(25vw - 20px);
+    }
     .main_title h2 {
       font-size: 40px;
     }
@@ -637,6 +643,11 @@
     }
   }/*=*/
 
+  @media (max-width: 400px) {
+    .main_title .table{
+      display: none;
+    }
+  }
 
 
   .section_0 {

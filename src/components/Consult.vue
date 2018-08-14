@@ -141,8 +141,9 @@
     }
 
     .area {
-      height: 200px;
+      min-height: 200px;
       padding: 10px 10px;
+      resize: vertical;
     }
 
     .submit {

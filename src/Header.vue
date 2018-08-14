@@ -55,15 +55,26 @@
     },
     methods: {
       handleScroll (event) {
-        let marge = (window.innerHeight - 70)
-        /* (document.documentElement.scrollTop)  Android Chrome Firefox IE */
-        /* (document.scrollingElement.scrollTop) Android Chrome Firefox Safari Edge */
-        if (document.scrollingElement.scrollTop > marge || document.documentElement.scrollTop > marge) {
-          this.$el.style.background = 'rgba(0,0,0,0.7)'
+        if (window.innerWidth > 835) {
+          let marge = (window.innerHeight - 70)
+          /* (document.documentElement.scrollTop)  Android Chrome Firefox IE */
+          /* (document.scrollingElement.scrollTop) Android Chrome Firefox Safari Edge */
+          if (document.scrollingElement.scrollTop > marge || document.documentElement.scrollTop > marge) {
+            this.$el.style.background = 'rgba(0,0,0,0.7)'
+          } else {
+            this.$el.style.background = ''
+          }
         } else {
-          this.$el.style.background = ''
+          let marge = (window.innerWidth - 70)
+          /* (document.documentElement.scrollTop)  Android Chrome Firefox IE */
+          /* (document.scrollingElement.scrollTop) Android Chrome Firefox Safari Edge */
+          if (document.scrollingElement.scrollTop > marge || document.documentElement.scrollTop > marge) {
+            this.$el.style.background = 'rgba(0,0,0,0.7)'
+          } else {
+            this.$el.style.background = ''
+          }
         }
-      }
+      },
     },
     created () {
       window.addEventListener('scroll', this.handleScroll)
