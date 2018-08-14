@@ -3,39 +3,27 @@
   <div class="video_wrap" id="video_wrap"
        :style="this.$parent.$data.mix_data.slide_mover"
        @click="$parent.$options.methods.only_close">
-    <div class="video_basket" id="video_basket">
+
+    <div class="video_basket" id="video_basket" v-if="windowWidth > 835">
 
       <!-- Youtube -->
-
-      <iframe v-if="windowWidth > 835" class="video" id="video" type="text/html"
+      <iframe class="video" id="video" type="text/html"
               src="https://www.youtube.com/embed/bDmuCtaRcZM?&autoplay=1&loop=1&playlist=bDmuCtaRcZM&showinfo=0&fs=0&disablekb=1&vq=auto&controls=0&rel=0&iv_load_policy=3&mute=1"
               allow="autoplay" frameborder="0" volume="0" allowfullscreen webkitallowfullscreen mozallowfullscreen>
       </iframe>
 
-      <!-- Vimeo -->
-<!--
-      <iframe v-if="windowWidth > 835" class="video" id="video"
-              src="https://player.vimeo.com/video/221257502?autoplay=1&loop=1&color=ffffff&background=1&title=0&byline=0&portrait=0&controls=0"
-              width="100%" height="100%" frameborder="0" volume="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
-      </iframe>
--->
-      <!-- Video file -->
-<!--
-      <video v-if="windowWidth > 835" class="video" id="video" loop autoplay>
-        <source src="./assets/common/files/lc_sample.mp4" type="video/mp4">
-        <p>Your browser does not support the video tag.</p>
-      </video>
--->
-
-      <!-- Cover Image when replaced instead video -->
-      <img v-else class="video_cover" src="./assets/pages/home/unsplash2.jpg" alt="Main Cover Image" />
-
     </div>
 
-    <div class="guide_to_scroll">
-      <!--<p class="guide_text">엘씨벤처스 더 보기</p>-->
-      <img class="down_img" src="./assets/common/scroll_down.png" alt="Scroll down image">
-      <!--<img class="down_img" src="./assets/pages/home/home_scroll.png" alt="Scroll down image">-->
+    <!-- v-else -->
+    <div class="video_basket_m" id="video_basket_m" v-else>
+      <!-- Cover Image when replaced instead video -->
+      <!-- <img class="video_cover" src="./assets/pages/home/unsplash2.jpg" alt="Main Cover Image" /> -->
+
+      <iframe class="video" id="video_m" type="text/html"
+              src="https://www.youtube.com/embed/AWnAHBqNqG0?&autoplay=1&loop=1&playlist=bDmuCtaRcZM&showinfo=0&fs=0&disablekb=1&vq=auto&controls=0&rel=0&iv_load_policy=3&mute=1"
+              allow="autoplay" frameborder="0" volume="0" allowfullscreen webkitallowfullscreen mozallowfullscreen>
+      </iframe>
+
     </div>
 
     <div class="guide_button">
@@ -43,10 +31,16 @@
         <img src="./assets/common/talk_white.png" alt="Consult button image.">
         <p>문의하기</p>
       </router-link>
-      <a class="gtn" href="./assets/common/files/aia_ppt.pptx" download>
+      <a class="gtn" href="./assets/common/files/180814_lcventures_introduce.pdf" download>
         <img src="./assets/common/down_white.png" alt="Introduce file download button image.">
         <p>회사소개서 다운받기</p>
       </a>
+    </div>
+
+    <div class="guide_to_scroll">
+      <!--<p class="guide_text">엘씨벤처스 더 보기</p>-->
+      <img class="down_img" src="./assets/common/scroll_down.png" alt="Scroll down image">
+      <!--<img class="down_img" src="./assets/pages/home/home_scroll.png" alt="Scroll down image">-->
     </div>
 
   </div>
@@ -99,6 +93,18 @@
     z-index: 30;
   }
 
+  .video_basket_m {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 30;
+  }
+
   .video {
     position: relative;
     top: 0;
@@ -115,10 +121,19 @@
     left: 0;
     width: 100%;
     height: 100%;
+    min-width: 100%;
+    min-height: 100%;
     z-index: 30;
     background-size: cover;
     object-fit: cover;
   }
+
+  /* Prepare mobile layout */
+  @media (max-width: 835px) {
+    .video_wrap {
+      height: 100vw;
+    }
+  }/*=*/
 
   /* Stretch Video */
   @media (min-aspect-ratio: 16/9) {
@@ -140,39 +155,11 @@
   ===============================================
   */
 
-  /* Down side arrow with animation */
-  .guide_to_scroll {
-    position: absolute;
-    display: block;
-    width: 100%;
-    top: calc(100vh - 60px);
-    text-align: center;
-    z-index: 8000;
-  }
-  .guide_text {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0 5px !important;
-    font-family: 'Nanums_regular', sans-serif;
-    font-size: 16px;
-    line-height: 20px;
-    color: #fdfdfd;
-  }
-  .down_img {
-    width: 50px;
-    height: 40px;
-    /*width: 80px;
-    height: 70px;*/
-    /* If image color is black */
-    filter: invert(1);
-    animation: down_there 1500ms infinite ease-in-out;
-  }
-
+  // Button area
   .guide_button {
-    position: absolute;
-    top: calc(100vh - 160px);
-    right: 5%;
+    position: relative;
+    top: calc(5% - 150px);
+    left: calc(95% - 205px);
     z-index: 9000;
     .gtn {
       position: relative;
@@ -214,4 +201,34 @@
       }
     }
   }
+
+  /* Down side arrow with animation */
+  .guide_to_scroll {
+    position: relative;
+    display: block;
+    width: 100%;
+    top: calc(-145px);
+    text-align: center;
+    z-index: 8000;
+  }
+  .guide_text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 5px !important;
+    font-family: 'Nanums_regular', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: #fdfdfd;
+  }
+  .down_img {
+    width: 50px;
+    height: 40px;
+    /*width: 80px;
+    height: 70px;*/
+    /* If image color is black */
+    filter: invert(1);
+    animation: down_there 1500ms infinite ease-in-out;
+  }
+
 </style>
