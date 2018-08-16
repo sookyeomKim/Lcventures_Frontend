@@ -47,7 +47,8 @@
       </div>
       <div class="input_wrap block">
         <div class="input_label">첨부파일</div>
-        <input type="file" class="file" placeholder="file">
+        <input type="file" class="file" placeholder="file" @change="add_file()" multiple>
+        <input type="button" class="delete" value="파일 삭제" @click="remove_file">
       </div>
 <!--
       <div>
@@ -56,7 +57,7 @@
       </div>
 -->
       <div>
-        <input type="button" class="submit" value="문의하기">
+        <input type="button" class="submit" value="문의하기" @click="submit_form()">
       </div>
     </section>
 
@@ -72,8 +73,23 @@
       in_company: '엘씨벤처스',
       in_email: 'dg-jayse.ryu@outlook.com',
       in_phone: '01046311322',
-      in_desc: '뷰로 사이트를 만들어요'
-    })
+      in_desc: '뷰로 사이트를 만들어요',
+      file: []
+    }),
+    methods : {
+      add_file() {
+        let file_data = event.target.files[0]
+        this.fileNames = file_data.name
+        console.log(this.fileNames)
+        console.log(file_data)
+      },
+      remove_file() {
+        console.log('4')
+      },
+      submit_form() {
+        console.log('2')
+      }
+    }
   }
 </script>
 
@@ -145,7 +161,21 @@
       padding: 10px 10px;
       resize: vertical;
     }
-
+    .delete {
+      border: 1px solid #c1c1c1;
+      border-radius: 5px;
+      background-color: #fefefe;
+      color: #ef2739;
+      font-weight: bold;
+      margin: 10px 0;
+      cursor: pointer;
+      transition: all 200ms ease-in-out;
+      &:hover, &:active {
+        border: 1px solid #fefefe;
+        background-color: #ff788a;
+        color: #fefefe;
+      }
+    }
     .submit {
       border: 1px solid #ffffff;
       border-radius: 5px;

@@ -31,7 +31,7 @@
         <img src="./assets/common/talk_white.png" alt="Consult button image.">
         <p>문의하기</p>
       </router-link>
-      <a class="gtn" href="./assets/common/files/180814_lcventures_introduce.pdf" download>
+      <a class="gtn" :href="introduce" download="엘씨벤처스 - 회사소개">
         <img src="./assets/common/down_white.png" alt="Introduce file download button image.">
         <p>회사소개서 다운받기</p>
       </a>
@@ -52,7 +52,8 @@
       name: 'app-video',
       data: function () {
         return {
-          windowWidth: window.innerWidth
+          windowWidth: window.innerWidth,
+          introduce: require('./assets/common/files/180814_lcventures_introduce.pdf')
         }
       },
       mounted () {
@@ -201,6 +202,12 @@
       }
     }
   }
+
+  @media (min-aspect-ratio: 16/9) {
+    .guide_button {
+      top: calc(-300% + 440px);
+    }
+  }/*=*/
 
   /* Down side arrow with animation */
   .guide_to_scroll {

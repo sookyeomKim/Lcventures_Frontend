@@ -76,7 +76,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(csv|xlsx|xls|ppt|pptx)$/,
+        test: /\.(csv|xlsx|xls|ppt|pptx|pdf)$/,
         loader: 'file-loader',
         options: {
           name: `files/[name].[ext]`

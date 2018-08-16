@@ -522,8 +522,10 @@
   }
 
   ::selection {
-    color: #313131;
-    background: rgba(245, 236, 133, 0.9);
+    /*color: #313131;
+    background: rgba(245, 236, 133, 0.9);*/
+    color: #efefef;
+    background: rgba(0, 137, 145, 0.9);
   }
 
   /*
