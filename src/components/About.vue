@@ -75,71 +75,8 @@
 
       <div class="history">
 
-        <div class="center_line"></div>
-
-        <div class="history_floor">
-          <div class="contents_wrap">
-            <div class="inner_image right"></div>
-            <div class="inner_text right">
-              <ul>
-                <li>KAKAO 프리미엄 공식대행사 선정</li>
-                <li>Google C-Level 파트너 선정</li>
-                <li>SK Planet 디자인외주사 선정</li>
-              </ul>
-            </div>
-          </div>
-          <div class="dummy"></div>
-        </div>
-
-        <div class="history_floor">
-          <div class="dummy"></div>
-          <div class="contents_wrap">
-            <div class="inner_image left"></div>
-            <div class="inner_text left">
-              <div>
-                <p>지원본부 확장</p>
-                <p>영상제작 Team</p>
-                <ul>
-                  <li>Facebook Agency Directory 광고대행사 선정</li>
-                  <li>SK communications 공식대행사 선정</li>
-                  <li>SK Planet 공식대행사 선정</li>
-                  <li>Yellow mobile 공식대행사 선정</li>
-                  <li>Taboola 공식대행사 선정</li>
-                </ul>
-                <ul>
-                  <li>KAKAO 광고 성과측정 프로그램</li>
-                  <li>업무자동화 프로그램</li>
-                  <li>DB추출 프로그램</li>
-                  <li>인스타그램 자동 팔로워 증가 프로그램</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="history_floor">
-          <div class="contents_wrap">
-            <div class="inner_image right"></div>
-            <div class="inner_text right">Image will be better</div>
-          </div>
-          <div class="dummy"></div>
-        </div>
-
-        <div class="history_floor">
-          <div class="dummy"></div>
-          <div class="contents_wrap">
-            <div class="inner_image left"></div>
-            <div class="inner_text left">Image will be better</div>
-          </div>
-        </div>
-
-        <div class="history_floor">
-          <div class="contents_wrap">
-            <div class="inner_image right"></div>
-            <div class="inner_text right">Image will be better</div>
-          </div>
-          <div class="dummy"></div>
-        </div>
+        <img v-if="windowWidth > 835" class="history_image" src="../assets/pages/about/company_history.jpg" alt="LC ventures history image.">
+        <img v-else class="history_image_m" src="../assets/pages/about/company_history_m.jpg" alt="LC ventures history image.">
 
       </div>
 
@@ -271,6 +208,13 @@
       padding: 0 4px;
     }
   }
+  @media (max-width: 835px) {
+    .lc_slogan {
+      span {
+        font-size: 20px;
+      }
+    }
+  }
 
   .logo_explain {
     padding: 50px 0;
@@ -302,70 +246,28 @@
 
   .history {
     position: relative;
-    background-color: #e5fafb;
+    background-color: #eafcfc;
     padding: 20px 0;
   }
 
-  .center_line {
-    position: absolute;
-    width: 4px;
-    height: calc(100% - 40px);
-    top: 20px;
+  .history_image {
+    position: relative;
     left: 50%;
-    background-color: #009da5;
-    border-radius: 5px;
+    transform: translateX(-50%);
+    width: 100%;
+    min-width: 1200px;
+    margin: auto;
   }
-
-  .history_floor {
-    width: 90%;
-    margin: 0 auto;
-    &:after {
-      content: '';
-      display: block;
-      clear: both;
+  @media (min-width: 1700px) {
+    .history_image {
+      left: unset;
+      transform: unset;
+      width: 100%;
+      max-width: 1600px;
     }
   }
-
-  .contents_wrap {
-    width: 50%;
-    vertical-align: top;
-    float: left;
-    &:after {
-      content: '';
-      display: block;
-      clear: both;
-    }
-  }
-
-  .dummy {
-    width: 50%;
-    height: 200px;
-    vertical-align: top;
-    float: left;
-  }
-
-  .inner_text {
-    height: 100%;
-    float: left;
-    margin: 10px 5%;
-  }
-
-  .inner_image {
-    width: 180px;
-    height: 180px;
-    margin: 0 5%;
-    background-color: #009da5;
-    float: left;
-    border-radius: 50%;
-  }
-
-  .right {
-    float: right;
-    text-align: right;
-  }
-  .left {
-    float: left;
-    text-align: left;
+  .history_image_m {
+    width: 100%;
   }
 
   .map_wrap {
