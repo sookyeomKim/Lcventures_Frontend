@@ -15,14 +15,10 @@
       </div>
     </div>
 
-    <section class="section_1"><!--make ul list-->
+    <img v-if="windowWidth > 835" class="home_image" src="../assets/pages/home/home_main.jpg" alt="LC ventures homepage start image.">
+    <img v-else class="home_image" src="../assets/pages/home/home_main_m.jpg" alt="LC ventures mobile homepage start image">
 
-      <!--
-      <div class="culture">
-        <img src="../assets/pages/home/home_culture.png" alt="Culture">
-      </div>
-      -->
-
+    <section class="section_1">
       <div class="culture_wrap">
         <div class="culture_img_wrap">
           <div class="culture_img">
@@ -394,6 +390,11 @@
 </script>
 
 <style lang="scss" scoped>
+
+  .home_image {
+    width: 100%;
+    margin-bottom: -5px;
+  }
 
   /* Section Part */
   .section_1, .section_2, .section_3, .section_4 {

@@ -253,6 +253,18 @@
           team: '컨텐츠사업부',
           position: '사원',
           src: require('../assets/pages/people/vertical_placeholder.png')
+        },
+        {
+          title: '김진아',
+          team: '유통사업부',
+          position: '사원',
+          src: require('../assets/pages/people/vertical_placeholder.png')
+        },
+        {
+          title: '조우석',
+          team: '마케팅부',
+          position: '사원',
+          src: require('../assets/pages/people/vertical_placeholder.png')
         }
       ]
     }),

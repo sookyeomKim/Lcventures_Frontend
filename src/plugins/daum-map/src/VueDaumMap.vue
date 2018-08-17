@@ -155,11 +155,13 @@
             '            <div class="desc">' +
             '                <div class="ellipsis">서울 성동구 뚝섬로 1길 25 한라에코밸리 206호</div>' +
             '                <div class="add_ellipsis">(전화) 070-8855-8390<br/>(지번) 성수동1가 656-36</div> ' +
-            '                <div class="link"><a href="http://map.daum.net/link/map/엘씨벤처스,37.543633,127.046361" target="_blank">길찾기</a></div>' +
+            '                <div class="link"><a href="http://map.daum.net/link/search/엘씨벤처스" target="_blank">길찾기</a></div>' +
             '            </div>' +
             '        </div>' +
             '    </div>' +
             '</div>'
+
+        // '                <div class="link"><a href="http://map.daum.net/link/map/엘씨벤처스,37.543633,127.046361" target="_blank">길찾기</a></div>' +
 
         // Custom overlay on marker
         // eslint-disable-next-line
