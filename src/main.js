@@ -21,6 +21,7 @@ Vue.component('app-navigator', Navigator)
 Vue.component('vue-daum-map', DaumMap)
 
 Vue.use(DaumMap)
+
 Vue.use(VueLazyload, {
   preLoad: 1.3,
   error: require('./assets/common/temp.png'),

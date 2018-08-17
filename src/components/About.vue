@@ -35,7 +35,7 @@
         <span class="slogan_3">Performance</span>
         -->
 
-        <span>급변하는 디지털시대의 혼돈 속에서 우리는 어떤 모습일까요?</span>
+        <span><p>급변하는 디지털시대의 혼돈 속에서</p><p>우리는 어떤 모습일까요?</p></span>
 
         <div class="division_bar"></div>
 
@@ -44,10 +44,9 @@
         <p>이를 토대로 엘씨벤처스의 브랜드 가치를 높여 국내 경쟁력을 확보하겠습니다.</p>
         -->
 
-        <p>우리는 디지털 미디어의 변화에 빠르게 적응하고, 대응하고, 리드합니다.</p>
-        <p>변화를 두려워 하지 않는 자세, 능동적이고 창의적인 행동들이 모여 엘씨벤처스를 이룹니다.</p>
-        <p>삶을 윤택하게 만드는 기술,</p>
-        <p>함께 만들어갑시다.</p>
+        <div><p class="slogan_wrap">우리는 디지털 미디어의 변화에</p><p class="slogan_wrap">빠르게 적응하고, 대응하고, 리드합니다.</p></div>
+        <div><p class="slogan_wrap">변화를 두려워 하지 않는 자세,</p><p class="slogan_wrap">능동적이고 창의적인 행동들이 모여</p><p class="slogan_wrap">엘씨벤처스를 이룹니다.</p></div>
+        <div><p class="slogan_wrap">삶을 윤택하게 만드는 기술,</p><p class="slogan_wrap">함께 만들어갑시다.</p></div>
 
       </div>
       <div class="division_bar"></div>
@@ -62,10 +61,10 @@
           <img src="../assets/pages/about/logo_type.jpg" alt="LC Ventures logo type image.">
         </div>
         <div class="logo_floor_2">
-          <p>카메라의 초점을 맞추는 형태의 테두리는 엘씨벤처스의 집중력과 팀워크를 나타내며</p>
-          <p>테두리의 위, 아래, 양옆으로 트여 있는 부분은 클라이언트와의 원활한 커뮤니케이션을 뜻하기도 합니다.</p>
-          <p>또한 지나치게 두껍지도 않고 얇지도 않은 적당한 선의 두께는 엘씨벤처스 직원들의 변함없는 열정과 끈기를 나타냅니다.</p>
-          <p>엘씨벤처스 심볼은 마케팅기업다운 디자인적인 세련미와 심플함을 놓치지 않고 표현 했습니다.</p>
+          <div><p>카메라의 초점을 맞추는 형태의 테두리는</p><p>엘씨벤처스의 집중력과 팀워크를 나타내며</p></div>
+          <div><p>테두리의 위, 아래, 양옆으로 트여 있는 부분은</p><p>클라이언트와의 원활한 커뮤니케이션을 뜻하기도 합니다.</p></div>
+          <div><p>또한 지나치게 두껍지도 않고 얇지도 않은 적당한 선의 두께는</p><p>엘씨벤처스 직원들의 변함없는 열정과 끈기를 나타냅니다.</p></div>
+          <div><p>엘씨벤처스 심볼은 마케팅기업다운 디자인적인 세련미와</p><p>심플함을 놓치지 않고 표현 했습니다.</p></div>
         </div>
       </div>
 
@@ -264,10 +263,12 @@
       background-color: #fdfdfd;
       margin: 10px auto 15px;
     }
-    p {
+    .slogan_wrap {
+      display: inline-block;
       font-family: 'Nanums_regular', sans-serif;
       color: #fdfdfd;
       font-size: 15px;
+      padding: 0 4px;
     }
   }
 
@@ -294,7 +295,8 @@
     font-size: 16px;
     padding: 4px 0;
     p {
-      padding: 3px 10px;
+      display: inline-block;
+      padding: 3px 2px;
     }
   }
 
