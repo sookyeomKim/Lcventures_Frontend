@@ -205,7 +205,7 @@
 
   @media (min-aspect-ratio: 16/9) {
     .guide_button {
-      top: calc(-300% + 440px);
+      top: calc(-300% + 85%);
     }
   }/*=*/
 

@@ -47,8 +47,8 @@
       </div>
       <div class="input_wrap block">
         <div class="input_label">첨부파일</div>
-        <input type="file" class="file" placeholder="file" @change="add_file()" multiple>
-        <input type="button" class="delete" value="파일 삭제" @click="remove_file">
+        <input type="file" class="file" id="file_input" ref="file_input" @change="add_file()" multiple>
+        <input type="button" class="delete" value="파일 삭제" @click="remove_file" v-show="file_flag === 1">
       </div>
 <!--
       <div>
@@ -68,26 +68,34 @@
   export default {
     name: 'consult',
     data: () => ({
-      in_name: '류동근',
-      in_position: '사원',
-      in_company: '엘씨벤처스',
-      in_email: 'dg-jayse.ryu@outlook.com',
-      in_phone: '01046311322',
-      in_desc: '뷰로 사이트를 만들어요',
+      file_flag: 0,
+      in_name: '',
+      in_position: '',
+      in_company: '',
+      in_email: '',
+      in_phone: '',
+      in_desc: '',
       file: []
     }),
     methods : {
       add_file() {
         let file_data = event.target.files[0]
-        this.fileNames = file_data.name
-        console.log(this.fileNames)
-        console.log(file_data)
+        let fileNames = file_data.name
+        console.log(fileNames)
+        this.file = file_data
+        //console.log(this.file)
+        this.file_flag = 1
       },
       remove_file() {
-        console.log('4')
+        this.$refs.file_input.value = ''
+        //console.log(this.$refs.file_input.value)
+        this.file = []
+        //console.log(this.file)
+        this.file_flag = 0
       },
       submit_form() {
-        console.log('2')
+        let tt = ', '
+        alert(this.in_name + tt + this.in_position + tt + this.in_company + tt + this.in_email + tt + this.in_phone + tt + this.in_desc + tt + this.file.name)
       }
     }
   }
