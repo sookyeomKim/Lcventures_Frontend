@@ -2,7 +2,6 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-
 import MixIn from './plugins/mixin'
 
 import router from './router'
@@ -12,6 +11,8 @@ import Footer from './Footer'
 import Navigator from './Navigator'
 import DaumMap from './plugins/daum-map'
 import VueLazyload from 'vue-lazyload'
+import VueUploadComponent from 'vue-upload-component'
+import axios from 'axios'
 
 Vue.config.productionTip = false
 Vue.component('app-header', Header)
@@ -19,6 +20,7 @@ Vue.component('app-video', Video)
 Vue.component('app-footer', Footer)
 Vue.component('app-navigator', Navigator)
 Vue.component('vue-daum-map', DaumMap)
+Vue.component('vue-upload', VueUploadComponent)
 
 Vue.use(DaumMap)
 
@@ -30,6 +32,8 @@ Vue.use(VueLazyload, {
   observer: true,
   listenEvents: [ 'scroll', 'wheel', 'resize' ]
 })
+
+Vue.prototype.$axios = axios
 
 /* eslint-disable no-new */
 new Vue({

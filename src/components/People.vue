@@ -218,12 +218,12 @@
           position: '사원',
           src: require('../assets/pages/people/dgryu.jpg')
         },
-        {
+        /*{
           title: '서혜인',
           team: '유통사업부',
           position: '사원',
           src: require('../assets/pages/people/hiseo.jpg')
-        },
+        },*/
         {
           title: '유기환',
           team: '마케팅부',
@@ -242,12 +242,12 @@
           position: '사원',
           src: require('../assets/pages/people/syjeoung.jpg')
         },
-        {
+        /*{
           title: '김다연',
           team: '컨텐츠사업부',
           position: '사원',
           src: require('../assets/pages/people/dykim.jpg')
-        },
+        },*/
         {
           title: '조미경',
           team: '컨텐츠사업부',
@@ -263,6 +263,12 @@
         {
           title: '조우석',
           team: '마케팅부',
+          position: '사원',
+          src: require('../assets/pages/people/vertical_placeholder.png')
+        },
+        {
+          title: '이진영',
+          team: '유통사업부',
           position: '사원',
           src: require('../assets/pages/people/vertical_placeholder.png')
         }
@@ -375,6 +381,7 @@
     text-align: left;
     font-size: 16px;
     padding: 4px 2px;
+    cursor: default;
   }
 
   .member_title {
@@ -385,6 +392,7 @@
     padding: 2px 10px;
     position: relative;
     z-index: 50;
+    cursor: default;
   }
 
 </style>
