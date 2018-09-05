@@ -5,8 +5,8 @@ import Home from '@/components/Home'
 import About from '@/components/About'
 import Projects from '@/components/Projects'
 import People from '@/components/People'
-import Recruit from '@/components/Recruit'
 import Consult from '@/components/Consult'
+// import Recruit from '@/components/Recruit'
 // import News from '@/components/News'
 // import Location from '@/components/Location'
 // import Contact from '@/components/Contact'
@@ -50,11 +50,11 @@ export default new Router({
     //   name: 'contact',
     //   component: Contact
     // },
-    {
-      path: '/recruit',
-      name: 'recruit',
-      component: Recruit
-    },
+    // {
+    //   path: '/recruit',
+    //   name: 'recruit',
+    //   component: Recruit
+    // },
     {
       path: '/consult',
       name: 'consult',

@@ -16,9 +16,11 @@
       <!--<div class="button_middle" @click="$parent.$options.methods.navi_delay">
         <router-link class="button_middle_inner" to="/consult">CONSULT</router-link>
       </div>-->
+      <!--
       <div class="button_middle" @click="$parent.$options.methods.navi_delay">
         <router-link class="button_middle_inner"  to="/recruit">RECRUIT</router-link>
       </div>
+      -->
       <div class="button_middle" @click="$parent.$options.methods.navi_delay">
         <router-link class="button_middle_inner"  to="/members">MEMBERS</router-link>
       </div>

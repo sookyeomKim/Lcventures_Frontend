@@ -193,6 +193,7 @@
       font-size: 38px;
       font-weight: bold;
       font-family: 'Nanums_regular', sans-serif;
+      word-break: keep-all;
     }
     .division_bar {
       width: 60px;

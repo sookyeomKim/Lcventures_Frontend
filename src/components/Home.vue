@@ -232,11 +232,11 @@
         images_1: [
           {
             title: 'Temporary Mind image 1',
-            src: require('../assets/pages/home/image_2/3.png')
+            src: require('../assets/pages/home/image_1/3.png')
           },
           {
             title: 'Temporary Mind image 2',
-            src: require('../assets/pages/home/image_2/3.png')
+            src: require('../assets/pages/home/image_1/4.png')
           }
         ],
         /* Slider 2 Images. title will be alt */
@@ -248,7 +248,7 @@
           {
             title: 'Respect image 2',
             src: require('../assets/pages/home/image_2/2.png')
-          },
+          }/*,
           {
             title: 'Respect image 3',
             src: require('../assets/pages/home/image_2/3.png')
@@ -256,7 +256,7 @@
           {
             title: 'Respect image 4',
             src: require('../assets/pages/home/image_2/4.png')
-          }
+          }*/
         ],
         /* Slider 3 Images. title will be alt */
         images_3: [
