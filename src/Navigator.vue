@@ -26,9 +26,6 @@
         <router-link class="nav_a" to="/members">MEMBERS</router-link>
       </li>
       <li>
-        <router-link class="nav_a" to="/recruit">RECRUIT</router-link>
-      </li>
-      <li>
         <router-link class="nav_a" to="/consult">CONSULT</router-link>
       </li>
     </ul>
@@ -46,7 +43,9 @@
       <li>
         <router-link class="nav_a" to="/location">엘씨 위치</router-link>
       </li>
-
+      <li>
+        <router-link class="nav_a" to="/recruit">RECRUIT</router-link>
+      </li>
     </ul>-->
 
     <div class="menu_division"></div>

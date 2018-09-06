@@ -132,7 +132,7 @@
           formData.append('email', this.in_email)
           formData.append('phone', this.in_phone)
           formData.append('describe', this.in_desc)
-          const baseURI = 'http://127.0.0.1:8000'
+          const baseURI = 'http://13.209.67.94/'
           const config = {
             headers: {
               'Content-Type': 'multipart/form-data'
@@ -169,7 +169,7 @@
           formData.append('phone', this.in_phone)
           formData.append('describe', this.in_desc)
           formData.append('file', this.$refs.file_input.files[0])
-          const baseURI = 'http://127.0.0.1:8000'
+          const baseURI = 'http://13.209.67.94/'
           const config = {
             headers: {
               'Content-Type': 'multipart/form-data'

@@ -34,7 +34,7 @@
     position: relative;
     width: 100%;
     padding: 30px 0;
-    background-color: #efefef;
+    background-color: #fafafa;
     transition: all 350ms cubic-bezier(.83,.01,.46,.86);
 
     .footer_wrap {
