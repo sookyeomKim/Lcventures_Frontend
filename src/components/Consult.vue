@@ -23,27 +23,27 @@
     <section class="section_1">
       <div class="input_wrap first">
         <div class="input_label">이름*</div>
-        <input type="text" class="name fill" id="in_name" v-model="in_name" placeholder="본인의 이름을 입력해주세요">
+        <input type="text" class="name fill" id="in_name" v-model="in_name" maxlength="16" placeholder="본인의 이름을 입력해주세요">
       </div>
       <div class="input_wrap">
         <div class="input_label">직책</div>
-        <input type="text" class="position fill" id="in_position" v-model="in_position" placeholder="본인의 직책을 입력해주세요">
+        <input type="text" class="position fill" id="in_position" v-model="in_position" maxlength="16" placeholder="본인의 직책을 입력해주세요">
       </div>
       <div class="input_wrap">
         <div class="input_label">소속*</div>
-        <input type="text" class="company fill" id="in_group" v-model="in_group" placeholder="본인의 회사명 또는 소속 기관을 입력해주세요">
+        <input type="text" class="company fill" id="in_group" v-model="in_group" maxlength="50" placeholder="본인의 회사명 또는 소속 기관을 입력해주세요">
       </div>
       <div class="input_wrap">
         <div class="input_label">이메일</div>
-        <input type="text" class="email fill" id="in_email" v-model="in_email" placeholder="연락받을 이메일 주소를 입력해주세요">
+        <input type="text" class="email fill" id="in_email" v-model="in_email" maxlength="50" placeholder="연락받을 이메일 주소를 입력해주세요">
       </div>
       <div class="input_wrap">
         <div class="input_label">전화번호*</div>
-        <input type="number" class="phone fill" id="in_phone" v-model="in_phone" placeholder="연락받을 전화번호를 입력해주세요">
+        <input type="number" class="phone fill" id="in_phone" v-model="in_phone" maxlength="12" placeholder="연락받을 전화번호를 입력해주세요">
       </div>
       <div class="input_wrap block">
         <div class="input_label">설명</div>
-        <textarea class="describe fill area" id="in_desc" v-model="in_desc" placeholder="무엇을 도와드릴까요?"></textarea>
+        <textarea class="describe fill area" id="in_desc" v-model="in_desc" maxlength="3000" placeholder="무엇을 도와드릴까요?"></textarea>
       </div>
       <div class="input_wrap block">
         <div class="input_label">첨부파일</div>
@@ -132,7 +132,7 @@
           formData.append('email', this.in_email)
           formData.append('phone', this.in_phone)
           formData.append('describe', this.in_desc)
-          const baseURI = 'http://127.0.0.1:8000'
+          const baseURI = 'http://13.209.67.94/'
           const config = {
             headers: {
               'Content-Type': 'multipart/form-data'
@@ -169,7 +169,7 @@
           formData.append('phone', this.in_phone)
           formData.append('describe', this.in_desc)
           formData.append('file', this.$refs.file_input.files[0])
-          const baseURI = 'http://127.0.0.1:8000'
+          const baseURI = 'http://13.209.67.94/'
           const config = {
             headers: {
               'Content-Type': 'multipart/form-data'
