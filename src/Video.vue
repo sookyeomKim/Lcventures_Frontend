@@ -8,7 +8,7 @@
 
       <!-- Youtube -->
       <iframe class="video" id="video" type="text/html"
-              src="https://www.youtube.com/embed/bDmuCtaRcZM?&autoplay=1&loop=1&playlist=bDmuCtaRcZM&showinfo=0&fs=0&disablekb=1&vq=auto&controls=0&rel=0&iv_load_policy=3&mute=1"
+              src="https://www.youtube.com/embed/bDmuCtaRcZM?&autoplay=1&loop=1&playlist=bDmuCtaRcZM&showinfo=0&fs=0&disablekb=1&vq=auto&controls=0&rel=0&iv_load_policy=3&mute=1&playsinline=1&modestbranding=1"
               allow="autoplay" frameborder="0" volume="0" allowfullscreen webkitallowfullscreen mozallowfullscreen>
       </iframe>
 
@@ -17,12 +17,15 @@
     <!-- v-else -->
     <div class="video_basket_m" id="video_basket_m" v-else>
       <!-- Cover Image when replaced instead video -->
-      <!-- <img class="video_cover" src="./assets/pages/home/unsplash2.jpg" alt="Main Cover Image" /> -->
 
+      <img class="video_cover" src="./assets/pages/home/m_main_banner.jpg" alt="Main Cover Image" />
+
+      <!--
       <iframe class="video" id="video_m" type="text/html"
-              src="https://www.youtube.com/embed/AWnAHBqNqG0?&autoplay=1&loop=1&playlist=bDmuCtaRcZM&showinfo=0&fs=0&disablekb=1&vq=auto&controls=0&rel=0&iv_load_policy=3&mute=1"
+              src="https://www.youtube.com/embed/AWnAHBqNqG0?&autoplay=1&loop=1&playlist=bDmuCtaRcZM&showinfo=0&fs=0&disablekb=1&vq=auto&controls=0&rel=0&iv_load_policy=3&mute=1&playsinline=1&modestbranding=1"
               allow="autoplay" frameborder="0" volume="0" allowfullscreen webkitallowfullscreen mozallowfullscreen>
       </iframe>
+      -->
 
     </div>
 
@@ -64,6 +67,20 @@
             that.windowWidth = window.innerWidth
           })
         })
+
+        // iframe handling
+        var iframe = document.getElementById('video_m')
+        var css = document.createElement('style')
+        css.type = 'text/css'
+
+        var styles = '.ytp-large-play-button { top: 25% !important; left: 25% !important;}'
+
+        css.appendChild(document.createTextNode(styles))
+
+        iframe.contentDocument.head.appendChild(css)
+        // #player_uid_72613243_1 > div.ytp-cued-thumbnail-overlay > button
+        // //*[@id="player_uid_72613243_1"]/div[4]/button
+        // //*[@id="player_uid_759848633_1"]/div[4]/button
       }
     }
 </script>

@@ -676,7 +676,6 @@
     margin: 0;
   } /* Main image sections' innerText belongs to App.vue */
 
-
   @keyframes down_there {
     0% {
       margin-top: 0;
