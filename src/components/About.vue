@@ -20,7 +20,6 @@
         <div>- 회사소개</div>
         <div>- 로고</div>
         <div>- 연혁</div>
-        <div>- 조직도</div>
         <div>- 오시는길</div>
       </div>
     </div>

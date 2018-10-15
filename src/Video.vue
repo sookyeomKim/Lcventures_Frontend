@@ -67,20 +67,6 @@
             that.windowWidth = window.innerWidth
           })
         })
-
-        // iframe handling
-        var iframe = document.getElementById('video_m')
-        var css = document.createElement('style')
-        css.type = 'text/css'
-
-        var styles = '.ytp-large-play-button { top: 25% !important; left: 25% !important;}'
-
-        css.appendChild(document.createTextNode(styles))
-
-        iframe.contentDocument.head.appendChild(css)
-        // #player_uid_72613243_1 > div.ytp-cued-thumbnail-overlay > button
-        // //*[@id="player_uid_72613243_1"]/div[4]/button
-        // //*[@id="player_uid_759848633_1"]/div[4]/button
       }
     }
 </script>

@@ -78,7 +78,7 @@
           title: '박우복',
           team: '유통사업부',
           position: '부장',
-          src: require('../assets/pages/people/vertical_placeholder.png')
+          src: require('../assets/pages/people/default.png')
         },
         {
           title: '류진우',
@@ -150,7 +150,7 @@
           title: '이상아',
           team: '마케팅부',
           position: '대리',
-          src: require('../assets/pages/people/vertical_placeholder.png')
+          src: require('../assets/pages/people/default.png')
         },
         {
           title: '이우준',
@@ -170,12 +170,12 @@
           position: '주임',
           src: require('../assets/pages/people/hjjang.jpg')
         },
-        {
+        /* {
           title: '최소영',
           team: '유통사업부',
           position: '주임',
           src: require('../assets/pages/people/sychoe.jpg')
-        },
+        }, */
         {
           title: '이로운',
           team: '마케팅부',
@@ -252,25 +252,25 @@
           title: '조미경',
           team: '컨텐츠사업부',
           position: '사원',
-          src: require('../assets/pages/people/vertical_placeholder.png')
+          src: require('../assets/pages/people/default.png')
         },
         {
           title: '김진아',
           team: '유통사업부',
           position: '사원',
-          src: require('../assets/pages/people/vertical_placeholder.png')
+          src: require('../assets/pages/people/default.png')
         },
         {
           title: '조우석',
           team: '마케팅부',
           position: '사원',
-          src: require('../assets/pages/people/vertical_placeholder.png')
+          src: require('../assets/pages/people/default.png')
         },
         {
           title: '이진영',
           team: '유통사업부',
           position: '사원',
-          src: require('../assets/pages/people/vertical_placeholder.png')
+          src: require('../assets/pages/people/default.png')
         }
       ]
     }),
