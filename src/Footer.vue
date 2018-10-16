@@ -34,7 +34,8 @@
     position: relative;
     width: 100%;
     padding: 30px 0;
-    background-color: #fafafa;
+    /*background-color: #fafafa;*/
+    background-color: #009da5;
     transition: all 350ms cubic-bezier(.83,.01,.46,.86);
 
     .footer_wrap {
@@ -49,7 +50,7 @@
           padding: 0 30px;
           img {
             width: 97%;
-            filter: invert(1);
+            /*filter: invert(1);*/
           }
         }
       }
@@ -60,7 +61,9 @@
         vertical-align: top;
         font-family: 'Nanums_regular', sans-serif;
         font-size: 14px;
-        color: #212121;
+        /*color: #212121;*/
+        color: #fefefe;
+        font-weight: bold;
         text-align: left;
       }
     }/* Footer wrap */
