@@ -31,7 +31,7 @@
     <section class="section_1">
       <div class="icon_wrapper">
         <div class="section_1_card">
-          <img src="../assets/pages/projects/section_1/icon_1.png" alt="">
+          <img src="../assets/pages/projects/section_1/icon_1.png" alt="Digital image">
           <p class="card_text_first">Digital Performance</p>
           <div class="card_division"></div>
           <div class="card_text_second">
@@ -45,7 +45,7 @@
           </div>
         </div>
         <div class="section_1_card">
-          <img src="../assets/pages/projects/section_1/icon_2.png" alt="">
+          <img src="../assets/pages/projects/section_1/icon_2.png" alt="Creative image">
           <p class="card_text_first">Unique Creative</p>
           <div class="card_division"></div>
           <div  class="card_text_second">
@@ -59,7 +59,7 @@
           </div>
         </div>
         <div class="section_1_card">
-          <img src="../assets/pages/projects/section_1/icon_3.png" alt="">
+          <img src="../assets/pages/projects/section_1/icon_3.png" alt="Hand shake image">
           <p class="card_text_first">Next Step</p>
           <div class="card_division"></div>
           <div class="card_text_second">
@@ -104,7 +104,7 @@
     <section class="section_4">
       <ul class="projects_area" v-lazy-container="{ selector: 'img' }">
 
-        <li class="project" v-for="project in project_list">
+        <li class="project" v-for="(project, index) in project_list" :class="index % 2 === 0 ? 'even' : 'odd'">
 
           <div class="project_title_wrap">
             <span class="project_title" v-for="(title, index) in project.header"
@@ -125,7 +125,7 @@
             </div>
 
             <div class="project_image_wrap">
-              <img class="project_image" :data-src="project.src" :alt="project.alt">
+              <img v-show="project.src" class="project_image" :data-src="project.src" :alt="project.alt">
             </div>
           </div>
         </li>
@@ -415,6 +415,12 @@
     padding: 50px 0;
   }
 
+  @media (max-width: 835px) {
+    .section_2_bg {
+      background-attachment: unset;
+    }
+  }
+
   .section_2_contents {
     .section_2_text_wrap {
       font-size: 24px;
@@ -521,7 +527,7 @@
 
   .section_4 {
     width: 100%;
-    padding: 40px 0;
+    padding-top: 40px;
     background-size: cover;
     font-family: 'Nanums_regular', sans-serif;
   }
@@ -540,8 +546,8 @@
     width: 100%;
     max-width: 1200px;
     max-height: 100%;
-    padding: 30px 0;
-    border-radius: 10px;
+    padding: 40px 0;
+    //border-radius: 10px;
     // max-width: 300px;
     overflow: hidden;
     transition: all 200ms ease-out;
@@ -551,6 +557,12 @@
     /*&:hover, &:active {
       transform: scale(1.01);
     }*/
+    &.even {
+      background-color: #ffffff;
+    }
+    &.odd {
+      background-color: #f9f9f9;
+    }
   }
 
   .project_title_wrap {
@@ -570,10 +582,8 @@
   }
 
   @media (max-width: 835px) {
-    .project {
-      padding: 15px 0;
-    }
     .project_title_wrap {
+      padding-top: 10px;
       padding-bottom: 20px;
       word-wrap: normal;
       word-break: keep-all;
@@ -688,7 +698,7 @@
         width: 100%;
         padding: 1% 2%;
         .project_image {
-          width: 80%;
+          width: 83%;
         }
       }
     }

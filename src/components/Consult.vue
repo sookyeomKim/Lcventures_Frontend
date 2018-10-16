@@ -311,22 +311,22 @@
       cursor: pointer;
       transition: all 200ms ease-in-out;
       &:hover, &:active {
-        border: 1px solid #fefefe;
+        border: 1px solid #ff788a;
         background-color: #ff788a;
         color: #fefefe;
       }
     }
     .submit {
-      border: 1px solid #ffffff;
+      border: 1px solid #009da5;
       border-radius: 5px;
-      background-color: #019DA5;
-      color: #efefef;
+      color: #009da5;
       font-weight: bold;
       margin: 10px 0;
       cursor: pointer;
       transition: all 200ms ease-in-out;
       &:hover, &:active {
         background-color: #01AEB7;
+        color: #fefefe;
       }
     }
 
@@ -387,7 +387,7 @@
         width: 90% !important;
       }
       .submit {
-        width: 90%;
+        width: 88.5%;
       }
     }
   }
