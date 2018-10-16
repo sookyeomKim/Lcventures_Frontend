@@ -103,6 +103,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    max-height: 100vh;
     pointer-events: none;
     background-color: black;
     opacity: 0.5;
@@ -136,6 +137,7 @@
   @media (max-width: 835px) {
     .video_wrap {
       height: 100vw;
+      max-height: 100vh;
     }
   }/*=*/
 
@@ -208,7 +210,7 @@
 
   @media (min-aspect-ratio: 16/9) {
     .guide_button {
-      top: calc(-300% + 65%);
+      top: calc(-200% - 140px);
     }
   }/*=*/
 
@@ -221,6 +223,13 @@
     text-align: center;
     z-index: 8000;
   }
+
+  @media (min-aspect-ratio: 16/9) {
+    .guide_to_scroll {
+      top: calc(-200% - 140px);
+    }
+  }
+
   .guide_text {
     position: absolute;
     left: 50%;

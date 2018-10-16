@@ -633,6 +633,7 @@
     .main_title {
       height: 100vw;
       padding-top: calc(25vw - 20px);
+      max-height: 100vh;
     }
     .main_title h2 {
       font-size: 40px;

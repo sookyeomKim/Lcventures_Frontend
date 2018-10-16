@@ -280,7 +280,7 @@
         let tempArry = []
         let resArry = []
         let count = this.count
-        console.log(shuffle)
+        /*console.log(shuffle)*/
         for (let i = 0; i < this.image_sources.length; i++) {
           if (i !== 0 && i % count === 0) {
             resArry.push(tempArry)

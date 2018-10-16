@@ -525,7 +525,7 @@
         .prev_button, .next_button {
           width: 40px;
           height: 40px;
-          background-color: #f0f0f0;
+          background-color: #009da5;
           border: 3px solid #ffffff;
           border-radius: 100%;
           opacity: 0.7;
@@ -533,6 +533,7 @@
           img {
             width: 100%;
             height: 100%;
+            filter: invert(1);
           }
           &:focus {
             outline: none;

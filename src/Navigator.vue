@@ -14,7 +14,7 @@
     <!-- Nav Category 1 About Company -->
     <ul class="nav_category" @click="$parent.$options.methods.navi_delay">
       <li>
-        <router-link class="nav_a" to="/">HOME</router-link>
+        <router-link class="nav_a" to="/">HOMEPAGE</router-link>
       </li>
       <li>
         <router-link class="nav_a" to="/company">COMPANY</router-link>
