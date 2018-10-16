@@ -13,6 +13,9 @@ import DaumMap from './plugins/daum-map'
 import VueLazyload from 'vue-lazyload'
 import VueUploadComponent from 'vue-upload-component'
 import axios from 'axios'
+import VeeValidate from 'vee-validate'
+// import { Validator } from 'vee-validate'
+// import ko from 'vee-validate/dist/locale/ko'
 
 Vue.config.productionTip = false
 Vue.component('app-header', Header)
@@ -34,6 +37,18 @@ Vue.use(VueLazyload, {
 })
 
 Vue.prototype.$axios = axios
+
+// const dictionary = {
+//   ko: {
+//     attributes: {
+//       email: '이메일'
+//     }
+//   }
+// }
+
+// Validator.localize(dictionary)
+
+Vue.use(VeeValidate)
 
 /* eslint-disable no-new */
 new Vue({

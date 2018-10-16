@@ -21,40 +21,43 @@
     </div>
 
     <section class="section_1">
-      <div class="input_wrap first">
-        <div class="input_label">이름*</div>
-        <input type="text" class="name fill" id="in_name" v-model="in_name" maxlength="16" placeholder="본인의 이름을 입력해주세요">
-      </div>
-      <div class="input_wrap">
-        <div class="input_label">직책</div>
-        <input type="text" class="position fill" id="in_position" v-model="in_position" maxlength="16" placeholder="본인의 직책을 입력해주세요">
-      </div>
-      <div class="input_wrap">
-        <div class="input_label">소속*</div>
-        <input type="text" class="company fill" id="in_group" v-model="in_group" maxlength="50" placeholder="본인의 회사명 또는 소속 기관을 입력해주세요">
-      </div>
-      <div class="input_wrap">
-        <div class="input_label">이메일</div>
-        <input type="text" class="email fill" id="in_email" v-model="in_email" maxlength="50" placeholder="연락받을 이메일 주소를 입력해주세요">
-      </div>
-      <div class="input_wrap">
-        <div class="input_label">전화번호*</div>
-        <input type="number" class="phone fill" id="in_phone" v-model="in_phone" maxlength="12" placeholder="연락받을 전화번호를 입력해주세요">
-      </div>
-      <div class="input_wrap block">
-        <div class="input_label">설명</div>
-        <textarea class="describe fill area" id="in_desc" v-model="in_desc" maxlength="3000" placeholder="무엇을 도와드릴까요?"></textarea>
-      </div>
-      <div class="input_wrap block">
-        <div class="input_label">첨부파일</div>
-        <input type="file" class="file" id="file_input" ref="file_input" @change="add_file()" multiple>
-        <input type="button" class="delete" value="파일 삭제" @click="remove_file" v-show="file_flag === 1">
-      </div>
+      <form @submit.prevent="submit_form">
+        <div class="input_wrap first">
+          <div class="input_label">이름*</div><div class="error_label" v-if="errors.has('in_name')">{{errors.first('in_name')}}</div>
+          <input v-validate="'required'" type="text" class="name fill" id="in_name" name="in_name" v-model="in_name" data-vv-as="Name" maxlength="16" placeholder="본인의 이름을 입력해주세요">
+        </div>
+        <div class="input_wrap">
+          <div class="input_label">직책</div>
+          <input type="text" class="position fill" id="in_position" v-model="in_position" maxlength="16" placeholder="본인의 직책을 입력해주세요">
+        </div>
+        <div class="input_wrap">
+          <div class="input_label">소속*</div><div class="error_label" v-if="errors.has('in_group')">{{errors.first('in_group')}}</div>
+          <input v-validate="'required'" type="text" class="company fill" id="in_group" name="in_group" data-vv-as="Group name" v-model="in_group" maxlength="50" placeholder="본인의 회사명 또는 소속 기관을 입력해주세요">
+        </div>
+        <div class="input_wrap">
+          <div class="input_label">이메일</div><div class="error_label" v-if="errors.has('in_email')">{{errors.first('in_email')}}</div>
+          <input v-validate="'email'" type="email" class="email fill" id="in_email" name="in_email" v-model="in_email" data-vv-as="E-mail" maxlength="50" placeholder="연락받을 이메일 주소를 입력해주세요">
+        </div>
+        <div class="input_wrap">
+          <div class="input_label">전화번호*</div><div class="error_label" v-if="errors.has('in_phone')">{{errors.first('in_phone')}}</div>
+          <input v-validate="'required|numeric|max:12'" type="number" class="phone fill" id="in_phone" name="in_phone" data-vv-as="Phone number" v-model="in_phone" maxlength="12" placeholder="연락받을 전화번호를 입력해주세요">
+        </div>
+        <div class="input_wrap block">
+          <div class="input_label">설명</div>
+          <textarea class="describe fill area" id="in_desc" v-model="in_desc" maxlength="3000" placeholder="무엇을 도와드릴까요?"></textarea>
+        </div>
+        <div class="input_wrap block">
+          <div class="input_label">첨부파일</div><div class="error_label" v-if="errors.has('in_file')">{{errors.first('in_file')}}</div>
+          <input v-validate="'size:102400'" type="file" class="file" id="file_input" name="in_file" data-vv-as="File" ref="file_input" @change="add_file()" multiple>
+          <!--<input type="button" class="delete" value="파일 삭제" @click="remove_file" v-show="file_flag === 1">-->
+          <input type="button" class="delete" value="파일 삭제" @click="remove_file">
+        </div>
 
-      <div>
-        <input type="button" class="submit" value="문의하기" @click="submit_form()">
-      </div>
-
+        <div>
+          <!--<input type="submit" class="submit" value="문의하기" @click="submit_form()">-->
+          <input type="submit" class="submit" value="문의하기">
+        </div>
+      </form>
 <!--
       <div v-if="test[0]">
         <div>{{ test[0].name }}</div>
@@ -72,7 +75,7 @@
   export default {
     name: 'consult',
     data: () => ({
-      file_flag: 0,
+      file_flag: 1,
       in_name: '',
       in_position: '',
       in_group: '',
@@ -80,22 +83,27 @@
       in_phone: '',
       in_desc: '',
       in_file: [],
+      file_info: '',
       test: []
     }),
     methods: {
       add_file() {
         /* When file data changed */
         let file_data = event.target.files[0]
+        this.file_info = file_data
         let fileNames = file_data.name
-        console.log(fileNames)
+        /*console.log(fileNames)*/
         this.in_file[0] = file_data
         this.file_flag = 1
+        //console.log(file_data.size)
       },
       remove_file() {
         /* Remove file data */
         this.$refs.file_input.value = ''
         this.in_file = []
+        this.file_info = ''
         this.file_flag = 0
+        this.$validator.validateAll()
       },
       submit_form() {
         /* axios get test */
@@ -108,6 +116,7 @@
             console.log(this.test)
           })
         */
+        this.$validator.validateAll()
 
         /* When mandatory forms are empty */
         if (this.in_name === '') {
@@ -121,6 +130,13 @@
         else if (this.in_phone === '') {
           alert('연락받을 전화번호를 입력해주세요.')
           document.getElementById('in_phone').focus()
+        }
+        else if (this.in_phone.length > 12) {
+          alert('전화번호 길이를 확인하세요.')
+          document.getElementById('in_phone').focus()
+        }
+        else if (this.file_info.size > 104857600) {
+          alert('파일 크기는 100MB 이하만 가능합니다.')
         }
 
         /* When file does not exist */
@@ -141,7 +157,7 @@
           /* Do axios post */
           this.$axios.post(`${baseURI}/consult/`, formData, config)
             .then((response) => {
-              console.log(response)
+              /*console.log(response)*/
               alert('접수되었습니다.')
               this.in_name = ''
               this.in_position = ''
@@ -152,6 +168,8 @@
               this.$refs.file_input.value = ''
               this.in_file = []
               this.file_flag = 0
+              this.file_info = ''
+              this.$validator.validateAll()
             })
             .catch((e) => {
               console.error(e)
@@ -178,7 +196,7 @@
           /* Do axios post */
           this.$axios.post(`${baseURI}/consult/`, formData, config)
             .then((response) => {
-              console.log(response)
+              /*console.log(response)*/
               alert('접수되었습니다.')
               this.in_name = ''
               this.in_position = ''
@@ -189,6 +207,8 @@
               this.$refs.file_input.value = ''
               this.in_file = []
               this.file_flag = 0
+              this.file_info = ''
+              this.$validator.validateAll()
             })
             .catch((e) => {
               console.error(e)
@@ -227,9 +247,11 @@
 
   .section_1 {
     .input_wrap {
+      text-align: left;
       padding: 8px;
     }
     .input_label {
+      display: inline-block;
       font-family: 'Nanums_regular', sans-serif;
       font-size: 14px;
       color: #019DA5;
@@ -245,6 +267,17 @@
     .check {
       width: 25px !important;
       float: left;
+    }
+    .error_label {
+      font-family: 'Nanums_regular', sans-serif;
+      font-size: 13px;
+      display: inline-block;
+      padding: 0 10px;
+      color: #ee5151;
+      border-radius: 5px;
+      margin-left: 5px;
+      border: 1px solid #ee5151;
+      box-sizing: border-box;
     }
 
     input, textarea {

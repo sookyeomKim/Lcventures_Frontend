@@ -67,20 +67,6 @@
             that.windowWidth = window.innerWidth
           })
         })
-
-        // iframe handling
-        var iframe = document.getElementById('video_m')
-        var css = document.createElement('style')
-        css.type = 'text/css'
-
-        var styles = '.ytp-large-play-button { top: 25% !important; left: 25% !important;}'
-
-        css.appendChild(document.createTextNode(styles))
-
-        iframe.contentDocument.head.appendChild(css)
-        // #player_uid_72613243_1 > div.ytp-cued-thumbnail-overlay > button
-        // //*[@id="player_uid_72613243_1"]/div[4]/button
-        // //*[@id="player_uid_759848633_1"]/div[4]/button
       }
     }
 </script>
@@ -117,6 +103,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    max-height: 100vh;
     pointer-events: none;
     background-color: black;
     opacity: 0.5;
@@ -150,6 +137,7 @@
   @media (max-width: 835px) {
     .video_wrap {
       height: 100vw;
+      max-height: 100vh;
     }
   }/*=*/
 
@@ -222,7 +210,7 @@
 
   @media (min-aspect-ratio: 16/9) {
     .guide_button {
-      top: calc(-300% + 65%);
+      top: calc(-200% - 140px);
     }
   }/*=*/
 
@@ -235,6 +223,13 @@
     text-align: center;
     z-index: 8000;
   }
+
+  @media (min-aspect-ratio: 16/9) {
+    .guide_to_scroll {
+      top: calc(-200% - 140px);
+    }
+  }
+
   .guide_text {
     position: absolute;
     left: 50%;

@@ -30,6 +30,9 @@
       <div class="button_middle" @click="$parent.$options.methods.navi_delay">
         <router-link class="button_middle_inner" to="/company">COMPANY</router-link>
       </div>
+      <div class="button_middle" @click="$parent.$options.methods.navi_delay">
+        <router-link class="button_middle_inner" to="/">HOMPAGE</router-link>
+      </div>
     </div>
     <!--Top button - middle menu-->
 
