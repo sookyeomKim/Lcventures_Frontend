@@ -945,7 +945,7 @@
     .side_text {
       // width: 5%;
       width: 30px;
-      padding: 0 28px;
+      padding: 0 25px;
       float: left;
       // font-size: 34px;
       font-size: 40px;
