@@ -17,13 +17,13 @@
       </div>
     </section>
 
-    <!-- Main Creative performance image -->
-    <section class="section_1">
+    <!-- Main Creative performance image (hidden. 2018.10.23) -->
+    <!-- <section class="section_1">
       <img v-if="windowWidth > 835" class="home_image" src="../assets/pages/home/home_main.jpg"
            alt="LC ventures homepage start image.">
       <img v-else class="home_image" src="../assets/pages/home/home_main_m.jpg"
            alt="LC ventures mobile homepage start image">
-    </section>
+    </section> -->
 
     <!-- Culture Image slide 1/4 -->
     <section class="section_2">
@@ -39,10 +39,10 @@
             </ul>
             <div class="img_nav">
               <button class="prev_button" id="1-prev" @click="img_control($event)">
-                <img src="../assets/pages/home/arrow_left.png" alt="Left button">
+                <img src="../assets/pages/home/arrow_left_01.png" alt="Left button">
               </button>
               <button class="next_button" id="1-next" @click="img_control($event)">
-                <img src="../assets/pages/home/arrow_right.png" alt="Right button">
+                <img src="../assets/pages/home/arrow_right_01.png" alt="Right button">
               </button>
             </div>
             <div class="img_position">
@@ -84,10 +84,10 @@
             </ul>
             <div class="img_nav">
               <button class="prev_button" id="2-prev" @click="img_control($event)">
-                <img src="../assets/pages/home/arrow_left.png" alt="Left button">
+                <img src="../assets/pages/home/arrow_left_01.png" alt="Left button">
               </button>
               <button class="next_button" id="2-next" @click="img_control($event)">
-                <img src="../assets/pages/home/arrow_right.png" alt="Right button">
+                <img src="../assets/pages/home/arrow_right_01.png" alt="Right button">
               </button>
             </div>
             <div class="img_position">
@@ -130,10 +130,10 @@
             </ul>
             <div class="img_nav">
               <button class="prev_button" id="3-prev" @click="img_control($event)">
-                <img src="../assets/pages/home/arrow_left.png" alt="Left button">
+                <img src="../assets/pages/home/arrow_left_01.png" alt="Left button">
               </button>
               <button class="next_button" id="3-next" @click="img_control($event)">
-                <img src="../assets/pages/home/arrow_right.png" alt="Right button">
+                <img src="../assets/pages/home/arrow_right_01.png" alt="Right button">
               </button>
             </div>
             <div class="img_position">
@@ -177,10 +177,10 @@
             </ul>
             <div class="img_nav">
               <button class="prev_button" id="4-prev" @click="img_control($event)">
-                <img src="../assets/pages/home/arrow_left.png" alt="Left button">
+                <img src="../assets/pages/home/arrow_left_01.png" alt="Left button">
               </button>
               <button class="next_button" id="4-next" @click="img_control($event)">
-                <img src="../assets/pages/home/arrow_right.png" alt="Right button">
+                <img src="../assets/pages/home/arrow_right_01.png" alt="Right button">
               </button>
             </div>
             <div class="img_position">
@@ -582,17 +582,21 @@
 
 <style lang="scss" scoped>
 
-  /* Creative performance image */
-  .home_image {
+  /* Creative performance image (hidden 2018.10.23) */
+  /*.home_image {
     width: 100%;
     margin-bottom: -5px;
-  }
+  }*/
 
   /* Culture image sections */
   .section_2, .section_3, .section_4, .section_5 {
     background-color: #ffffff;
-    padding: 150px 0;
+    padding-top: 150px;
     font-family: Impact, sans-serif;
+  }
+
+  .section_5 {
+    padding-bottom: 150px;
   }
 
   /* Actual main contents of each section */
@@ -715,7 +719,7 @@
           img {
             width: 100%;
             height: 100%;
-            filter: invert(1);
+            // filter: invert(1);
           }
           &:focus {
             outline: none;
@@ -816,7 +820,7 @@
   /* Vertical text */
   .side_text {
     // width: 5%;
-    width: 1px;
+    width: 20px;
     float: left;
     // font-size: 34px;
     font-size: 27px;
@@ -940,7 +944,7 @@
 
     .side_text {
       // width: 5%;
-      width: 1px;
+      width: 30px;
       float: left;
       // font-size: 34px;
       font-size: 40px;
@@ -959,8 +963,12 @@
   @media (max-width: 835px) {
     .section_2, .section_3, .section_4, .section_5 {
       background-color: #ffffff;
-      padding: 50px 0;
+      padding-top: 50px;
       font-family: Impact, sans-serif;
+    }
+
+    .section_5 {
+      padding-bottom: 50px;
     }
 
     .culture {
