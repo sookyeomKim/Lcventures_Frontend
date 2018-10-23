@@ -929,10 +929,10 @@
     .culture_text {
       .inner_title {
         h4 {
-          font-size: 90px;
+          font-size: 80px;
         }
         p {
-          font-size: 45px;
+          font-size: 35px;
         }
       }
       .inner_content {
@@ -948,7 +948,7 @@
       padding: 0 25px;
       float: left;
       // font-size: 34px;
-      font-size: 40px;
+      font-size: 35px;
       font-weight: bold;
       // padding-top: 45px;
       color: #000;
