@@ -39,10 +39,10 @@
             </ul>
             <div class="img_nav">
               <button class="prev_button" id="1-prev" @click="img_control($event)">
-                <img src="../assets/pages/home/arrow_left.png" alt="Left button">
+                <img src="../assets/pages/home/arrow_left_01.png" alt="Left button">
               </button>
               <button class="next_button" id="1-next" @click="img_control($event)">
-                <img src="../assets/pages/home/arrow_right.png" alt="Right button">
+                <img src="../assets/pages/home/arrow_right_01.png" alt="Right button">
               </button>
             </div>
             <div class="img_position">
@@ -84,10 +84,10 @@
             </ul>
             <div class="img_nav">
               <button class="prev_button" id="2-prev" @click="img_control($event)">
-                <img src="../assets/pages/home/arrow_left.png" alt="Left button">
+                <img src="../assets/pages/home/arrow_left_01.png" alt="Left button">
               </button>
               <button class="next_button" id="2-next" @click="img_control($event)">
-                <img src="../assets/pages/home/arrow_right.png" alt="Right button">
+                <img src="../assets/pages/home/arrow_right_01.png" alt="Right button">
               </button>
             </div>
             <div class="img_position">
@@ -130,10 +130,10 @@
             </ul>
             <div class="img_nav">
               <button class="prev_button" id="3-prev" @click="img_control($event)">
-                <img src="../assets/pages/home/arrow_left.png" alt="Left button">
+                <img src="../assets/pages/home/arrow_left_01.png" alt="Left button">
               </button>
               <button class="next_button" id="3-next" @click="img_control($event)">
-                <img src="../assets/pages/home/arrow_right.png" alt="Right button">
+                <img src="../assets/pages/home/arrow_right_01.png" alt="Right button">
               </button>
             </div>
             <div class="img_position">
@@ -177,10 +177,10 @@
             </ul>
             <div class="img_nav">
               <button class="prev_button" id="4-prev" @click="img_control($event)">
-                <img src="../assets/pages/home/arrow_left.png" alt="Left button">
+                <img src="../assets/pages/home/arrow_left_01.png" alt="Left button">
               </button>
               <button class="next_button" id="4-next" @click="img_control($event)">
-                <img src="../assets/pages/home/arrow_right.png" alt="Right button">
+                <img src="../assets/pages/home/arrow_right_01.png" alt="Right button">
               </button>
             </div>
             <div class="img_position">
@@ -719,7 +719,7 @@
           img {
             width: 100%;
             height: 100%;
-            filter: invert(1);
+            // filter: invert(1);
           }
           &:focus {
             outline: none;
@@ -820,7 +820,7 @@
   /* Vertical text */
   .side_text {
     // width: 5%;
-    width: 1px;
+    width: 20px;
     float: left;
     // font-size: 34px;
     font-size: 27px;
@@ -944,7 +944,7 @@
 
     .side_text {
       // width: 5%;
-      width: 1px;
+      width: 30px;
       float: left;
       // font-size: 34px;
       font-size: 40px;
