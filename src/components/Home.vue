@@ -17,13 +17,13 @@
       </div>
     </section>
 
-    <!-- Main Creative performance image -->
-    <section class="section_1">
+    <!-- Main Creative performance image (hidden. 2018.10.23) -->
+    <!-- <section class="section_1">
       <img v-if="windowWidth > 835" class="home_image" src="../assets/pages/home/home_main.jpg"
            alt="LC ventures homepage start image.">
       <img v-else class="home_image" src="../assets/pages/home/home_main_m.jpg"
            alt="LC ventures mobile homepage start image">
-    </section>
+    </section> -->
 
     <!-- Culture Image slide 1/4 -->
     <section class="section_2">
@@ -582,17 +582,21 @@
 
 <style lang="scss" scoped>
 
-  /* Creative performance image */
-  .home_image {
+  /* Creative performance image (hidden 2018.10.23) */
+  /*.home_image {
     width: 100%;
     margin-bottom: -5px;
-  }
+  }*/
 
   /* Culture image sections */
   .section_2, .section_3, .section_4, .section_5 {
     background-color: #ffffff;
-    padding: 150px 0;
+    padding-top: 150px;
     font-family: Impact, sans-serif;
+  }
+
+  .section_5 {
+    padding-bottom: 150px;
   }
 
   /* Actual main contents of each section */
@@ -959,8 +963,12 @@
   @media (max-width: 835px) {
     .section_2, .section_3, .section_4, .section_5 {
       background-color: #ffffff;
-      padding: 50px 0;
+      padding-top: 50px;
       font-family: Impact, sans-serif;
+    }
+
+    .section_5 {
+      padding-bottom: 50px;
     }
 
     .culture {
