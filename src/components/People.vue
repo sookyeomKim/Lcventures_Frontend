@@ -279,20 +279,40 @@
         let shuffle = this.image_sources[Math.floor(Math.random() * this.image_sources.length)]
         let tempArry = []
         let resArry = []
+        let width = this.windowWidth
         let count = this.count
         /*console.log(shuffle)*/
-        for (let i = 0; i < this.image_sources.length; i++) {
-          if (i !== 0 && i % count === 0) {
-            resArry.push(tempArry)
-            tempArry = []
-            tempArry.push(this.image_sources[i])
-            if (i + 1 === this.image_sources.length) {
+        if (width > 1300) {
+          count = 4
+          for (let i = 0; i < this.image_sources.length; i++) {
+            if (i !== 0 && i % count === 0) {
               resArry.push(tempArry)
+              tempArry = []
+              tempArry.push(this.image_sources[i])
+              if (i + 1 === this.image_sources.length) {
+                resArry.push(tempArry)
+              }
+            } else {
+              tempArry.push(this.image_sources[i])
+              if (i + 1 === this.image_sources.length) {
+                resArry.push(tempArry)
+              }
             }
-          } else {
-            tempArry.push(this.image_sources[i])
-            if (i + 1 === this.image_sources.length) {
+          }
+        } else {
+          for (let i = 0; i < this.image_sources.length; i++) {
+            if (i !== 0 && i % count === 0) {
               resArry.push(tempArry)
+              tempArry = []
+              tempArry.push(this.image_sources[i])
+              if (i + 1 === this.image_sources.length) {
+                resArry.push(tempArry)
+              }
+            } else {
+              tempArry.push(this.image_sources[i])
+              if (i + 1 === this.image_sources.length) {
+                resArry.push(tempArry)
+              }
             }
           }
         }
@@ -332,7 +352,9 @@
   .memberContainer {
     .memberWrap {
       width: 100%;
-      padding: 10px 5%;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 10px 1%;
       ul {
         display: inline-block;
         .memberList {

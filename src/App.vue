@@ -1,11 +1,10 @@
 <template>
   <div id="app">
+    <!-- Video Area -->
+    <app-video/>
 
     <!--Header-->
     <app-header/>
-
-    <!-- Video Area -->
-    <app-video/>
 
     <!--Main Contents-->
     <router-view/>
@@ -547,10 +546,12 @@
 
   .main_role {
     position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100vh;
+    /*top: 0;*/
+    /*left: 0;*/
+    /*width: 100%;*/
+    /*max-width: 1300px;*/
+    /*margin: 0 auto;*/
+    /*min-height: 100vh;*/
     transition: all 350ms cubic-bezier(.83,.01,.46,.86);
   } /* Overall Main Contents Area */
 
@@ -568,28 +569,27 @@
 
   /* Main Text on Video */
   .main_title {
-    position: relative;
-    top: 0;
-    left: 0;
     width: 100%;
+    max-width: 1300px;
     height: 100vh;
+    margin: 0 auto;
     padding-top: calc(50vh - 65px);
     color: #fdfdfd;
-    //text-align: center;
     word-break: keep-all;
     white-space: pre-line;
     overflow: hidden;
     font-family: Impact, sans-serif;
-    box-shadow: 0px -35px 20px 40px rgba(0,0,0,0.75);
+    /*box-shadow: 0px -35px 20px 40px rgba(0,0,0,0.75);*/
     transition: all 350ms cubic-bezier(.83,.01,.46,.86);
   }/* Main title area end */
 
   .main_title h2 {
     position: relative;
-    font-size: 55px;
+    font-size: 70px;
     font-weight: bold;
     margin: 0;
-    padding-left: 5%;
+    /*padding-left: 5%;*/
+    padding-left: 10px;
     z-index: 500;
   }
 
@@ -607,15 +607,18 @@
     width: 70px;
     height: 3px;
     background-color: #fdfdfd;
-    margin: 12px 0 20px 5%;
+    /*margin: 12px 0 20px 5%;*/
+    margin: 15px 0 20px 10px;
     z-index: 500;
   }
 
   .main_title p {
     position: relative;
     font-family: 'Nanums_regular', sans-serif;
-    font-size: 16px;
-    padding-left: 5%;
+    font-size: 18px;
+    line-height: 26px;
+    /*padding-left: 5%;*/
+    padding-left: 10px;
     z-index: 500;
   }
 
@@ -623,7 +626,9 @@
     position: relative;
     font-family: 'Nanums_regular', sans-serif;
     font-size: 16px;
-    padding-left: 5%;
+    padding-left: 10px;
+    padding-right: calc(5% - 10px);
+    /*padding-left: 10px;*/
     z-index: 500;
   }
 
@@ -651,31 +656,6 @@
       display: none;
     }
   }
-
-
-  .section_0 {
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: 450;
-    width: 100%;
-    height: 100vh;
-    padding-top: calc(50vh - 25px);
-    color: #fdfdfd;
-    text-align: center;
-    font-size: 30px;
-    word-break: keep-all;
-    white-space: pre-line;
-    /*background-color: rgba(0,0,0,0.5);*/
-    box-shadow: inset 0px -200px 20px -190px rgba(0,0,0,0.75);
-    overflow: hidden;
-    font-family: Impact, sans-serif;
-  } /* Main image section belongs to App.vue */
-
-  .section_0_title {
-    padding: 0;
-    margin: 0;
-  } /* Main image sections' innerText belongs to App.vue */
 
   @keyframes down_there {
     0% {

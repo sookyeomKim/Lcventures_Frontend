@@ -2,43 +2,43 @@
   <!-- Header + Top Buttons -->
   <header class="header"
           :style="this.$parent.$data.mix_data.slide_mover" id="header" v-bind:style="handleScroll">
+    <div class="header_wrap">
+      <!-- Logo Area -->
+      <div class="head_logo">
+        <router-link class="head_logo_inner" to="/">
+          <img src="./assets/common/lc_logo.png" alt="Lc ventures logo image">
+        </router-link>
+      </div>
 
-    <!-- Logo Area -->
-    <div class="head_logo">
-      <router-link class="head_logo_inner" to="/">
-        <img src="./assets/common/lc_logo.png" alt="Lc ventures logo image">
-      </router-link>
+      <!-- Top Buttons (Simple nav button) -->
+      <!-- Float right. Stack elements invert ordered. -->
+      <div v-if="windowWidth > 835" class="middle_menu">
+        <!--<div class="button_middle" @click="$parent.$options.methods.navi_delay">
+          <router-link class="button_middle_inner" to="/consult">CONSULT</router-link>
+        </div>-->
+        <!--
+        <div class="button_middle" @click="$parent.$options.methods.navi_delay">
+          <router-link class="button_middle_inner"  to="/recruit">RECRUIT</router-link>
+        </div>
+        -->
+        <div class="button_middle" @click="$parent.$options.methods.navi_delay">
+          <router-link class="button_middle_inner" to="/members">MEMBERS</router-link>
+        </div>
+        <div class="button_middle" @click="$parent.$options.methods.navi_delay">
+          <router-link class="button_middle_inner" to="/projects">PROJECT</router-link>
+        </div>
+        <div class="button_middle" @click="$parent.$options.methods.navi_delay">
+          <router-link class="button_middle_inner" to="/company">COMPANY</router-link>
+        </div>
+        <div class="button_middle" @click="$parent.$options.methods.navi_delay">
+          <router-link class="button_middle_inner" to="/">HOMPAGE</router-link>
+        </div>
+      </div>
+      <!--Top button - middle menu-->
+
+      <!-- Hamburger Menu Button -->
+      <div v-else class="button_menu" id="button_menu" @click="$parent.$options.methods.slide_nav"></div>
     </div>
-
-    <!-- Top Buttons (Simple nav button) -->
-    <!-- Float right. Stack elements invert ordered. -->
-    <div v-if="windowWidth > 835" class="middle_menu">
-      <!--<div class="button_middle" @click="$parent.$options.methods.navi_delay">
-        <router-link class="button_middle_inner" to="/consult">CONSULT</router-link>
-      </div>-->
-      <!--
-      <div class="button_middle" @click="$parent.$options.methods.navi_delay">
-        <router-link class="button_middle_inner"  to="/recruit">RECRUIT</router-link>
-      </div>
-      -->
-      <div class="button_middle" @click="$parent.$options.methods.navi_delay">
-        <router-link class="button_middle_inner"  to="/members">MEMBERS</router-link>
-      </div>
-      <div class="button_middle" @click="$parent.$options.methods.navi_delay">
-        <router-link class="button_middle_inner"  to="/projects">PROJECT</router-link>
-      </div>
-      <div class="button_middle" @click="$parent.$options.methods.navi_delay">
-        <router-link class="button_middle_inner" to="/company">COMPANY</router-link>
-      </div>
-      <div class="button_middle" @click="$parent.$options.methods.navi_delay">
-        <router-link class="button_middle_inner" to="/">HOMPAGE</router-link>
-      </div>
-    </div>
-    <!--Top button - middle menu-->
-
-    <!-- Hamburger Menu Button -->
-    <div v-else class="button_menu" id="button_menu" @click="$parent.$options.methods.slide_nav"></div>
-
   </header>
 </template>
 
@@ -50,7 +50,7 @@
         windowWidth: window.innerWidth
       }
     },
-    mounted () {
+    mounted() {
       let that = this
       this.$nextTick(function () {
         window.addEventListener('resize', function (e) {
@@ -59,35 +59,52 @@
       })
     },
     methods: {
-      handleScroll (event) {
-        if (window.innerWidth > 835) {
-          let marge = (window.innerHeight - 70)
-          /* (document.documentElement.scrollTop)  Android Chrome Firefox IE */
-          /* (document.scrollingElement.scrollTop) Android Chrome Firefox Safari Edge */
-          if (document.scrollingElement.scrollTop > marge || document.documentElement.scrollTop > marge) {
-            this.$el.style.background = 'rgba(0,0,0,0.7)'
-          } else {
-            this.$el.style.background = ''
-          }
-        } else {
-          let marge = (window.innerWidth - 70)
-          /* (document.documentElement.scrollTop)  Android Chrome Firefox IE */
-          /* (document.scrollingElement.scrollTop) Android Chrome Firefox Safari Edge */
-          if (document.scrollingElement.scrollTop > marge || document.documentElement.scrollTop > marge) {
-            this.$el.style.background = 'rgba(0,0,0,0.7)'
-          } else {
-            this.$el.style.background = ''
-          }
+      handleScroll(event) {
+        // if (window.innerWidth > 835) {
+        let marge = (window.innerHeight - 70)
+        /* (document.documentElement.scrollTop)  Android Chrome Firefox IE */
+        /* (document.scrollingElement.scrollTop) Android Chrome Firefox Safari Edge */
+        let dctop = document.documentElement.scrollTop
+        let sctop = document.scrollingElement.scrollTop
+        if (dctop === null) {
+          dctop = 0
+        } else if (sctop === null) {
+          sctop = 0
         }
+        // console.log(sctop)
+        // console.log(dctop)
+        if (sctop > marge || dctop > marge) {
+          this.$el.style.background = 'rgba(0,0,0,0.7)'
+        } else {
+          this.$el.style.background = ''
+        }
+        /*} else {
+          let marge = (window.innerWidth - 70)
+          /!* (document.documentElement.scrollTop)  Android Chrome Firefox IE *!/
+          /!* (document.scrollingElement.scrollTop) Android Chrome Firefox Safari Edge *!/
+          let dctop = document.documentElement.scrollTop
+          let sctop = document.scrollingElement.scrollTop
+          if (dctop === null) {
+            dctop = 0
+          } else if (sctop === null) {
+            sctop = 0
+          }
+          if (sctop > marge || dctop > marge) {
+            this.$el.style.background = 'rgba(0,0,0,0.7)'
+          } else {
+            this.$el.style.background = ''
+          }
+        }*/
       },
     },
-    created () {
+    created() {
       window.addEventListener('scroll', this.handleScroll)
     },
-    destroyed () {
+    destroyed() {
       window.removeEventListener('scroll', this.handleScroll)
     }
-  }/* export */
+  }
+  /* export */
 </script>
 
 <style lang="scss" scoped>
@@ -98,16 +115,23 @@
     left: 0;
     width: 100%;
     //height: 100px;
-    padding: 10px 25px;
-    margin-bottom: -50px;
-    transition: all 350ms cubic-bezier(.83,.01,.46,.86);
+    padding: 5px 0;
+    /*margin-bottom: -50px;*/
+    transition: all 350ms cubic-bezier(.83, .01, .46, .86);
     overflow: visible;
     z-index: 9000;
   }
 
+  .header_wrap {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
   .head_logo {
     position: fixed;
-    width: 180px;
+    /*width: 180px;*/
+    width: 240px;
     height: 45px;
     float: left;
     vertical-align: top;
@@ -119,18 +143,19 @@
     //transition: all 350ms cubic-bezier(.83,.01,.46,.86);
     margin-top: 3px;
   }
+
   .head_logo_inner {
     display: block;
     width: 100%;
     height: 100%;
     color: #fdfdfd;
     border-radius: 4px;
-    transition: all 350ms cubic-bezier(.83,.01,.46,.86);
+    transition: all 350ms cubic-bezier(.83, .01, .46, .86);
     &:hover, &:active {
       background-color: rgba(25, 25, 25, 0.6);
     }
     img {
-      width: 95%;
+      margin-top: 12px;
     }
   }
 
@@ -142,17 +167,16 @@
     line-height: 53px;
     text-align: center;
     float: right;
-    color: #fff68f;
     z-index: 5000;
     right: 25px;
   }
 
   .button_middle_inner {
     position: fixed;
-    color: #fdfdfd;
+    color: #efefef;
     //font-weight: bold;
     margin-right: 15px;
-    transition: all 350ms cubic-bezier(.83,.01,.46,.86);
+    transition: all 350ms cubic-bezier(.83, .01, .46, .86);
     font-family: Impact, sans-serif;
     &:hover, &:active {
       color: #aeaeae;
@@ -168,6 +192,7 @@
     line-height: 53px;
     color: #fdfdfd;
   }
+
   .button_menu {
     position: relative;
     width: 50px;
@@ -188,6 +213,7 @@
     display: block;
     clear: both;
   }
+
   /* Header End and Clear float */
 
   /*

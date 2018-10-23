@@ -81,7 +81,15 @@ module.exports = {
         options: {
           name: `files/[name].[ext]`
         }
-      }
+      },
+      {
+        test: /favicon\.(ico|png)$/,
+        loader: 'url',
+        query: {
+          limit: 1,
+          name: '[name].[ext]',
+        },
+      },
     ]
   },
   node: {
