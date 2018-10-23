@@ -64,20 +64,27 @@
         let marge = (window.innerHeight - 70)
         /* (document.documentElement.scrollTop)  Android Chrome Firefox IE */
         /* (document.scrollingElement.scrollTop) Android Chrome Firefox Safari Edge */
-        let dctop = document.documentElement.scrollTop
-        let sctop = document.scrollingElement.scrollTop
-        if (dctop === null) {
+        let scroll = document.body.scrollTop || document.documentElement.scrollTop
+        // let dctop = document.documentElement.scrollTop
+        // let sctop = document.scrollingElement.scrollTop
+        /*if (dctop === null) {
           dctop = 0
         } else if (sctop === null) {
           sctop = 0
-        }
+        }*/
         // console.log(sctop)
         // console.log(dctop)
-        if (sctop > marge || dctop > marge) {
+        console.log(scroll)
+        if (scroll > marge) {
           this.$el.style.background = 'rgba(0,0,0,0.7)'
         } else {
           this.$el.style.background = ''
         }
+        /*if (sctop > marge || dctop > marge) {
+          this.$el.style.background = 'rgba(0,0,0,0.7)'
+        } else {
+          this.$el.style.background = ''
+        }*/
         /*} else {
           let marge = (window.innerWidth - 70)
           /!* (document.documentElement.scrollTop)  Android Chrome Firefox IE *!/
