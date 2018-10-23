@@ -30,19 +30,21 @@
     </div>
 
     <div class="guide_button">
-      <router-link class="gtn" to="/consult">
-        <img src="./assets/common/talk_white.png" alt="Consult button image.">
-        <p>문의하기</p>
-      </router-link>
-      <a class="gtn" :href="introduce" download="엘씨벤처스 - 회사소개">
-        <img src="./assets/common/down_white.png" alt="Introduce file download button image.">
-        <p>회사소개서 다운받기</p>
-      </a>
+      <div class="guide_inner">
+        <router-link class="gtn" to="/consult">
+          <img src="./assets/common/talk_white_01.png" alt="Consult button image.">
+          <p>문의하기</p>
+        </router-link>
+        <a class="gtn" :href="introduce" download="엘씨벤처스 - 회사소개">
+          <img src="./assets/common/down_white_01.png" alt="Introduce file download button image.">
+          <p>회사소개서 다운받기</p>
+        </a>
+      </div>
     </div>
 
     <div class="guide_to_scroll">
       <!--<p class="guide_text">엘씨벤처스 더 보기</p>-->
-      <img class="down_img" src="./assets/common/scroll_down.png" alt="Scroll down image">
+      <img class="down_img" src="./assets/common/scroll_down_01.png" alt="Scroll down image">
       <!--<img class="down_img" src="./assets/pages/home/home_scroll.png" alt="Scroll down image">-->
     </div>
 
@@ -165,45 +167,49 @@
   .guide_button {
     position: relative;
     top: calc(5% - 150px);
-    left: calc(95% - 205px);
+    //left: calc(95% - 205px);
     z-index: 9000;
-    .gtn {
-      position: relative;
-      display: block;
-      width: 200px;
-      height: 35px;
-      line-height: 33px;
-      margin: 5px 0;
-      border: 1px solid #fdfdfd;
-      background-color: transparent;
-      color: #fdfdfd;
-      text-align: left;
-      cursor: pointer;
-      z-index: 9999;
-      padding: 2px 5px;
-      vertical-align: top;
-      &:hover, &:active {
-        background-color: rgba(25, 25, 25, 0.7);
-        color: rgba(200,200,200, 0.8);
-        transition: all 350ms cubic-bezier(.83,.01,.46,.86);
-      }
-      img {
-        float: left;
-        width: 30px;
-        height: 30px;
-        filter: invert(1);
-        margin: 0 5px 0 0;
-        vertical-align: top;
-      }
-      p {
-        float: left;
-        height: 35px;
-        line-height: 31px;
-      }
-      &:after {
-        content: '';
+    .guide_inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      .gtn {
+        position: relative;
         display: block;
-        clear: both;
+        width: 200px;
+        height: 35px;
+        line-height: 33px;
+        margin: 5px 35px 5px auto;
+        border: 1px solid #fdfdfd;
+        background-color: transparent;
+        color: #fdfdfd;
+        text-align: left;
+        cursor: pointer;
+        z-index: 9999;
+        padding: 2px 5px;
+        vertical-align: top;
+        &:hover, &:active {
+          background-color: rgba(25, 25, 25, 0.7);
+          color: rgba(200,200,200, 0.8);
+          transition: all 350ms cubic-bezier(.83,.01,.46,.86);
+        }
+        img {
+          float: left;
+          width: 30px;
+          height: 30px;
+          // filter: invert(1);
+          margin: 0 5px 0 0;
+          vertical-align: top;
+        }
+        p {
+          float: left;
+          height: 35px;
+          line-height: 31px;
+        }
+        &:after {
+          content: '';
+          display: block;
+          clear: both;
+        }
       }
     }
   }
@@ -246,7 +252,7 @@
     /*width: 80px;
     height: 70px;*/
     /* If image color is black */
-    filter: invert(1);
+    // filter: invert(1);
     animation: down_there 1500ms infinite ease-in-out;
   }
 

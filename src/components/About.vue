@@ -164,7 +164,8 @@
       position: relative;
       width: 320px;
       z-index: 500;
-      padding: 20px 0 0 5%;
+      /*padding: 20px 0 0 5%;*/
+      padding: 20px 0 0 10px;
       div {
         padding: 4px 0;
         font-size: 17px;
@@ -277,12 +278,14 @@
   .daum_map {
     position: relative;
     width: 92%;
+    max-width: 1300px;
     height: 480px;
     margin: auto;
   }
 
   .map_info {
     width: 92%;
+    max-width: 1300px;
     min-height: 25px;
     color: #fdfdfd;
     font-size: 17px;
