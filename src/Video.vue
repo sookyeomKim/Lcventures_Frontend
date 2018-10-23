@@ -4,6 +4,7 @@
        :style="this.$parent.$data.mix_data.slide_mover"
        @click="$parent.$options.methods.only_close">
 
+    <!-- v-if -->
     <div class="video_basket" id="video_basket" v-if="windowWidth > 835">
 
       <!-- Youtube -->
@@ -20,6 +21,7 @@
 
       <img class="video_cover" src="./assets/pages/home/m_main_banner.jpg" alt="Main Cover Image" />
 
+      <!-- mobile square video (failed. unable autoplay video in mobile environment.) -->
       <!--
       <iframe class="video" id="video_m" type="text/html"
               src="https://www.youtube.com/embed/AWnAHBqNqG0?&autoplay=1&loop=1&playlist=bDmuCtaRcZM&showinfo=0&fs=0&disablekb=1&vq=auto&controls=0&rel=0&iv_load_policy=3&mute=1&playsinline=1&modestbranding=1"
@@ -43,7 +45,6 @@
     </div>
 
     <div class="guide_to_scroll">
-      <!--<p class="guide_text">엘씨벤처스 더 보기</p>-->
       <img class="down_img" src="./assets/common/scroll_down_01.png" alt="Scroll down image">
       <!--<img class="down_img" src="./assets/pages/home/home_scroll.png" alt="Scroll down image">-->
     </div>
@@ -167,7 +168,6 @@
   .guide_button {
     position: relative;
     top: calc(5% - 150px);
-    //left: calc(95% - 205px);
     z-index: 9000;
     .guide_inner {
       max-width: 1300px;
@@ -196,7 +196,6 @@
           float: left;
           width: 30px;
           height: 30px;
-          // filter: invert(1);
           margin: 0 5px 0 0;
           vertical-align: top;
         }
@@ -249,10 +248,6 @@
   .down_img {
     width: 50px;
     height: 40px;
-    /*width: 80px;
-    height: 70px;*/
-    /* If image color is black */
-    // filter: invert(1);
     animation: down_there 1500ms infinite ease-in-out;
   }
 
