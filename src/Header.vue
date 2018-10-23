@@ -13,14 +13,6 @@
       <!-- Top Buttons (Simple nav button) -->
       <!-- Float right. Stack elements invert ordered. -->
       <div v-if="windowWidth > 835" class="middle_menu">
-        <!--<div class="button_middle" @click="$parent.$options.methods.navi_delay">
-          <router-link class="button_middle_inner" to="/consult">CONSULT</router-link>
-        </div>-->
-        <!--
-        <div class="button_middle" @click="$parent.$options.methods.navi_delay">
-          <router-link class="button_middle_inner"  to="/recruit">RECRUIT</router-link>
-        </div>
-        -->
         <div class="button_middle" @click="$parent.$options.methods.navi_delay">
           <router-link class="button_middle_inner" to="/members">MEMBERS</router-link>
         </div>
@@ -51,6 +43,7 @@
       }
     },
     mounted() {
+      console.log('%cCreative Performance!' + '%c엘씨벤처스 v2', 'background-color: #009da5; color: #fefefe; border-radius: 4px; font-size: 16px; padding: 3px;', 'color: #313131; font-size: 14px; padding: 3px;')
       let that = this
       this.$nextTick(function () {
         window.addEventListener('resize', function (e) {
@@ -60,48 +53,13 @@
     },
     methods: {
       handleScroll(event) {
-        // if (window.innerWidth > 835) {
         let marge = (window.innerHeight - 70)
-        /* (document.documentElement.scrollTop)  Android Chrome Firefox IE */
-        /* (document.scrollingElement.scrollTop) Android Chrome Firefox Safari Edge */
         let scroll = document.body.scrollTop || document.documentElement.scrollTop
-        // let dctop = document.documentElement.scrollTop
-        // let sctop = document.scrollingElement.scrollTop
-        /*if (dctop === null) {
-          dctop = 0
-        } else if (sctop === null) {
-          sctop = 0
-        }*/
-        // console.log(sctop)
-        // console.log(dctop)
-        console.log(scroll)
         if (scroll > marge) {
           this.$el.style.background = 'rgba(0,0,0,0.7)'
         } else {
           this.$el.style.background = ''
         }
-        /*if (sctop > marge || dctop > marge) {
-          this.$el.style.background = 'rgba(0,0,0,0.7)'
-        } else {
-          this.$el.style.background = ''
-        }*/
-        /*} else {
-          let marge = (window.innerWidth - 70)
-          /!* (document.documentElement.scrollTop)  Android Chrome Firefox IE *!/
-          /!* (document.scrollingElement.scrollTop) Android Chrome Firefox Safari Edge *!/
-          let dctop = document.documentElement.scrollTop
-          let sctop = document.scrollingElement.scrollTop
-          if (dctop === null) {
-            dctop = 0
-          } else if (sctop === null) {
-            sctop = 0
-          }
-          if (sctop > marge || dctop > marge) {
-            this.$el.style.background = 'rgba(0,0,0,0.7)'
-          } else {
-            this.$el.style.background = ''
-          }
-        }*/
       },
     },
     created() {
@@ -125,7 +83,7 @@
     padding: 5px 0;
     /*margin-bottom: -50px;*/
     transition: all 350ms cubic-bezier(.83, .01, .46, .86);
-    overflow: visible;
+    overflow: hidden;
     z-index: 9000;
   }
 
