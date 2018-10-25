@@ -218,7 +218,7 @@
   }
 
   .logo_explain {
-    padding: 50px 0;
+    padding: 100px 0;
     text-align: center;
     &:after {
       content: '';
@@ -231,7 +231,7 @@
     img {
       width: 95%;
       max-width: 950px;
-      padding: 20px 0;
+      padding: 0 0 20px;
     }
   }
 
@@ -272,7 +272,6 @@
   }
 
   .map_wrap {
-    // padding: 20px 0;
     padding: 100px 0;
   }
 

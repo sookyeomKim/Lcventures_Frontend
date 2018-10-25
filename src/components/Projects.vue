@@ -20,7 +20,7 @@
       <span>E</span>
       <span>C</span>
       <span>T</span>
-      <span>S</span>
+      <!--<span>S</span>-->
     </div>
 
     <section class="section_first">
@@ -171,7 +171,7 @@
             {title: '운영내용', contents: ['페이스북 광고 운영', '영상 조회, 구매 전환, 리타겟팅 캠페인을 구성']},
             {title: '광고성과', contents: ['영상 조회 캠페인 CPV 20원 / VTR 20.27%', '구매전환 캠페인 ROAS 504%', '리타겟팅 캠페인 ROAS 1,421%']}
           ],
-          src: require('../assets/pages/projects/section_4/03.png'),
+          src: require('../assets/pages/projects/section_4/03_181025.png'),
           alt: 'Project image 3'
         },
         {
@@ -204,7 +204,7 @@
             {title: '운영내용', contents: ['정보성 컨텐츠 활용 (생활건강)', '카카오스토리 성과형 광고 집행']},
             {title: '광고성과', contents: ['집행일 (210일간) 동안 모집인원 136,185명', '(객 단가 1,346원)']}
           ],
-          src: require('../assets/pages/projects/section_4/06.png'),
+          src: require('../assets/pages/projects/section_4/06_181025.png'),
           alt: 'Project image 6'
         },
         {
@@ -226,7 +226,7 @@
             {title: '운영내용', contents: ['페이스북 / 인스타그램 계정 운영', '페이스북 / 인스타그램 스폰서 광고 운영', '사이트 컨설팅을 통한 구매유도']},
             {title: '광고성과', contents: ['SNS 계정 활성화 및 팔로워 및 좋아요 수 증가', 'SNS를 통한 사이트 유입량 약 114% 증가', '사이트 매출 약 2.8배 증가']}
           ],
-          src: require('../assets/pages/projects/section_4/08.png'),
+          src: require('../assets/pages/projects/section_4/08_181025.png'),
           alt: 'Project image 8'
         },
         {
@@ -352,7 +352,7 @@
     width: 100%;
     max-width: 1100px;
     margin: auto;
-    padding: 50px 0;
+    padding: 100px 0;
     &:after {
       content: '';
       display: block;
@@ -363,19 +363,11 @@
   .section_1_card {
     width: 33.33%;
     float: left;
-    padding: 15px 0;
     border-right: 2px solid #c1c1c1;
     &:nth-last-child(1) {
       border: none;
     }
   }
-
-  @media (max-width: 835px) {
-    .section_1_card {
-      width: 100%;
-      border: none;
-    }
-  }/* media */
 
   .card_text_first {
     font-size: 24px;
@@ -402,6 +394,17 @@
     margin: 5px auto;
   }
 
+  @media (max-width: 835px) {
+    .icon_wrapper {
+      padding: 80px 0;
+    }
+    .section_1_card {
+      width: 100%;
+      border: none;
+      padding: 20px 0;
+    }
+  }/* media */
+
   .section_2 {
     width: 100%;
   }
@@ -412,7 +415,7 @@
     background-size: cover;
     background-position: 50% 50%;
     background-attachment: fixed;
-    padding: 50px 0;
+    padding: 100px 0;
   }
 
   @media (max-width: 835px) {
@@ -436,7 +439,7 @@
       }
     }
     .last_wrap {
-      padding-bottom: 35px;
+      padding-bottom: 45px;
     }
   }
 
@@ -477,7 +480,7 @@
   }
 
   .section_3_contents {
-    padding: 50px 0;
+    padding: 100px 0;
     .section_3_text_wrap {
       font-size: 24px;
       line-height: 30px;
@@ -527,7 +530,7 @@
 
   .section_4 {
     width: 100%;
-    padding-top: 40px;
+    padding: 50px 0;
     background-size: cover;
     font-family: 'Nanums_regular', sans-serif;
   }
@@ -546,7 +549,7 @@
     width: 100%;
     max-width: 1200px;
     max-height: 100%;
-    padding: 40px 0;
+    padding: 50px 0;
     //border-radius: 10px;
     // max-width: 300px;
     overflow: hidden;
@@ -558,10 +561,10 @@
       transform: scale(1.01);
     }*/
     &.even {
-      background-color: #ffffff;
+      // background-color: #ffffff;
     }
     &.odd {
-      background-color: #f9f9f9;
+      // background-color: #f9f9f9;
     }
   }
 
