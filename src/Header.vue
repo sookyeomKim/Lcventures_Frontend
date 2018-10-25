@@ -53,12 +53,22 @@
     },
     methods: {
       handleScroll(event) {
-        let marge = (window.innerHeight - 70)
-        let scroll = document.body.scrollTop || document.documentElement.scrollTop
-        if (scroll > marge) {
-          this.$el.style.background = 'rgba(0,0,0,0.7)'
+        if(this.windowWidth > 835) {
+          let marge = (window.innerHeight - 70)
+          let scroll = document.body.scrollTop || document.documentElement.scrollTop
+          if (scroll > marge) {
+            this.$el.style.background = 'rgba(0,0,0,0.7)'
+          } else {
+            this.$el.style.background = ''
+          }
         } else {
-          this.$el.style.background = ''
+          let marge = (this.windowWidth - 70)
+          let scroll = document.body.scrollTop || document.documentElement.scrollTop
+          if (scroll > marge) {
+            this.$el.style.background = 'rgba(0,0,0,0.7)'
+          } else {
+            this.$el.style.background = ''
+          }
         }
       },
     },

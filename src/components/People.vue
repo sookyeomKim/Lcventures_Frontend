@@ -29,6 +29,7 @@
               <div class="member_team">- {{member.team}}</div>
               <div class="member_title">{{member.title}} / {{member.position}}</div>
               <img :src="member.src" :data-src="member.src" :alt="member.title">
+              <div class="barrier"></div>
             </li>
           </ul>
         </div>
@@ -372,6 +373,13 @@
             top: -25px;
             z-index: 40;
             transition: all 200ms ease-in-out;
+          }
+          .barrier {
+            width: 100%;
+            position: absolute;
+            height: 380px;
+            z-index: 50;
+            top: 0;
           }
           &:hover, &:active {
             position: relative;
