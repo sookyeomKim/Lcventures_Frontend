@@ -509,7 +509,7 @@
 
   @media (max-width: 835px) {
     .section_3_contents {
-      padding: 35px 0;
+      padding: 100px 0;
       .section_3_text_wrap {
         font-size: 20px;
         line-height: 25px;
