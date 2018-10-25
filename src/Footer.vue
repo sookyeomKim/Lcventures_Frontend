@@ -34,8 +34,9 @@
     position: relative;
     width: 100%;
     padding: 30px 0;
-    /*background-color: #fafafa;*/
-    background-color: #009da5;
+    // background-color: #fafafa;
+    // background-color: #009da5;
+    background: #303030;
     transition: all 350ms cubic-bezier(.83,.01,.46,.86);
 
     .footer_wrap {

@@ -340,7 +340,7 @@
   /* Section Part */
   .section_1, .section_2, .section_3, .section_4 {
     width: 100%;
-    padding: 50px 0;
+    padding: 65px 0;
     background-color: #ffffff;
     text-align: center;
     color: #515151;
@@ -354,7 +354,7 @@
       width: 100%;
       max-width: 1300px;
       margin: 0 auto;
-      padding: 10px 1%;
+      padding: 65px 2%;
       ul {
         display: inline-block;
         .memberList {
