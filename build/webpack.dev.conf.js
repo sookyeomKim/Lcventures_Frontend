@@ -46,7 +46,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     }
   },
   plugins: [
-    new FaviconsWebpackPlugin('./src/assets/common/favicon/apple-icon-152x152.png'),
+    new FaviconsWebpackPlugin('./src/assets/common/favicon/apple-icon-120x120.png'),
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env')
     }),

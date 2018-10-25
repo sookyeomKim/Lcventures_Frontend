@@ -31,7 +31,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
   plugins: [
-    new FaviconsWebpackPlugin('./src/assets/common/favicon/apple-icon-152x152.png'),
+    new FaviconsWebpackPlugin('./src/assets/common/favicon/apple-icon-120x120.png'),
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
       'process.env': env
