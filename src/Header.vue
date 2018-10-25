@@ -179,7 +179,7 @@
     z-index: 5000;
     float: right;
     background-image: url('./assets/common/menu_btn.png');
-    background-size: 80%;
+    background-size: 85%;
     background-position: 50% 50%;
     &:hover:before, &:active {
       color: #aeaeae;
