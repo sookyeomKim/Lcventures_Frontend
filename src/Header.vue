@@ -165,7 +165,7 @@
     content: '\2630';
     font-size: 35px;
     line-height: 53px;
-    color: #fdfdfd;
+    color: #fdfdfd !important;
   }
 
   .button_menu {

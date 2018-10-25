@@ -213,7 +213,7 @@
     }
   }
 
-  @media (min-aspect-ratio: 16/9) {
+  @media (min-aspect-ratio: 16/9) and (min-width: 835px) {
     .guide_button {
       top: calc(-200% - 140px);
     }
