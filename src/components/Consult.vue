@@ -16,7 +16,7 @@
       <span>L</span>
       <span>T</span>
       <div class="table">
-        <div>우리와 프로젝트를 시작해 보세요</div>
+        <div>- 우리와 프로젝트를 시작해 보세요</div>
       </div>
     </div>
 
@@ -227,7 +227,7 @@
       position: relative;
       width: 320px;
       z-index: 500;
-      padding: 20px 0 0 5%;
+      padding: 20px 0 0 10px;
       div {
         padding: 4px 0;
         font-size: 17px;
