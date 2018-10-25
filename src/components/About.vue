@@ -272,7 +272,8 @@
   }
 
   .map_wrap {
-    padding: 20px 0;
+    // padding: 20px 0;
+    padding: 100px 0;
   }
 
   .daum_map {
