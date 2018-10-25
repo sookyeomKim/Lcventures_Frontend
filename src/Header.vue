@@ -162,7 +162,7 @@
   .button_menu:before {
     width: 100%;
     height: 100%;
-    content: '\2630';
+    // content: '\2630';
     font-size: 35px;
     line-height: 53px;
     color: #fdfdfd !important;
@@ -178,6 +178,9 @@
     //margin-left: calc(100% - 100px);
     z-index: 5000;
     float: right;
+    background-image: url('./assets/common/menu_btn.png');
+    background-size: 85%;
+    background-position: 50% 50%;
     &:hover:before, &:active {
       color: #aeaeae;
     }
