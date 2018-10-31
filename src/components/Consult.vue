@@ -320,6 +320,7 @@
       border: 1px solid #009da5;
       border-radius: 5px;
       color: #009da5;
+      background-color: #ffffff;
       font-weight: bold;
       margin: 10px 0;
       cursor: pointer;
