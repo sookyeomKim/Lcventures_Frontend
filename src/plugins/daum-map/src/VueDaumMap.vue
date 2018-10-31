@@ -262,7 +262,7 @@
   .overlay_wrap .body {
     width: 280px;
     height: 120px;
-    padding: 24px;
+    padding: 18px;
   }
 
   .overlay_wrap .img {
