@@ -69,18 +69,18 @@
           position: '부장',
           src: require('../assets/pages/people/shlee.jpg')
         },
-        {
-          title: '노일찬',
-          team: '유통사업부',
-          position: '부장',
-          src: require('../assets/pages/people/icnho.jpg')
-        },
-        {
-          title: '박우복',
-          team: '유통사업부',
-          position: '부장',
-          src: require('../assets/pages/people/default.png')
-        },
+        // {
+        //   title: '노일찬',
+        //   team: '유통사업부',
+        //   position: '부장',
+        //   src: require('../assets/pages/people/icnho.jpg')
+        // },
+        // {
+        //   title: '박우복',
+        //   team: '유통사업부',
+        //   position: '부장',
+        //   src: require('../assets/pages/people/default.png')
+        // },
         {
           title: '류진우',
           team: '마케팅부',
@@ -171,12 +171,12 @@
           position: '주임',
           src: require('../assets/pages/people/hjjang.jpg')
         },
-        /* {
-          title: '최소영',
-          team: '유통사업부',
-          position: '주임',
-          src: require('../assets/pages/people/sychoe.jpg')
-        }, */
+        //  {
+        //   title: '최소영',
+        //   team: '유통사업부',
+        //   position: '주임',
+        //   src: require('../assets/pages/people/sychoe.jpg')
+        // },
         {
           title: '이로운',
           team: '마케팅부',
@@ -255,12 +255,12 @@
           position: '사원',
           src: require('../assets/pages/people/default.png')
         },
-        {
-          title: '김진아',
-          team: '유통사업부',
-          position: '사원',
-          src: require('../assets/pages/people/default.png')
-        },
+        // {
+        //   title: '김진아',
+        //   team: '유통사업부',
+        //   position: '사원',
+        //   src: require('../assets/pages/people/default.png')
+        // },
         {
           title: '조우석',
           team: '마케팅부',
