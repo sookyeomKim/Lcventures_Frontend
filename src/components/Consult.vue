@@ -291,9 +291,12 @@
     }
 
     .fill {
-
       border: none;
       border-bottom: 1px solid #ededed;
+    }
+
+    .file {
+      background-color: #ffffff;
     }
 
     .area {
