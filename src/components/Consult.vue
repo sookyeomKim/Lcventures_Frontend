@@ -194,7 +194,7 @@
             }
           }
           /* Do axios post */
-          this.$axios.post(`${baseURI}/consult/`, formData, config)
+          this.$axios.post(`${baseURI}consult/`, formData, config)
             .then((response) => {
               /*console.log(response)*/
               alert('접수되었습니다.')
