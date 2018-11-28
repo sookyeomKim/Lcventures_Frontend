@@ -47,7 +47,7 @@
           <textarea class="describe fill area" id="in_desc" v-model="in_desc" maxlength="3000" placeholder="무엇을 도와드릴까요?"></textarea>
         </div>
         <div class="input_wrap block">
-          <div class="input_label">첨부파일 (영어이름만 가능합니다. 한글이름 지원 준비 중.)</div><div class="error_label" v-if="errors.has('in_file')">{{errors.first('in_file')}}</div>
+          <div class="input_label">첨부파일 (한글 파일명 사용 불가)</div><div class="error_label" v-if="errors.has('in_file')">{{errors.first('in_file')}}</div>
           <input v-validate="'size:102400'" type="file" class="file" id="file_input" name="in_file" data-vv-as="File" ref="file_input" @change="add_file()" multiple>
           <!--<input type="button" class="delete" value="파일 삭제" @click="remove_file" v-show="file_flag === 1">-->
           <input type="button" class="delete" value="파일 삭제" @click="remove_file">
@@ -117,6 +117,7 @@
           })
         */
         this.$validator.validateAll()
+        var kor_filter = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/
 
         /* When mandatory forms are empty */
         if (this.in_name === '') {
@@ -135,6 +136,9 @@
           alert('전화번호 길이를 확인하세요.')
           document.getElementById('in_phone').focus()
         }
+        // else if (kor_filter.test(this.file_info.name)) {
+        //   alert('한글 파일 이름은 지원되지 않습니다.')
+        // }
         else if (this.file_info.size > 104857600) {
           alert('파일 크기는 100MB 이하만 가능합니다.')
         }
