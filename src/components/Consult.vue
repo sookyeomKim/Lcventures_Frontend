@@ -47,7 +47,7 @@
           <textarea class="describe fill area" id="in_desc" v-model="in_desc" maxlength="3000" placeholder="무엇을 도와드릴까요?"></textarea>
         </div>
         <div class="input_wrap block">
-          <div class="input_label">첨부파일</div><div class="error_label" v-if="errors.has('in_file')">{{errors.first('in_file')}}</div>
+          <div class="input_label">첨부파일 (영어이름만 가능합니다. 한글이름 지원 준비 중.)</div><div class="error_label" v-if="errors.has('in_file')">{{errors.first('in_file')}}</div>
           <input v-validate="'size:102400'" type="file" class="file" id="file_input" name="in_file" data-vv-as="File" ref="file_input" @change="add_file()" multiple>
           <!--<input type="button" class="delete" value="파일 삭제" @click="remove_file" v-show="file_flag === 1">-->
           <input type="button" class="delete" value="파일 삭제" @click="remove_file">
@@ -148,6 +148,7 @@
           formData.append('email', this.in_email)
           formData.append('phone', this.in_phone)
           formData.append('describe', this.in_desc)
+          // const testURI = 'http://127.0.0.1:8000/'
           const baseURI = 'http://13.209.67.94/'
           const config = {
             headers: {
@@ -155,6 +156,7 @@
             }
           }
           /* Do axios post */
+          // this.$axios.post(`${testURI}consult/`, formData, config)
           this.$axios.post(`${baseURI}consult/`, formData, config)
             .then((response) => {
               /*console.log(response)*/
@@ -187,6 +189,7 @@
           formData.append('phone', this.in_phone)
           formData.append('describe', this.in_desc)
           formData.append('file', this.$refs.file_input.files[0])
+          // const testURI = 'http://127.0.0.1:8000/'
           const baseURI = 'http://13.209.67.94/'
           const config = {
             headers: {
@@ -194,6 +197,7 @@
             }
           }
           /* Do axios post */
+          // this.$axios.post(`${testURI}consult/`, formData, config)
           this.$axios.post(`${baseURI}consult/`, formData, config)
             .then((response) => {
               /*console.log(response)*/
