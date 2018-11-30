@@ -45,7 +45,7 @@
   .frame_header {
     position: relative;
     width: 50%;
-    min-width: 450px;
+    min-width: 300px;
     height: 30px;
     top: 15%;
     text-align: right;
@@ -62,7 +62,7 @@
   .iframe_wrapper {
     position: relative;
     width: 50%;
-    min-width: 450px;
+    min-width: 300px;
     height: 70%;
     top: 50%;
     margin: 0 auto;
