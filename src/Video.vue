@@ -37,6 +37,10 @@
           <img src="./assets/common/talk_white_01.png" alt="Consult button image.">
           <p>문의하기</p>
         </router-link>
+        <div class="gtn" href="#" @click="$parent.$options.methods.payment_open">
+          <img src="./assets/common/payment.png" alt="Payment image" class="payment_image">
+          <p>결제하기</p>
+        </div>
         <a class="gtn" :href="introduce" download="엘씨벤처스 - 회사소개">
           <img src="./assets/common/down_white_01.png" alt="Introduce file download button image.">
           <p>회사소개서 다운받기</p>
@@ -167,7 +171,7 @@
   // Button area
   .guide_button {
     position: relative;
-    top: calc(5% - 150px);
+    top: calc(5% - 190px);
     z-index: 9000;
     .guide_inner {
       max-width: 1300px;
@@ -208,6 +212,9 @@
           content: '';
           display: block;
           clear: both;
+        }
+        .payment_image {
+          padding: 6px 4px;
         }
       }
     }
