@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <!-- Payment modal -->
+    <app-payment/>
+
     <!-- Video Area -->
     <app-video/>
 
@@ -22,12 +25,10 @@
   import MixIn from './plugins/mixin'
   export default {
     name: 'App',
-    data () {
-      return {
-        /* Link to plugIn js for scss values */
-        mix_data: MixIn.data
-      }
-    }/* data */,
+    data: () => ({
+      /* Link to plugIn js for scss values */
+      mix_data: MixIn.data,
+    })/* data */,
     methods: {
       /* Navigation On Off */
       slide_nav () {
@@ -40,6 +41,12 @@
       /* Navigation Close a bit later when hit route location */
       navi_delay () {
         MixIn.methods.make_slow()
+      },
+      payment_open() {
+        MixIn.methods.frame_open()
+      },
+      payment_close() {
+        MixIn.methods.frame_close()
       }
     }/* method */
   }/* export */

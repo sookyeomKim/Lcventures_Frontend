@@ -10,6 +10,9 @@ var Mixin = {
     },
     navigation_mover: {
       transform: 'unset'
+    },
+    payment_flag: {
+      frame: false
     }
   }/* data */,
   methods: {
@@ -48,6 +51,14 @@ var Mixin = {
           anchor.slide_flag = false
         }
       }, 250)
+    },
+    frame_open () {
+      var anchor = Mixin.data
+      anchor.payment_flag.frame = true
+    },
+    frame_close () {
+      var anchor = Mixin.data
+      anchor.payment_flag.frame = false
     }
   }/* Method */
 }/* Mixin */

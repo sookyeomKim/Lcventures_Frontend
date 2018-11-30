@@ -9,6 +9,9 @@ import Header from './Header'
 import Video from './Video'
 import Footer from './Footer'
 import Navigator from './Navigator'
+import Payment from './Payment'
+
+// import components
 import DaumMap from './plugins/daum-map'
 import VueLazyload from 'vue-lazyload'
 import VueUploadComponent from 'vue-upload-component'
@@ -22,6 +25,9 @@ Vue.component('app-header', Header)
 Vue.component('app-video', Video)
 Vue.component('app-footer', Footer)
 Vue.component('app-navigator', Navigator)
+Vue.component('app-payment', Payment)
+
+// Utilities
 Vue.component('vue-daum-map', DaumMap)
 Vue.component('vue-upload', VueUploadComponent)
 
