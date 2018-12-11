@@ -25,7 +25,6 @@
       name: "payment",
       data:() => ({
         iframe: {
-          // src: 'https://www.youtube.com/embed/bDmuCtaRcZM?&autoplay=1&loop=1&playlist=bDmuCtaRcZM&showinfo=0&fs=0&disablekb=1&vq=auto&controls=0&rel=0&iv_load_policy=3&mute=1&playsinline=1&modestbranding=1'
           src: 'http://www.lcventures.net/lcv_payment.php'
         }
       })
@@ -47,6 +46,7 @@
     position: relative;
     width: 50%;
     min-width: 300px;
+    max-width: 700px;
     height: 30px;
     top: 15%;
     text-align: right;
@@ -64,6 +64,7 @@
     position: relative;
     width: 50%;
     min-width: 300px;
+    max-width: 700px;
     height: 70%;
     top: 50%;
     margin: 0 auto;
@@ -73,8 +74,11 @@
   }
 
   .payment_frame {
+    background-color: #ffffff;
+    padding-top: 20px;
     width: 100%;
     height: 100%;
+    overflow: auto;
   }
 
 </style>
