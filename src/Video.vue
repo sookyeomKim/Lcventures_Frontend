@@ -37,7 +37,7 @@
           <img src="./assets/common/talk_white_01.png" alt="Consult button image.">
           <p>문의하기</p>
         </router-link>
-        <div class="gtn" href="#" @click="$parent.$options.methods.payment_open">
+        <div class="gtn payment_btn" href="#" @click="$parent.$options.methods.payment_open" v-if="windowWidth > 835">
           <img src="./assets/common/payment.png" alt="Payment image" class="payment_image">
           <p>결제하기</p>
         </div>
