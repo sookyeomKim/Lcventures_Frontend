@@ -41,7 +41,7 @@
           <img src="./assets/common/payment.png" alt="Payment image" class="payment_image">
           <p>결제하기</p>
         </div>
-        <a class="gtn" :href="introduce" download="엘씨벤처스 - 회사소개">
+        <a class="gtn" :href="introduce" download="엘씨벤처스 - 회사소개" target="_blank">
           <img src="./assets/common/down_white_01.png" alt="Introduce file download button image.">
           <p>회사소개서 다운받기</p>
         </a>
