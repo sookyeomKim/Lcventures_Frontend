@@ -43,7 +43,6 @@
       }
     },
     mounted() {
-      console.log('%cCreative Performance!' + '%c엘씨벤처스 v2', 'background-color: #009da5; color: #fefefe; border-radius: 4px; font-size: 16px; padding: 3px;', 'color: #313131; font-size: 14px; padding: 3px;')
       let that = this
       this.$nextTick(function () {
         window.addEventListener('resize', function (e) {
