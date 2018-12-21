@@ -52,6 +52,19 @@
           that.count = Math.floor(window.innerWidth * 0.96 / 300)
         })
       })
+      /* Sort randomly image sources */
+      let arr = this.image_sources
+      let n = arr.length
+      let temp = []
+      for (let i = 0; i < n-1; i++ ) {
+        /* The following line removes one random element from arr */
+        /* and pushes it onto tempArr */
+        temp.push(arr.splice(Math.floor(Math.random()*arr.length),1)[0])
+      }
+       /* Push the remaining item onto tempArr */
+      temp.push(arr[0])
+      arr=temp
+      this.image_sources = arr
     },
     data: () => ({
       windowWidth: window.innerWidth,
@@ -60,7 +73,7 @@
         {
           title: '권용무',
           team: '엘씨벤처스 (주)',
-          position: '대표이사',
+          position: '대표',
           src: require('../assets/pages/people/ymkwon.jpg')
         },
         {
@@ -69,23 +82,11 @@
           position: '부장',
           src: require('../assets/pages/people/shlee.jpg')
         },
-        // {
-        //   title: '노일찬',
-        //   team: '유통사업부',
-        //   position: '부장',
-        //   src: require('../assets/pages/people/icnho.jpg')
-        // },
-        // {
-        //   title: '박우복',
-        //   team: '유통사업부',
-        //   position: '부장',
-        //   src: require('../assets/pages/people/default.png')
-        // },
         {
-          title: '류진우',
-          team: '마케팅부',
+          title: '배기오',
+          team: '유통사업부',
           position: '차장',
-          src: require('../assets/pages/people/jwryu.jpg')
+          src: require('../assets/pages/people/default.png')
         },
         {
           title: '김홍식',
@@ -120,13 +121,13 @@
         {
           title: '공경환',
           team: '마케팅부',
-          position: '대리',
+          position: '과장',
           src: require('../assets/pages/people/khkong.jpg')
         },
         {
           title: '진승우',
           team: '마케팅부',
-          position: '대리',
+          position: '과장',
           src: require('../assets/pages/people/swjin.jpg')
         },
         {
@@ -162,21 +163,15 @@
         {
           title: '김수겸',
           team: '개발사업부',
-          position: '주임',
+          position: '대리',
           src: require('../assets/pages/people/skkim.jpg')
         },
         {
           title: '장현정',
           team: '지원본부',
-          position: '주임',
+          position: '대리',
           src: require('../assets/pages/people/hjjang.jpg')
         },
-        //  {
-        //   title: '최소영',
-        //   team: '유통사업부',
-        //   position: '주임',
-        //   src: require('../assets/pages/people/sychoe.jpg')
-        // },
         {
           title: '이로운',
           team: '마케팅부',
@@ -204,13 +199,13 @@
         {
           title: '박재현',
           team: '컨텐츠사업부',
-          position: '사원',
+          position: '대리',
           src: require('../assets/pages/people/jhpark.jpg')
         },
         {
           title: '여창훈',
           team: '컨텐츠사업부',
-          position: '사원',
+          position: '대리',
           src: require('../assets/pages/people/chyeo.jpg')
         },
         {
@@ -219,16 +214,10 @@
           position: '사원',
           src: require('../assets/pages/people/dgryu.jpg')
         },
-        /*{
-          title: '서혜인',
-          team: '유통사업부',
-          position: '사원',
-          src: require('../assets/pages/people/hiseo.jpg')
-        },*/
         {
           title: '유기환',
           team: '마케팅부',
-          position: '사원',
+          position: '주임',
           src: require('../assets/pages/people/khyou.jpg')
         },
         {
@@ -237,17 +226,11 @@
           position: '사원',
           src: require('../assets/pages/people/sylee.jpg')
         },
-        {
+        /*{
           title: '정순영',
           team: '마케팅부',
           position: '사원',
           src: require('../assets/pages/people/syjeoung.jpg')
-        },
-        /*{
-          title: '김다연',
-          team: '컨텐츠사업부',
-          position: '사원',
-          src: require('../assets/pages/people/dykim.jpg')
         },*/
         {
           title: '조미경',
@@ -255,12 +238,6 @@
           position: '사원',
           src: require('../assets/pages/people/default.png')
         },
-        // {
-        //   title: '김진아',
-        //   team: '유통사업부',
-        //   position: '사원',
-        //   src: require('../assets/pages/people/default.png')
-        // },
         {
           title: '조우석',
           team: '마케팅부',
@@ -277,13 +254,13 @@
     }),
     computed: {
       person_counter: function () {
-        let shuffle = this.image_sources[Math.floor(Math.random() * this.image_sources.length)]
         let tempArry = []
         let resArry = []
         let width = this.windowWidth
         let count = this.count
-        /*console.log(shuffle)*/
+
         if (width > 1300) {
+          // Limit maximum value of images in each line
           count = 4
           for (let i = 0; i < this.image_sources.length; i++) {
             if (i !== 0 && i % count === 0) {
