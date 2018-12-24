@@ -97,7 +97,7 @@
         {
           title: '이효진',
           team: '마케팅부',
-          position: '과장',
+          position: '차장',
           src: require('../assets/pages/people/hjlee.jpg')
         },
         {
@@ -109,7 +109,7 @@
         {
           title: '이호원',
           team: '마케팅부',
-          position: '과장',
+          position: '차장',
           src: require('../assets/pages/people/hwlee.jpg')
         },
         {
