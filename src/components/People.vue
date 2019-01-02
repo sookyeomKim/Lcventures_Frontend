@@ -100,12 +100,12 @@
           position: '차장',
           src: require('../assets/pages/people/hjlee.jpg')
         },
-        {
+        /*{
           title: '전준식',
           team: '마케팅부',
           position: '과장',
           src: require('../assets/pages/people/jsjeon.jpg')
-        },
+        },*/
         {
           title: '이호원',
           team: '마케팅부',
@@ -247,6 +247,12 @@
         {
           title: '이진영',
           team: '유통사업부',
+          position: '사원',
+          src: require('../assets/pages/people/default.png')
+        },
+        {
+          title: '박정수',
+          team: '마케팅부',
           position: '사원',
           src: require('../assets/pages/people/default.png')
         }
