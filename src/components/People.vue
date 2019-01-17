@@ -255,6 +255,12 @@
           team: '마케팅부',
           position: '사원',
           src: require('../assets/pages/people/default.png')
+        },
+        {
+          title: '이주현',
+          team: '마케팅부',
+          position: '사원',
+          src: require('../assets/pages/people/default.png')
         }
       ]
     }),
