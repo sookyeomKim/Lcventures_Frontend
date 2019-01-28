@@ -23,7 +23,7 @@
     <section class="section_1">
       <form @submit.prevent="submit_form">
         <div class="input_wrap first">
-          <div class="input_label">이름*</div><div class="error_label" v-if="errors.has('in_name')">{{errors.first('in_name')}}</div>
+          <div class="input_label">이름*</div><div class="error_label" v-if="errors.has('in_name')">이름을 입력해주세요</div>
           <input v-validate="'required'" type="text" class="name fill" id="in_name" name="in_name" v-model="in_name" data-vv-as="Name" maxlength="16" placeholder="본인의 이름을 입력해주세요">
         </div>
         <div class="input_wrap">
@@ -31,15 +31,15 @@
           <input type="text" class="position fill" id="in_position" v-model="in_position" maxlength="16" placeholder="본인의 직책을 입력해주세요">
         </div>
         <div class="input_wrap">
-          <div class="input_label">소속*</div><div class="error_label" v-if="errors.has('in_group')">{{errors.first('in_group')}}</div>
+          <div class="input_label">소속*</div><div class="error_label" v-if="errors.has('in_group')">소속업체를 입력해주세요</div>
           <input v-validate="'required'" type="text" class="company fill" id="in_group" name="in_group" data-vv-as="Group name" v-model="in_group" maxlength="50" placeholder="본인의 회사명 또는 소속 기관을 입력해주세요">
         </div>
         <div class="input_wrap">
-          <div class="input_label">이메일</div><div class="error_label" v-if="errors.has('in_email')">{{errors.first('in_email')}}</div>
+          <div class="input_label">이메일</div><div class="error_label" v-if="errors.has('in_email')">이메일 형식을 확인하세요</div>
           <input v-validate="'email'" type="email" class="email fill" id="in_email" name="in_email" v-model="in_email" data-vv-as="E-mail" maxlength="50" placeholder="연락받을 이메일 주소를 입력해주세요">
         </div>
         <div class="input_wrap">
-          <div class="input_label">전화번호*</div><div class="error_label" v-if="errors.has('in_phone')">{{errors.first('in_phone')}}</div>
+          <div class="input_label">전화번호*</div><div class="error_label" v-if="errors.has('in_phone')">전화번호 형식을 확인하세요</div>
           <input v-validate="'required|numeric|max:12'" type="number" class="phone fill" id="in_phone" name="in_phone" data-vv-as="Phone number" v-model="in_phone" maxlength="12" placeholder="연락받을 전화번호를 입력해주세요">
         </div>
         <div class="input_wrap block">
