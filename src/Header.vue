@@ -69,7 +69,7 @@
             this.$el.style.background = ''
           }
         }
-      },
+      }
     },
     created() {
       window.addEventListener('scroll', this.handleScroll)
