@@ -53,7 +53,7 @@
     methods: {
       handleScroll(event) {
         if(this.windowWidth > 835) {
-          let marge = (window.innerHeight - 70)
+          let marge = (window.innerHeight * 0.85 - 70)
           let scroll = document.body.scrollTop || document.documentElement.scrollTop
           if (scroll > marge) {
             this.$el.style.background = 'rgba(0,0,0,0.7)'
@@ -61,7 +61,7 @@
             this.$el.style.background = ''
           }
         } else {
-          let marge = (this.windowWidth - 70)
+          let marge = (this.windowWidth * 0.85 - 70)
           let scroll = document.body.scrollTop || document.documentElement.scrollTop
           if (scroll > marge) {
             this.$el.style.background = 'rgba(0,0,0,0.7)'
@@ -87,7 +87,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100% !important;
     //height: 100px;
     padding: 5px 0;
     /*margin-bottom: -50px;*/

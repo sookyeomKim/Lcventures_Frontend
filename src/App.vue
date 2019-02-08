@@ -1,24 +1,34 @@
 <template>
-  <div id="app">
-    <!-- Payment modal -->
-    <app-payment/>
 
-    <!-- Video Area -->
-    <app-video/>
+    <div id="app">
 
-    <!--Header-->
-    <app-header/>
+      <!-- Payment modal -->
+      <transition name="fade">
+        <app-payment/>
+      </transition>
 
-    <!--Main Contents-->
-    <router-view/>
+      <!-- Video Area -->
+      <app-video/>
 
-    <!--Footer-->
-    <app-footer/>
+      <!--Header-->
+      <app-header/>
 
-    <!--Right side Navigation-->
-    <app-navigator/>
+      <!--Main Contents-->
+      <transition name="fade">
+        <router-view/>
+      </transition>
 
-  </div>
+      <!--Footer-->
+      <app-footer/>
+
+      <!--Right side Navigation-->
+      <app-navigator/>
+
+      <!-- Floating banner -->
+      <app-floater/>
+
+    </div>
+
 </template>
 
 <script>
@@ -52,7 +62,7 @@
   }/* export */
 </script>
 
-<style>
+<style lang="scss">
   /* Import Nanum square font here. */
   /*@import url(https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css);*/
 
@@ -543,8 +553,28 @@
     Personal CSS Started
   */
 
+  .fade-enter-active {
+    transition: all 250ms ease-out;
+  }
+
+  .fade-leave-active {
+    transition: none;
+  }
+
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+  {
+    opacity: 0;
+    // transform: translateY(10px);
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: auto;
+  }
+
   body {
-    background-color: #121212;
+    background-color: transparent;
     font: 1rem/1.1 'Avenir', Helvetica, Arial, "Montserrat", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -578,9 +608,9 @@
   .main_title {
     width: 100%;
     max-width: 1300px;
-    height: 100vh;
+    height: 85vh;
     margin: 0 auto;
-    padding-top: calc(50vh - 65px);
+    padding-top: calc(40vh - 70px);
     color: #fdfdfd;
     word-break: keep-all;
     white-space: pre-line;
@@ -588,6 +618,7 @@
     font-family: Impact, sans-serif;
     /*box-shadow: 0px -35px 20px 40px rgba(0,0,0,0.75);*/
     transition: all 350ms cubic-bezier(.83,.01,.46,.86);
+    pointer-events: none;
   }/* Main title area end */
 
   .main_title h2 {

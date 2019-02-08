@@ -84,7 +84,7 @@
   .video_wrap {
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 85vh;
     background: #000;
     top: 0; right: 0; bottom: 0; left: 0;
     overflow: hidden;
@@ -231,14 +231,20 @@
     position: relative;
     display: block;
     width: 100%;
-    top: calc(-145px);
+    top: calc(-190px);
     text-align: center;
     z-index: 8000;
   }
 
-  @media (min-aspect-ratio: 16/9) {
+  @media (max-width: 836px) {
     .guide_to_scroll {
-      top: calc(-200% - 140px);
+      top: calc(-160px);
+    }
+  }
+
+  @media (min-width: 835px) and (min-aspect-ratio: 16/9) {
+    .guide_to_scroll {
+      top: calc(-200% - 190px);
     }
   }
 

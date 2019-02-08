@@ -10,6 +10,7 @@ import Video from './Video'
 import Footer from './Footer'
 import Navigator from './Navigator'
 import Payment from './Payment'
+import Floater from './Floater'
 
 // import components
 import DaumMap from './plugins/daum-map'
@@ -26,6 +27,7 @@ Vue.component('app-video', Video)
 Vue.component('app-footer', Footer)
 Vue.component('app-navigator', Navigator)
 Vue.component('app-payment', Payment)
+Vue.component('app-floater', Floater)
 
 // Utilities
 Vue.component('vue-daum-map', DaumMap)
