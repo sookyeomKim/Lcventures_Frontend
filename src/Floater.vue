@@ -96,7 +96,7 @@
     width: 100%;
     top: calc(90vh);
     margin: auto;
-    z-index: 800;
+    z-index: 2800;
     pointer-events: none;
     transition: all 200ms ease-in-out;
   }
