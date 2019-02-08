@@ -14,62 +14,21 @@
 <script>
   export default {
     name: "Floater",
-    data: () => ({
-      top: ''
-    }),
-    mounted() {
-      this.$nextTick(function () {
-        // window.addEventListener('scroll', (e) => {
-        //   this.Floated()
-        // })
-      })
-      // this.$nextTick(() => {
-      //   window.addEventListener('scroll', (e) => {
-      //     if (this.windowWidth > 835) {
-      //       let marge = (window.innerHeight * 0.85 - 70)
-      //       let scroll = document.body.scrollTop || document.documentElement.scrollTop
-      //       if (scroll > marge) {
-      //         this.top = scroll
-      //         // this.Floated('big')
-      //       }
-      //     } else {
-      //       let marge = (window.innerWidth - 70)
-      //       let scroll = document.body.scrollTop || document.documentElement.scrollTop
-      //       if (scroll > marge) {
-      //         console.log('scroll > marge')
-      //         this.top = scroll
-      //         // this.Floated('small')
-      //       }
-      //     }
-      //   })
-      // })
-    },
     methods: {
       Floated() {
-        // if (width === 'big') {
-        //   console.log('big?')
-        //   document.getElementById('float_link').style.top = this.top
-        // } else if (width === 'small') {
-        //   console.log('small?')
-        //   document.getElementById('float_link').style.top = this.top
-        // }
         if (window.innerWidth > 835) {
-          console.log('width > 835')
           let marge = (window.innerHeight * 0.85 - 70)
           let scroll = document.body.scrollTop || document.documentElement.scrollTop
           if (scroll > marge) {
             this.$el.style.opacity = '1'
-            this.$el.style.top = this.top
           } else {
             this.$el.style.opacity = '0'
           }
         } else {
-          console.log('width < 836')
           let marge = (window.innerWidth - 70)
           let scroll = document.body.scrollTop || document.documentElement.scrollTop
           if (scroll > marge) {
             this.$el.style.opacity = '1'
-            this.$el.style.top = this.top
           } else {
             this.$el.style.opacity = '0'
           }
@@ -99,6 +58,7 @@
     z-index: 2800;
     pointer-events: none;
     transition: all 200ms ease-in-out;
+    opacity: 0;
   }
 
   .back_panel {
