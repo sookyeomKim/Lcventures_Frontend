@@ -19,18 +19,36 @@
         if (window.innerWidth > 835) {
           let marge = (window.innerHeight * 0.85 - 70)
           let scroll = document.body.scrollTop || document.documentElement.scrollTop
-          if (scroll > marge) {
+          let bottom = document.body.scrollHeight || document.documentElement.scrollHeight
+          let limit = false
+          if (scroll + window.innerHeight > bottom - 105) {
+            limit = true
+          } else {
+            limit = false
+          }
+          if (scroll > marge && !limit) {
             this.$el.style.opacity = '1'
+            this.$el.style.visibility = 'visible'
           } else {
             this.$el.style.opacity = '0'
+            this.$el.style.visibility = 'hidden'
           }
         } else {
           let marge = (window.innerWidth - 70)
           let scroll = document.body.scrollTop || document.documentElement.scrollTop
-          if (scroll > marge) {
+          let bottom = document.body.scrollHeight || document.documentElement.scrollHeight
+          let limit = false
+          if (scroll + window.innerHeight > bottom - 150) {
+            limit = true
+          } else {
+            limit = false
+          }
+          if (scroll > marge && !limit) {
             this.$el.style.opacity = '1'
+            this.$el.style.visibility = 'visible'
           } else {
             this.$el.style.opacity = '0'
+            this.$el.style.visibility = 'hidden'
           }
         }
       }
