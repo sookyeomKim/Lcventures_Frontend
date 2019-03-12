@@ -110,6 +110,8 @@
         this.$validator.validateAll()
       },
       submit_form() {
+        this.form_blocked()
+        return false
         /* axios get test */
         /*
         const baseURI = 'http://127.0.0.1:8000'
@@ -120,118 +122,125 @@
             console.log(this.test)
           })
         */
-        this.$validator.validateAll()
-        var kor_filter = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/
-
-        /* When mandatory forms are empty */
-        if (this.in_name === '') {
-          alert('이름을 입력해주세요.')
-          document.getElementById('in_name').focus()
-        }
-        else if (this.in_group === '') {
-          alert('회사명 또는 소속기관을 입력해주세요.')
-          document.getElementById('in_group').focus()
-        }
-        else if (this.in_phone === '') {
-          alert('연락받을 전화번호를 입력해주세요.')
-          document.getElementById('in_phone').focus()
-        }
-        else if (this.in_phone.length > 12) {
-          alert('전화번호 길이를 확인하세요.')
-          document.getElementById('in_phone').focus()
-        }
-        // else if (kor_filter.test(this.file_info.name)) {
-        //   alert('한글 파일 이름은 지원되지 않습니다.')
+        // this.$validator.validateAll()
+        // var kor_filter = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/
+        //
+        // /* When mandatory forms are empty */
+        // if (this.in_name === '') {
+        //   alert('이름을 입력해주세요.')
+        //   document.getElementById('in_name').focus()
         // }
-        else if (this.file_info.size > 104857600) {
-          alert('파일 크기는 100MB 이하만 가능합니다.')
-        }
-
-        /* When file does not exist */
-        else if (!this.in_file[0]){
-          let formData = new FormData()
-          formData.append('name', this.in_name)
-          formData.append('position', this.in_position)
-          formData.append('group', this.in_group)
-          formData.append('email', this.in_email)
-          formData.append('phone', this.in_phone)
-          formData.append('describe', this.in_desc)
-          // const testURI = 'http://127.0.0.1:8000/'
-          // const baseURI = 'http://13.209.67.94/'
-          // backend ip changed 29.jan.2019
-          const baseURI = 'http://54.180.144.6/'
-          const config = {
-            headers: {
-              'Content-Type': 'multipart/form-data'
-            }
-          }
-          /* Do axios post */
-          // this.$axios.post(`${testURI}consult/`, formData, config)
-          this.$axios.post(`${baseURI}consult/`, formData, config)
-            .then((response) => {
-              /*console.log(response)*/
-              alert('접수되었습니다.')
-              this.in_name = ''
-              this.in_position = ''
-              this.in_group = ''
-              this.in_email = ''
-              this.in_phone = ''
-              this.in_desc = ''
-              this.$refs.file_input.value = ''
-              this.in_file = []
-              this.file_flag = 0
-              this.file_info = ''
-              this.$validator.validateAll()
-            })
-            .catch((e) => {
-              console.error(e)
-              alert('전송 중 문제가 발생하였습니다. 다시시도 또는 이메일을 이용해주세요.')
-            })
-        }
-
-        /* When file exist */
-        else {
-          let formData = new FormData()
-          formData.append('name', this.in_name)
-          formData.append('position', this.in_position)
-          formData.append('group', this.in_group)
-          formData.append('email', this.in_email)
-          formData.append('phone', this.in_phone)
-          formData.append('describe', this.in_desc)
-          formData.append('file', this.$refs.file_input.files[0])
-          // const testURI = 'http://127.0.0.1:8000/'
-          // const baseURI = 'http://13.209.67.94/'
-          // backend ip changed 29.jan.2019
-          const baseURI = 'http://54.180.144.6/'
-          const config = {
-            headers: {
-              'Content-Type': 'multipart/form-data'
-            }
-          }
-          /* Do axios post */
-          // this.$axios.post(`${testURI}consult/`, formData, config)
-          this.$axios.post(`${baseURI}consult/`, formData, config)
-            .then((response) => {
-              /*console.log(response)*/
-              alert('접수되었습니다.')
-              this.in_name = ''
-              this.in_position = ''
-              this.in_group = ''
-              this.in_email = ''
-              this.in_phone = ''
-              this.in_desc = ''
-              this.$refs.file_input.value = ''
-              this.in_file = []
-              this.file_flag = 0
-              this.file_info = ''
-              this.$validator.validateAll()
-            })
-            .catch((e) => {
-              console.error(e)
-              alert('전송 중 문제가 발생하였습니다. 다시시도 또는 이메일을 이용해주세요.')
-            })
-        }
+        // else if (this.in_group === '') {
+        //   alert('회사명 또는 소속기관을 입력해주세요.')
+        //   document.getElementById('in_group').focus()
+        // }
+        // else if (this.in_phone === '') {
+        //   alert('연락받을 전화번호를 입력해주세요.')
+        //   document.getElementById('in_phone').focus()
+        // }
+        // else if (this.in_phone.length > 12) {
+        //   alert('전화번호 길이를 확인하세요.')
+        //   document.getElementById('in_phone').focus()
+        // }
+        // // else if (kor_filter.test(this.file_info.name)) {
+        // //   alert('한글 파일 이름은 지원되지 않습니다.')
+        // // }
+        // else if (this.file_info.size > 104857600) {
+        //   alert('파일 크기는 100MB 이하만 가능합니다.')
+        // }
+        //
+        // /* When file does not exist */
+        // else if (!this.in_file[0]){
+        //   let formData = new FormData()
+        //   formData.append('name', this.in_name)
+        //   formData.append('position', this.in_position)
+        //   formData.append('group', this.in_group)
+        //   formData.append('email', this.in_email)
+        //   formData.append('phone', this.in_phone)
+        //   formData.append('describe', this.in_desc)
+        //   // const testURI = 'http://127.0.0.1:8000/'
+        //   // const baseURI = 'http://13.209.67.94/'
+        //   // backend ip changed 29.jan.2019
+        //   const baseURI = 'http://54.180.144.6/'
+        //   const config = {
+        //     headers: {
+        //       'Content-Type': 'multipart/form-data'
+        //     }
+        //   }
+        //   /* Do axios post */
+        //   // this.$axios.post(`${testURI}consult/`, formData, config)
+        //   this.$axios.post(`${baseURI}consult/`, formData, config)
+        //     .then((response) => {
+        //       /*console.log(response)*/
+        //       alert('접수되었습니다.')
+        //       this.in_name = ''
+        //       this.in_position = ''
+        //       this.in_group = ''
+        //       this.in_email = ''
+        //       this.in_phone = ''
+        //       this.in_desc = ''
+        //       this.$refs.file_input.value = ''
+        //       this.in_file = []
+        //       this.file_flag = 0
+        //       this.file_info = ''
+        //       this.$validator.validateAll()
+        //     })
+        //     .catch((e) => {
+        //       console.error(e)
+        //       alert('전송 중 문제가 발생하였습니다. 다시시도 또는 이메일을 이용해주세요.')
+        //     })
+        // }
+        //
+        // /* When file exist */
+        // else {
+        //   let formData = new FormData()
+        //   formData.append('name', this.in_name)
+        //   formData.append('position', this.in_position)
+        //   formData.append('group', this.in_group)
+        //   formData.append('email', this.in_email)
+        //   formData.append('phone', this.in_phone)
+        //   formData.append('describe', this.in_desc)
+        //   formData.append('file', this.$refs.file_input.files[0])
+        //   // const testURI = 'http://127.0.0.1:8000/'
+        //   // const baseURI = 'http://13.209.67.94/'
+        //   // backend ip changed 29.jan.2019
+        //   const baseURI = 'http://54.180.144.6/'
+        //   const config = {
+        //     headers: {
+        //       'Content-Type': 'multipart/form-data'
+        //     }
+        //   }
+        //   /* Do axios post */
+        //   // this.$axios.post(`${testURI}consult/`, formData, config)
+        //   this.$axios.post(`${baseURI}consult/`, formData, config)
+        //     .then((response) => {
+        //       /*console.log(response)*/
+        //       alert('접수되었습니다.')
+        //       this.in_name = ''
+        //       this.in_position = ''
+        //       this.in_group = ''
+        //       this.in_email = ''
+        //       this.in_phone = ''
+        //       this.in_desc = ''
+        //       this.$refs.file_input.value = ''
+        //       this.in_file = []
+        //       this.file_flag = 0
+        //       this.file_info = ''
+        //       this.$validator.validateAll()
+        //     })
+        //     .catch((e) => {
+        //       console.error(e)
+        //       alert('전송 중 문제가 발생하였습니다. 다시시도 또는 이메일을 이용해주세요.')
+        //     })
+        // }
       },
+      form_blocked() {
+        alert('현재 문의기능을 사용 할 수 없습니다. 하단 이메일이나 전화를 이용해주세요.')
+      }
+    },
+    mounted() {
+      alert('현재 문의기능을 사용 할 수 없습니다. 하단 이메일이나 전화를 이용해주세요.')
+      this.$router.push({path: '/'})
     }
   }
 </script>
