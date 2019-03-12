@@ -157,7 +157,9 @@
           formData.append('phone', this.in_phone)
           formData.append('describe', this.in_desc)
           // const testURI = 'http://127.0.0.1:8000/'
-          const baseURI = 'http://13.209.67.94/'
+          // const baseURI = 'http://13.209.67.94/'
+          // backend ip changed 29.jan.2019
+          const baseURI = 'http://54.180.144.6/'
           const config = {
             headers: {
               'Content-Type': 'multipart/form-data'
