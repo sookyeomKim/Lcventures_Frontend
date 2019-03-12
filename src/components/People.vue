@@ -268,6 +268,12 @@
           position: '사원',
           src: require('../assets/pages/people/jeoh.jpg')
         },
+        {
+          title: '전현정',
+          team: '컨텐츠사업부',
+          position: '사원',
+          src: require('../assets/pages/people/default.png')
+        },
       ]
     }),
     computed: {
