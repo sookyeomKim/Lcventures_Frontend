@@ -51,8 +51,8 @@
           </div>
         </div>
         <div class="input_wrap block">
-          <div class="input_label">첨부파일</div><div class="error_label" v-if="errors.has('in_file')">파일은 100mb 이하, 영문이어야 합니다</div>
-          <input v-validate="'size:102400'" type="file" class="file" id="file_input" name="in_file" data-vv-as="File" ref="file_input" @change="add_file()" multiple>
+          <div class="input_label">첨부파일</div><div class="error_label" v-if="errors.has('in_file')">파일은 6mb 이하여야 합니다</div>
+          <input v-validate="'size:6143'" type="file" class="file" id="file_input" name="in_file" data-vv-as="File" ref="file_input" @change="add_file()" multiple>
           <input type="button" class="delete" value="파일 삭제" @click="remove_file">
         </div>
 
@@ -136,8 +136,8 @@
           this.loading = false
           document.getElementById('submit').disabled = false
         }
-        else if (this.file_info.size > 104857600) {
-          alert('파일 크기는 100MB 이하만 가능합니다.')
+        else if (this.file_info.size > 6291455) {
+          alert('파일 크기는 6MB 이하만 가능합니다.')
           this.loading = false
           document.getElementById('submit').disabled = false
         }
