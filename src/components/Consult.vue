@@ -51,27 +51,20 @@
           </div>
         </div>
         <div class="input_wrap block">
-          <div class="input_label">첨부파일 (한글 파일명 사용 불가)</div><div class="error_label" v-if="errors.has('in_file')">파일은 100mb 이하, 영문이어야 합니다</div>
+          <div class="input_label">첨부파일</div><div class="error_label" v-if="errors.has('in_file')">파일은 100mb 이하, 영문이어야 합니다</div>
           <input v-validate="'size:102400'" type="file" class="file" id="file_input" name="in_file" data-vv-as="File" ref="file_input" @change="add_file()" multiple>
-          <!--<input type="button" class="delete" value="파일 삭제" @click="remove_file" v-show="file_flag === 1">-->
           <input type="button" class="delete" value="파일 삭제" @click="remove_file">
         </div>
 
         <div class="input_wrap block">
-          <!--<input type="submit" class="submit" value="문의하기" @click="submit_form()">-->
-          <input type="submit" class="submit" value="문의하기">
+          <input type="submit" class="submit" id="submit" value="문의하기">
         </div>
       </form>
-<!--
-      <div v-if="test[0]">
-        <div>{{ test[0].name }}</div>
-        <div>{{ test[1].name }}</div>
-        <div>{{ test[0].group }}</div>
-        <div>{{ test[1].group }}</div>
-      </div>
--->
 
     </section>
+    <div v-if="loading" class="loading">
+      <div class="lds-hourglass"></div>
+    </div>
   </div>
 </template>
 
@@ -88,7 +81,8 @@
       in_desc: '',
       in_file: [],
       file_info: '',
-      test: []
+      test: [],
+      loading: false
     }),
     methods: {
       add_file() {
@@ -110,142 +104,189 @@
         this.$validator.validateAll()
       },
       submit_form() {
-        this.form_blocked()
-        return false
-        /* axios get test */
-        /*
-        const baseURI = 'http://127.0.0.1:8000'
-        this.$axios.get(`${baseURI}/consult/`)
-          .then((result) => {
-            console.log(result)
-            this.test = result.data
-            console.log(this.test)
-          })
-        */
-        // this.$validator.validateAll()
-        // var kor_filter = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/
-        //
-        // /* When mandatory forms are empty */
-        // if (this.in_name === '') {
-        //   alert('이름을 입력해주세요.')
-        //   document.getElementById('in_name').focus()
-        // }
-        // else if (this.in_group === '') {
-        //   alert('회사명 또는 소속기관을 입력해주세요.')
-        //   document.getElementById('in_group').focus()
-        // }
-        // else if (this.in_phone === '') {
-        //   alert('연락받을 전화번호를 입력해주세요.')
-        //   document.getElementById('in_phone').focus()
-        // }
-        // else if (this.in_phone.length > 12) {
-        //   alert('전화번호 길이를 확인하세요.')
-        //   document.getElementById('in_phone').focus()
-        // }
-        // // else if (kor_filter.test(this.file_info.name)) {
-        // //   alert('한글 파일 이름은 지원되지 않습니다.')
-        // // }
-        // else if (this.file_info.size > 104857600) {
-        //   alert('파일 크기는 100MB 이하만 가능합니다.')
-        // }
-        //
-        // /* When file does not exist */
-        // else if (!this.in_file[0]){
-        //   let formData = new FormData()
-        //   formData.append('name', this.in_name)
-        //   formData.append('position', this.in_position)
-        //   formData.append('group', this.in_group)
-        //   formData.append('email', this.in_email)
-        //   formData.append('phone', this.in_phone)
-        //   formData.append('describe', this.in_desc)
-        //   // const testURI = 'http://127.0.0.1:8000/'
-        //   // const baseURI = 'http://13.209.67.94/'
-        //   // backend ip changed 29.jan.2019
-        //   const baseURI = 'http://54.180.144.6/'
-        //   const config = {
-        //     headers: {
-        //       'Content-Type': 'multipart/form-data'
-        //     }
-        //   }
-        //   /* Do axios post */
-        //   // this.$axios.post(`${testURI}consult/`, formData, config)
-        //   this.$axios.post(`${baseURI}consult/`, formData, config)
-        //     .then((response) => {
-        //       /*console.log(response)*/
-        //       alert('접수되었습니다.')
-        //       this.in_name = ''
-        //       this.in_position = ''
-        //       this.in_group = ''
-        //       this.in_email = ''
-        //       this.in_phone = ''
-        //       this.in_desc = ''
-        //       this.$refs.file_input.value = ''
-        //       this.in_file = []
-        //       this.file_flag = 0
-        //       this.file_info = ''
-        //       this.$validator.validateAll()
-        //     })
-        //     .catch((e) => {
-        //       console.error(e)
-        //       alert('전송 중 문제가 발생하였습니다. 다시시도 또는 이메일을 이용해주세요.')
-        //     })
-        // }
-        //
-        // /* When file exist */
-        // else {
-        //   let formData = new FormData()
-        //   formData.append('name', this.in_name)
-        //   formData.append('position', this.in_position)
-        //   formData.append('group', this.in_group)
-        //   formData.append('email', this.in_email)
-        //   formData.append('phone', this.in_phone)
-        //   formData.append('describe', this.in_desc)
-        //   formData.append('file', this.$refs.file_input.files[0])
-        //   // const testURI = 'http://127.0.0.1:8000/'
-        //   // const baseURI = 'http://13.209.67.94/'
-        //   // backend ip changed 29.jan.2019
-        //   const baseURI = 'http://54.180.144.6/'
-        //   const config = {
-        //     headers: {
-        //       'Content-Type': 'multipart/form-data'
-        //     }
-        //   }
-        //   /* Do axios post */
-        //   // this.$axios.post(`${testURI}consult/`, formData, config)
-        //   this.$axios.post(`${baseURI}consult/`, formData, config)
-        //     .then((response) => {
-        //       /*console.log(response)*/
-        //       alert('접수되었습니다.')
-        //       this.in_name = ''
-        //       this.in_position = ''
-        //       this.in_group = ''
-        //       this.in_email = ''
-        //       this.in_phone = ''
-        //       this.in_desc = ''
-        //       this.$refs.file_input.value = ''
-        //       this.in_file = []
-        //       this.file_flag = 0
-        //       this.file_info = ''
-        //       this.$validator.validateAll()
-        //     })
-        //     .catch((e) => {
-        //       console.error(e)
-        //       alert('전송 중 문제가 발생하였습니다. 다시시도 또는 이메일을 이용해주세요.')
-        //     })
-        // }
+        // Disable some additional edits by user, loading ui
+        this.loading = true
+        document.getElementById('submit').disabled = true
+        // Validate form
+        this.$validator.validateAll()
+        var kor_filter = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/
+
+        /* When mandatory forms are empty */
+        if (this.in_name === '') {
+          alert('이름을 입력해주세요.')
+          document.getElementById('in_name').focus()
+          this.loading = false
+          document.getElementById('submit').disabled = false
+        }
+        else if (this.in_group === '') {
+          alert('회사명 또는 소속기관을 입력해주세요.')
+          document.getElementById('in_group').focus()
+          this.loading = false
+          document.getElementById('submit').disabled = false
+        }
+        else if (this.in_phone === '') {
+          alert('연락받을 전화번호를 입력해주세요.')
+          document.getElementById('in_phone').focus()
+          this.loading = false
+          document.getElementById('submit').disabled = false
+        }
+        else if (this.in_phone.length > 12) {
+          alert('전화번호 길이를 확인하세요.')
+          document.getElementById('in_phone').focus()
+          this.loading = false
+          document.getElementById('submit').disabled = false
+        }
+        else if (this.file_info.size > 104857600) {
+          alert('파일 크기는 100MB 이하만 가능합니다.')
+          this.loading = false
+          document.getElementById('submit').disabled = false
+        }
+
+        /* When file does not exist */
+        else if (!this.in_file[0]){
+          let formData = new FormData()
+          formData.append('name', this.in_name)
+          formData.append('position', this.in_position)
+          formData.append('group', this.in_group)
+          formData.append('email', this.in_email)
+          formData.append('phone', this.in_phone)
+          formData.append('describe', this.in_desc)
+          // const testURI = 'http://127.0.0.1:8000/'
+          // const baseURI = 'http://54.180.144.6/'
+          const baseURI = 'https://l7t3kb8sbi.execute-api.ap-northeast-2.amazonaws.com/prod/api/inquiry'
+          const config = {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          }
+          /* Do axios post */
+          // this.$axios.post(`${testURI}consult/`, formData, config)
+          this.$axios.post(`${baseURI}`, formData, config)
+            .then((response) => {
+              alert('접수되었습니다.')
+              this.in_name = ''
+              this.in_position = ''
+              this.in_group = ''
+              this.in_email = ''
+              this.in_phone = ''
+              this.in_desc = ''
+              this.$refs.file_input.value = ''
+              this.in_file = []
+              this.file_flag = 0
+              this.file_info = ''
+              this.$validator.validateAll()
+              this.loading = false
+              document.getElementById('submit').disabled = false
+            })
+            .catch((e) => {
+              console.error(e)
+              alert('전송 중 문제가 발생하였습니다. 다시시도 또는 이메일을 이용해주세요.')
+              this.loading = false
+              document.getElementById('submit').disabled = false
+            })
+        }
+
+        /* When file exist */
+        else {
+          let formData = new FormData()
+          formData.append('name', this.in_name)
+          formData.append('position', this.in_position)
+          formData.append('group', this.in_group)
+          formData.append('email', this.in_email)
+          formData.append('phone', this.in_phone)
+          formData.append('describe', this.in_desc)
+          formData.append('file', this.$refs.file_input.files[0])
+          // const testURI = 'http://127.0.0.1:8000/'
+          // const baseURI = 'http://54.180.144.6/'
+          const baseURI = 'https://l7t3kb8sbi.execute-api.ap-northeast-2.amazonaws.com/prod/api/inquiry'
+          const config = {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          }
+          /* Do axios post */
+          // this.$axios.post(`${testURI}consult/`, formData, config)
+          this.$axios.post(`${baseURI}`, formData, config)
+            .then((response) => {
+              alert('접수되었습니다.')
+              this.in_name = ''
+              this.in_position = ''
+              this.in_group = ''
+              this.in_email = ''
+              this.in_phone = ''
+              this.in_desc = ''
+              this.$refs.file_input.value = ''
+              this.in_file = []
+              this.file_flag = 0
+              this.file_info = ''
+              this.$validator.validateAll()
+              this.loading = false
+              document.getElementById('submit').disabled = false
+            })
+            .catch((e) => {
+              console.error(e)
+              alert('전송 중 문제가 발생하였습니다. 다시시도 또는 이메일을 이용해주세요.')
+              this.loading = false
+              document.getElementById('submit').disabled = false
+            })
+        }
       },
-      form_blocked() {
-        alert('현재 문의기능을 사용 할 수 없습니다. 하단 이메일이나 전화를 이용해주세요.')
-      }
     },
-    mounted() {
-      alert('현재 문의기능을 사용 할 수 없습니다. 하단 이메일이나 전화를 이용해주세요.')
-      this.$router.push({path: '/'})
-    }
   }
 </script>
 
 <style lang="scss" scoped>
+
+  .loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  /**/
+
+  .lds-hourglass {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .lds-hourglass:after {
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    margin: 6px;
+    box-sizing: border-box;
+    border: 26px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-hourglass 1.2s infinite;
+  }
+  @keyframes lds-hourglass {
+    0% {
+      transform: rotate(0);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    50% {
+      transform: rotate(900deg);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    100% {
+      transform: rotate(1800deg);
+    }
+  }
+
+
+  /**/
+
 
   .main_title {
     .table {
