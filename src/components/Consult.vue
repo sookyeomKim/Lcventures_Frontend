@@ -153,7 +153,7 @@
           formData.append('describe', this.in_desc)
           // const testURI = 'http://127.0.0.1:8000/'
           // const baseURI = 'http://54.180.144.6/'
-          const baseURI = 'https://mwopiz0j2b.execute-api.ap-northeast-2.amazonaws.com/prod/api/inquiry'
+          const baseURI = 'https://mwopiz0j2b.execute-api.ap-northeast-2.amazonaws.com/prod/api/inquiry/'
           const config = {
             headers: {
               'Content-Type': 'multipart/form-data'
@@ -198,7 +198,7 @@
           formData.append('file', this.$refs.file_input.files[0])
           // const testURI = 'http://127.0.0.1:8000/'
           // const baseURI = 'http://54.180.144.6/'
-          const baseURI = 'https://mwopiz0j2b.execute-api.ap-northeast-2.amazonaws.com/prod/api/inquiry'
+          const baseURI = 'https://mwopiz0j2b.execute-api.ap-northeast-2.amazonaws.com/prod/api/inquiry/'
           const config = {
             headers: {
               'Content-Type': 'multipart/form-data'
