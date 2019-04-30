@@ -78,7 +78,7 @@
         },
         {
           title: '이세호',
-          team: '마케팅부',
+          team: '마케팅본부',
           position: '부장',
           src: require('../assets/pages/people/shlee.jpg')
         },
@@ -90,190 +90,172 @@
         },*/
         {
           title: '김홍식',
-          team: '마케팅부',
+          team: '마케팅본부',
           position: '차장',
           src: require('../assets/pages/people/hskim.jpg')
         },
         {
           title: '이효진',
-          team: '마케팅부',
+          team: '마케팅본부',
           position: '차장',
           src: require('../assets/pages/people/hjlee.jpg')
         },
-        /*{
-          title: '전준식',
-          team: '마케팅부',
-          position: '과장',
-          src: require('../assets/pages/people/jsjeon.jpg')
-        },*/
         {
           title: '이호원',
-          team: '마케팅부',
+          team: '마케팅본부',
           position: '차장',
           src: require('../assets/pages/people/hwlee.jpg')
         },
         {
           title: '하재륜',
-          team: '마케팅부',
+          team: '마케팅본부',
           position: '대리',
           src: require('../assets/pages/people/jrha.jpg')
         },
         {
           title: '공경환',
-          team: '마케팅부',
+          team: '마케팅본부',
           position: '과장',
           src: require('../assets/pages/people/khkong.jpg')
         },
         {
           title: '진승우',
-          team: '마케팅부',
+          team: '마케팅본부',
           position: '과장',
           src: require('../assets/pages/people/swjin.jpg')
         },
-        /*{
-          title: '최지현',
-          team: '마케팅부',
-          position: '대리',
-          src: require('../assets/pages/people/jhchoe.jpg')
-        },*/
         {
           title: '김민서',
-          team: '마케팅부',
+          team: '마케팅본부',
           position: '대리',
           src: require('../assets/pages/people/mskim.jpg')
         },
         {
-          title: '김준형',
-          team: '컨텐츠사업부',
-          position: '대리',
-          src: require('../assets/pages/people/jhkim.jpg')
-        },
-        {
           title: '이상아',
-          team: '마케팅부',
+          team: '마케팅본부',
           position: '대리',
           src: require('../assets/pages/people/salee.jpg')
         },
         {
           title: '이우준',
-          team: '마케팅부',
+          team: '마케팅본부',
           position: '대리',
           src: require('../assets/pages/people/wjlee.jpg')
         },
         {
           title: '김수겸',
-          team: '개발사업부',
+          team: '개발팀',
           position: '대리',
           src: require('../assets/pages/people/skkim.jpg')
         },
         {
           title: '장현정',
-          team: '지원본부',
+          team: '경영지원팀',
           position: '대리',
           src: require('../assets/pages/people/hjjang.jpg')
         },
         {
           title: '이로운',
-          team: '마케팅부',
+          team: '마케팅본부',
           position: '주임',
           src: require('../assets/pages/people/rwlee.jpg')
         },
         {
           title: '변두환',
-          team: '마케팅부',
+          team: '마케팅본부',
           position: '주임',
           src: require('../assets/pages/people/dhbeon.jpg')
         },
-        /*{
-          title: '이지은',
-          team: 'HNM',
-          position: '주임',
-          src: require('../assets/pages/people/jelee.jpg')
-        },*/
         {
           title: '김성식',
-          team: '컨텐츠사업부',
+          team: '디자인팀',
           position: '주임',
           src: require('../assets/pages/people/sskim.jpg')
         },
         {
           title: '박재현',
-          team: '컨텐츠사업부',
+          team: '영상제작팀',
           position: '대리',
           src: require('../assets/pages/people/jhpark.jpg')
         },
         {
           title: '여창훈',
-          team: '컨텐츠사업부',
+          team: '영상제작팀',
           position: '대리',
           src: require('../assets/pages/people/chyeo.jpg')
         },
         {
           title: '류동근',
-          team: '개발사업부',
+          team: '개발팀',
           position: '사원',
           src: require('../assets/pages/people/dgryu.jpg')
         },
         {
-          title: '유기환',
-          team: '마케팅부',
-          position: '주임',
-          src: require('../assets/pages/people/khyou.jpg')
-        },
-        {
           title: '이수영',
-          team: '지원본부',
+          team: '경영지원팀',
           position: '사원',
           src: require('../assets/pages/people/sylee.jpg')
         },
-        /*{
-          title: '정순영',
-          team: '마케팅부',
-          position: '사원',
-          src: require('../assets/pages/people/syjeoung.jpg')
-        },*/
         {
           title: '조미경',
-          team: '컨텐츠사업부',
+          team: '디자인팀',
           position: '사원',
           src: require('../assets/pages/people/mkjo.jpg')
         },
         {
           title: '조우석',
-          team: '마케팅부',
+          team: '마케팅본부',
           position: '사원',
           src: require('../assets/pages/people/wsjo.jpg')
         },
-        /*{
-          title: '이진영',
-          team: 'HNM',
-          position: '사원',
-          src: require('../assets/pages/people/default.png')
-        },*/
         {
           title: '박정수',
-          team: '마케팅부',
+          team: '마케팅본부',
           position: '사원',
           src: require('../assets/pages/people/jspark.jpg')
         },
         {
           title: '이주현',
-          team: '마케팅부',
+          team: '마케팅본부',
           position: '사원',
           src: require('../assets/pages/people/jhlee.jpg')
         },
         {
           title: '오주은',
-          team: '마케팅부',
+          team: '마케팅본부',
           position: '사원',
           src: require('../assets/pages/people/jeoh.jpg')
         },
         {
           title: '전현정',
-          team: '컨텐츠사업부',
+          team: '디자인팀',
           position: '사원',
           src: require('../assets/pages/people/default.png')
         },
+        {
+          title: '유정훈',
+          team: '마케팅본부',
+          position: '사원',
+          src: require('../assets/pages/people/default.png')
+        },
+        {
+          title: '전연우',
+          team: '마케팅본부',
+          position: '사원',
+          src: require('../assets/pages/people/default.png')
+        }
+        // {
+        //   title: '이지은',
+        //   team: 'HNM',
+        //   position: '주임',
+        //   src: require('../assets/pages/people/jelee.jpg')
+        // },
+        // {
+        //   title: '이진영',
+        //   team: 'HNM',
+        //   position: '사원',
+        //   src: require('../assets/pages/people/default.png')
+        // },
       ]
     }),
     computed: {
