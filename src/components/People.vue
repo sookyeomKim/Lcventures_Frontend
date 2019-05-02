@@ -166,12 +166,12 @@
           position: '주임',
           src: require('../assets/pages/people/dhbeon.jpg')
         },
-        {
-          title: '김성식',
-          team: '디자인팀',
-          position: '주임',
-          src: require('../assets/pages/people/sskim.jpg')
-        },
+        // {
+        //   title: '김성식',
+        //   team: '디자인팀',
+        //   position: '주임',
+        //   src: require('../assets/pages/people/sskim.jpg')
+        // },
         {
           title: '박재현',
           team: '영상제작팀',
