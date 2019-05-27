@@ -243,6 +243,12 @@
           team: '마케팅본부',
           position: '사원',
           src: require('../assets/pages/people/default.png')
+        },
+        {
+          title: '장민경',
+          team: '디자인팀',
+          position: '사원',
+          src: require('../assets/pages/people/default.png')
         }
         // {
         //   title: '이지은',
