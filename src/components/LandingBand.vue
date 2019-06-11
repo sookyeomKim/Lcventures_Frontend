@@ -120,7 +120,7 @@
       vertical-align: middle;
       text-align: left;
       img {
-        width: 17%;
+        width: 19%;
       }
     }
     .header_text {
@@ -129,7 +129,7 @@
       vertical-align: middle;
       text-align: right;
       img {
-        width: 35%;
+        width: 45%;
       }
     }
   }
