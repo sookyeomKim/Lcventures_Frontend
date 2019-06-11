@@ -5,8 +5,24 @@
 
     <div class="image_wrap" id="image_wrap">
 
+      <section class="section_header">
+        <img src="../assets/pages/landing/band/190611/header_bg.png" alt="LCVENTURES Band - header image"/>
+        <div class="header_contents">
+          <div class="header_logo">
+            <router-link to="/">
+              <img src="../assets/pages/landing/band/190611/header_logo.png" alt="LCVENTURES Band - header image"/>
+            </router-link>
+          </div>
+          <div class="header_text">
+            <router-link to="/">
+              <img src="../assets/pages/landing/band/190611/header_text.png" alt="LCVENTURES Band - header image"/>
+            </router-link>
+          </div>
+        </div>
+      </section>
+
       <section class="section_1">
-        <img src="../assets/pages/landing/band/190611/01.jpg" alt="LCVENTURES Band - landing image"/>
+        <img src="../assets/pages/landing/band/190611/01.png" alt="LCVENTURES Band - landing image"/>
       </section>
 
       <section class="section_2">
@@ -90,6 +106,33 @@
     }
   }
   /* section end */
+
+  .header_contents {
+    padding: 0 2%;
+    font-size: 0;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    margin-top: 1.5%;
+    .header_logo {
+      width: 50%;
+      display: inline-block;
+      vertical-align: middle;
+      text-align: left;
+      img {
+        width: 19%;
+      }
+    }
+    .header_text {
+      width: 50%;
+      display: inline-block;
+      vertical-align: middle;
+      text-align: right;
+      img {
+        width: 45%;
+      }
+    }
+  }
 
   .form_1 {
     position: absolute;
