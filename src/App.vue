@@ -8,10 +8,10 @@
       </transition>
 
       <!-- Video Area -->
-      <app-video/>
+      <app-video v-if="mix_data.video_flag"/>
 
       <!--Header-->
-      <app-header/>
+      <app-header v-if="mix_data.header_flag"/>
 
       <!--Main Contents-->
       <transition name="fade">
@@ -37,8 +37,8 @@
     name: 'App',
     data: () => ({
       /* Link to plugIn js for scss values */
-      mix_data: MixIn.data,
-    })/* data */,
+      mix_data: MixIn.data
+    }),/* data */
     methods: {
       /* Navigation On Off */
       slide_nav () {

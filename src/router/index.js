@@ -1,20 +1,24 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import A404 from '@/components/A404'
 import Home from '@/components/Home'
 import About from '@/components/About'
 import Projects from '@/components/Projects'
 import People from '@/components/People'
 import Consult from '@/components/Consult'
-// import Recruit from '@/components/Recruit'
-// import News from '@/components/News'
-// import Location from '@/components/Location'
-// import Contact from '@/components/Contact'
+import LandingBand from '@/components/LandingBand'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
+// export default new Router({
   routes: [
+    {
+      path: '/error',
+      name: 'a404',
+      component: A404
+    },
     {
       path: '/',
       name: 'home',
@@ -35,34 +39,34 @@ export default new Router({
       name: 'members',
       component: People
     },
-    // {
-    //   path: '/news',
-    //   name: 'news',
-    //   component: News
-    // },
-    // {
-    //   path: '/location',
-    //   name: 'location',
-    //   component: Location
-    // },
-    // {
-    //   path: '/contact',
-    //   name: 'contact',
-    //   component: Contact
-    // },
-    // {
-    //   path: '/recruit',
-    //   name: 'recruit',
-    //   component: Recruit
-    // },
     {
       path: '/consult',
       name: 'consult',
       component: Consult
+    },
+    {
+      path: '/landing/band',
+      name: 'landing_band',
+      component: LandingBand
     }
   ],
   mode: 'history',
   scrollBehavior (to, from, savedPosition) {
-    return { x: 0, y: 0 }
+    return {
+      x: 0,
+      y: 0
+    }
   }
 })
+
+router.beforeEach((to, from, next) => {
+  // eslint-disable-next-line
+  if (to.name == '' || to.name == null) {
+    console.log('to name is none')
+    next({name: 'a404'})
+  } else {
+    next()
+  }
+})
+
+export default router

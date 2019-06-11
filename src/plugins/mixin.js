@@ -13,7 +13,9 @@ var Mixin = {
     },
     payment_flag: {
       frame: false
-    }
+    },
+    video_flag: true,
+    header_flag: true
   }/* data */,
   methods: {
     /* Navigation Open and Close */

@@ -5,9 +5,11 @@
     <div class="footer_wrap"><!--for make without padding-->
 
       <div class="logo_tap">
-        <div class="footer_logo">
-          <img src="./assets/common/lc_logo.png" alt="Lc ventures logo image">
-        </div>
+        <router-link to="/">
+          <div class="footer_logo">
+            <img src="./assets/common/lc_logo.png" alt="Lc ventures logo image">
+          </div>
+        </router-link>
       </div>
 
       <div class="info_tap">
@@ -37,18 +39,21 @@
     // background-color: #fafafa;
     // background-color: #009da5;
     background: #303030;
-    transition: all 350ms cubic-bezier(.83,.01,.46,.86);
+    transition: all 350ms cubic-bezier(.83, .01, .46, .86);
 
     .footer_wrap {
       text-align: center;
+
       .logo_tap {
         display: inline-block;
         margin: 0;
         vertical-align: top;
+
         .footer_logo {
           font-size: 35px;
           font-weight: bold;
           padding: 0 30px;
+
           img {
             width: 97%;
             /*filter: invert(1);*/
@@ -67,9 +72,13 @@
         font-weight: bold;
         text-align: left;
       }
-    }/* Footer wrap */
+    }
 
-  }/*Footer*/
+    /* Footer wrap */
+
+  }
+
+  /*Footer*/
 
 
   /*
@@ -78,10 +87,11 @@
   ===============================================
   */
   @media (max-width: 835px) {
-    .footer{
+    .footer {
       .footer_wrap {
         .logo_tap {
           display: block;
+
           .footer_logo {
             img {
               max-width: 240px;
