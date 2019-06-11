@@ -6,7 +6,6 @@
 
     <!-- v-if -->
     <div class="video_basket" id="video_basket" v-if="windowWidth > 835">
-
       <!-- Youtube -->
       <iframe class="video" id="video" type="text/html"
               src="https://www.youtube.com/embed/bDmuCtaRcZM?&autoplay=1&loop=1&playlist=bDmuCtaRcZM&showinfo=0&fs=0&disablekb=1&vq=auto&controls=0&rel=0&iv_load_policy=3&mute=1&playsinline=1&modestbranding=1"
