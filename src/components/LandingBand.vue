@@ -69,7 +69,9 @@
         <img src="../assets/pages/landing/band/190618/desktop/01/01_bg.png"/>
 
         <div class="logo">
-          <img src="../assets/pages/landing/band/190618/desktop/01/01_logo.png"/>
+          <router-link to="/">
+            <img src="../assets/pages/landing/band/190618/desktop/01/01_logo.png"/>
+          </router-link>
         </div>
 
         <div class="content">
