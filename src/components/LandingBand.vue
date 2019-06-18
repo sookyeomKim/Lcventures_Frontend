@@ -4,7 +4,7 @@
        @click="$parent.$options.methods.only_close">
 
     <!-- Mobile wrap -->
-    <div v-if="windowWidth < 1000" class="image_wrap_mobile" id="image_wrap_mobile">
+    <div v-if="windowWidth < 920" class="image_wrap_mobile" id="image_wrap_mobile">
 
       <section class="mobile_header">
         <img src="../assets/pages/landing/band/190618/mobile/header_bg.png" alt="LCVENTURES Band - header image"/>
@@ -173,7 +173,7 @@
     position: relative;
     width: 100%;
     min-width: 320px;
-    max-width: 1000px;
+    max-width: 950px;
     margin: 0 auto;
   }
   /* /Mobile wrap */
