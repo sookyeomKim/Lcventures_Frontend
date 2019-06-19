@@ -55,7 +55,7 @@
     <div v-else class="image_wrap_desktop" id="image_wrap_desktop">
 
       <section class="desktop_header">
-        <img src="../assets/pages/landing/band/190618/desktop/header/header_bg.png" alt="LCVENTURES Band - header back ground image"/>
+        <img src="../assets/pages/landing/band/190618/desktop/header/header_bg_01.png" alt="LCVENTURES Band - header back ground image"/>
         <div class="header_contents">
           <div class="header_logo">
             <router-link to="/">
@@ -66,7 +66,7 @@
       </section>
 
       <section class="desktop_1">
-        <img src="../assets/pages/landing/band/190618/desktop/01/01_bg.png"/>
+        <img src="../assets/pages/landing/band/190618/desktop/01/01_bg_01.png"/>
 
         <div class="logo">
           <router-link to="/">
@@ -251,7 +251,7 @@
   #image_wrap_desktop {
     position: relative;
     width: 100%;
-    max-width: 1600px;
+    max-width: 1920px;
     margin: 0 auto;
   }
 
@@ -274,8 +274,8 @@
         vertical-align: middle;
         text-align: left;
         img {
-          width: unset;
-          height: 100%;
+          width: 7%;
+          padding: calc(1% - 4px) 0;
         }
       }
       .header_text {
@@ -287,8 +287,7 @@
         vertical-align: middle;
         text-align: right;
         img {
-          width: unset;
-          height: 100%;
+          width: 20%;
         }
       }
     }
