@@ -157,6 +157,7 @@
     text-align: center;
     color: #515151;
     font-family: Impact, sans-serif;
+    font-size: 0;
     z-index: 2000;
     img {
       width: 100%;
