@@ -22,6 +22,18 @@
       <li>
         <router-link class="nav_a" to="/projects">PROJECT</router-link>
       </li>
+      <!--<li>
+        <router-link class="small_nav" to="/landing/band">- SA & DA</router-link>
+      </li>-->
+      <li>
+        <router-link class="small_nav" to="/landing/band">- SNS & Viral</router-link>
+      </li>
+      <!--<li>
+        <router-link class="small_nav" to="/landing/band">- Media</router-link>
+      </li>-->
+      <!--<li>
+        <router-link class="small_nav" to="/landing/band">- Commerce</router-link>
+      </li>-->
       <li>
         <router-link class="nav_a" to="/members">MEMBERS</router-link>
       </li>
@@ -31,22 +43,6 @@
     </ul>
 
     <div class="menu_division"></div>
-
-    <!-- Nav Category 2 About us -->
-    <!--<ul class="nav_category" @click="$parent.$options.methods.navi_delay">
-      <li>
-        <router-link class="nav_a" to="/contact">연락처</router-link>
-      </li>
-      <li>
-        <router-link class="nav_a" to="/news">엘씨 뉴스</router-link>
-      </li>
-      <li>
-        <router-link class="nav_a" to="/location">엘씨 위치</router-link>
-      </li>
-      <li>
-        <router-link class="nav_a" to="/recruit">RECRUIT</router-link>
-      </li>
-    </ul>-->
 
     <div class="menu_division"></div>
 
@@ -96,6 +92,19 @@
         cursor: pointer;
         background-color: #313131;
       }
+      .small_nav {
+        display: block;
+        padding: 4px 8px 4px 30px;
+        color: #aeaeae;
+        font-size: 15px;
+        &:hover, &:active {
+          color: #fdfdfd;
+        }
+      }/*List route links*/
+      &:hover, &:active {
+        cursor: pointer;
+        background-color: #313131;
+      }
     }/*Normal Nav Lists*/
     li .router-link-exact-active {
       margin: 0 0;
@@ -103,6 +112,11 @@
       background-color: #313131;
       color: #fdfdfd;
       .nav_a {
+        display: block;
+        padding: 4px 8px;
+        color: #fdfdfd;
+      }
+      .small_nav {
         display: block;
         padding: 4px 8px;
         color: #fdfdfd;

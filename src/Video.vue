@@ -121,7 +121,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100% + 15vh);
     pointer-events: none;
     z-index: 20;
   }
@@ -170,7 +170,7 @@
   // Button area
   .guide_button {
     position: relative;
-    top: calc(5% - 190px);
+    top: calc(5% - 250px);
     z-index: 9000;
     .guide_inner {
       max-width: 1300px;
@@ -216,6 +216,12 @@
           padding: 6px 4px;
         }
       }
+    }
+  }
+
+  @media (max-width: 835px) {
+    .guide_button {
+      top: calc(5% - 165px);
     }
   }
 

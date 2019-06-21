@@ -80,7 +80,9 @@
           <div class="section_2_text_wrap"><p class="section_2_normal">엘씨벤처스에서는&nbsp;</p><p  class="section_2_special">다양한 광고제안</p><p class="section_2_normal">을</p></div>
           <div class="section_2_text_wrap last_wrap"><p class="section_2_special">한번에&nbsp;</p><p class="section_2_normal">받아 보실 수 있습니다</p></div>
           <div class="section_2_image_wrap">
-            <img src="../assets/pages/projects/section_2/01.jpg" alt="marketing platform image 1">
+            <router-link to="/landing/band">
+              <img src="../assets/pages/projects/section_2/01_1.jpg" alt="marketing platform image 1">
+            </router-link>
             <img src="../assets/pages/projects/section_2/02.jpg" alt="marketing platform image 2">
           </div>
           <div class="section_2_image_wrap">
