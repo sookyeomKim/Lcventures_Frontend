@@ -7,17 +7,17 @@
     <div v-if="windowWidth < 920" class="image_wrap_mobile" id="image_wrap_mobile">
 
       <section class="mobile_header">
-        <img src="../assets/pages/landing/band/190618/mobile/header_bg.png" alt="LCVENTURES Band - header image"/>
+        <img src="../../assets/pages/landing/band/190618/mobile/header_bg.png" alt="LCVENTURES Band - header image"/>
 
         <div class="header_contents">
           <div class="header_logo">
             <router-link to="/">
-              <img src="../assets/pages/landing/band/190618/mobile/header_logo.png" alt="LCVENTURES Band - header image"/>
+              <img src="../../assets/pages/landing/band/190618/mobile/header_logo.png" alt="LCVENTURES Band - header image"/>
             </router-link>
           </div>
           <div class="header_text">
             <router-link to="/">
-              <img src="../assets/pages/landing/band/190618/mobile/header_text.png" alt="LCVENTURES Band - header image"/>
+              <img src="../../assets/pages/landing/band/190618/mobile/header_text.png" alt="LCVENTURES Band - header image"/>
             </router-link>
           </div>
         </div>
@@ -25,25 +25,25 @@
       </section>
 
       <section class="mobile_1">
-        <img src="../assets/pages/landing/band/190618/mobile/01.png" alt="LCVENTURES Band - landing image"/>
+        <img src="../../assets/pages/landing/band/190618/mobile/01.png" alt="LCVENTURES Band - landing image"/>
       </section>
 
       <section class="mobile_2">
-        <img src="../assets/pages/landing/band/190618/mobile/02.jpg" alt="LCVENTURES Band - landing image"/>
+        <img src="../../assets/pages/landing/band/190618/mobile/02.jpg" alt="LCVENTURES Band - landing image"/>
       </section>
 
       <section class="mobile_3">
-        <img src="../assets/pages/landing/band/190618/mobile/03.jpg" alt="LCVENTURES Band - landing image"/>
+        <img src="../../assets/pages/landing/band/190618/mobile/03.jpg" alt="LCVENTURES Band - landing image"/>
       </section>
 
       <section class="mobile_4">
-        <img src="../assets/pages/landing/band/190618/mobile/04.png" alt="LCVENTURES Band - landing image"/>
+        <img src="../../assets/pages/landing/band/190618/mobile/04.png" alt="LCVENTURES Band - landing image"/>
         <div class="mobile_form_1">
           <a href="tel:070-8855-8390">
-            <img src="../assets/pages/landing/band/190618/mobile/btn_01_phone.png" alt="LCVENTURES Band - landing phone button">
+            <img src="../../assets/pages/landing/band/190618/mobile/btn_01_phone.png" alt="LCVENTURES Band - landing phone button">
           </a>
           <a href="mailto:biz@lcventures.co.kr">
-            <img src="../assets/pages/landing/band/190618/mobile/btn_02_email.png" alt="LCVENTURES Band - landing email button">
+            <img src="../../assets/pages/landing/band/190618/mobile/btn_02_email.png" alt="LCVENTURES Band - landing email button">
           </a>
         </div>
       </section>
@@ -55,58 +55,58 @@
     <div v-else class="image_wrap_desktop" id="image_wrap_desktop">
 
       <section class="desktop_header">
-        <img src="../assets/pages/landing/band/190618/desktop/header/header_bg_01.png" alt="LCVENTURES Band - header back ground image"/>
+        <img src="../../assets/pages/landing/band/190618/desktop/header/header_bg_01.png" alt="LCVENTURES Band - header back ground image"/>
         <div class="header_contents">
           <div class="header_logo">
             <router-link to="/">
-              <img src="../assets/pages/landing/band/190618/desktop/header/header_logo.png" alt="LCVENTURES Band - header image"/>
+              <img src="../../assets/pages/landing/band/190618/desktop/header/header_logo.png" alt="LCVENTURES Band - header image"/>
             </router-link>
           </div>
         </div>
       </section>
 
       <section class="desktop_1">
-        <img src="../assets/pages/landing/band/190618/desktop/01/01_bg_01.png"/>
+        <img src="../../assets/pages/landing/band/190618/desktop/01/01_bg_01.png"/>
 
         <div class="logo">
           <router-link to="/">
-            <img src="../assets/pages/landing/band/190618/desktop/01/01_logo.png"/>
+            <img src="../../assets/pages/landing/band/190618/desktop/01/01_logo.png"/>
           </router-link>
         </div>
 
         <div class="content">
-          <img src="../assets/pages/landing/band/190618/desktop/01/01_font.png"/>
+          <img src="../../assets/pages/landing/band/190618/desktop/01/01_font.png"/>
         </div>
       </section>
 
       <section class="desktop_2">
-        <img src="../assets/pages/landing/band/190618/desktop/02/02_bg.png"/>
+        <img src="../../assets/pages/landing/band/190618/desktop/02/02_bg.png"/>
         <div class="content">
-          <img src="../assets/pages/landing/band/190618/desktop/02/02_fontbox.png"/>
+          <img src="../../assets/pages/landing/band/190618/desktop/02/02_fontbox.png"/>
         </div>
       </section>
 
       <section class="desktop_3">
-        <img src="../assets/pages/landing/band/190618/desktop/03/03_bg.png"/>
+        <img src="../../assets/pages/landing/band/190618/desktop/03/03_bg.png"/>
         <div class="content">
-          <img src="../assets/pages/landing/band/190618/desktop/03/03_fontbox.png"/>
+          <img src="../../assets/pages/landing/band/190618/desktop/03/03_fontbox.png"/>
         </div>
       </section>
 
       <section class="desktop_4">
-        <img src="../assets/pages/landing/band/190618/desktop/04/04_bg.png"/>
+        <img src="../../assets/pages/landing/band/190618/desktop/04/04_bg.png"/>
         <div class="content_1">
-          <img src="../assets/pages/landing/band/190618/desktop/04/04_content.png"/>
+          <img src="../../assets/pages/landing/band/190618/desktop/04/04_content.png"/>
         </div>
         <div class="content_2">
-          <img src="../assets/pages/landing/band/190618/desktop/04/04_font.png"/>
+          <img src="../../assets/pages/landing/band/190618/desktop/04/04_font.png"/>
         </div>
         <div class="desktop_form_1">
           <a href="tel:070-8855-8390">
-            <img src="../assets/pages/landing/band/190618/mobile/btn_01_phone.png" alt="LCVENTURES Band - landing phone button">
+            <img src="../../assets/pages/landing/band/190618/mobile/btn_01_phone.png" alt="LCVENTURES Band - landing phone button">
           </a>
           <a href="mailto:biz@lcventures.co.kr">
-            <img src="../assets/pages/landing/band/190618/mobile/btn_02_email.png" alt="LCVENTURES Band - landing email button">
+            <img src="../../assets/pages/landing/band/190618/mobile/btn_02_email.png" alt="LCVENTURES Band - landing email button">
           </a>
         </div>
       </section>

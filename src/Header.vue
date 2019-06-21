@@ -1,7 +1,8 @@
 <template>
   <!-- Header + Top Buttons -->
   <header class="header"
-          :style="this.$parent.$data.mix_data.slide_mover" id="header" v-bind:style="handleScroll">
+          :style="this.$parent.$data.mix_data.slide_mover" id="header" v-bind:style="handleScroll"
+          @mouseleave="sub_wrap_off('all')">
     <div class="header_wrap">
       <!-- Logo Area -->
       <div class="head_logo">
@@ -17,7 +18,12 @@
           <router-link class="button_middle_inner" to="/members">MEMBERS</router-link>
         </div>
         <div class="button_middle" @click="$parent.$options.methods.navi_delay">
-          <router-link class="button_middle_inner" to="/projects">PROJECT</router-link>
+          <router-link class="button_middle_inner" to="/projects" ><div @mouseenter="sub_wrap_on(3)">PROJECT</div></router-link>
+          <div :class="sub_nav.class.nav_3">
+            <div class="sub_nav" @mouseleave="sub_wrap_off(3)">
+              <router-link to="/landing/band">SNS & Viral</router-link>
+            </div>
+          </div>
         </div>
         <div class="button_middle" @click="$parent.$options.methods.navi_delay">
           <router-link class="button_middle_inner" to="/company">COMPANY</router-link>
@@ -39,7 +45,13 @@
     name: 'app-header',
     data: function () {
       return {
-        windowWidth: window.innerWidth
+        windowWidth: window.innerWidth,
+        sub_nav: {
+          nav_3: false,
+          class: {
+            nav_3: 'sub_wrap_off'
+          }
+        }
       }
     },
     mounted() {
@@ -69,6 +81,27 @@
             this.$el.style.background = ''
           }
         }
+      },
+      sub_wrap_on(num) {
+        if (num == 3) {
+          if (!this.sub_nav.nav_3) {
+            this.sub_nav.nav_3 = !this.sub_nav.nav_3
+            this.sub_nav.class.nav_3 = 'sub_wrap'
+          }
+        }
+      },
+      sub_wrap_off(num) {
+        if (num == 3) {
+          if (this.sub_nav.nav_3) {
+            this.sub_nav.nav_3 = !this.sub_nav.nav_3
+            this.sub_nav.class.nav_3 = 'sub_wrap_off'
+          }
+        } else if (num == 'all') {
+          if (this.sub_nav.nav_3) {
+            this.sub_nav.nav_3 = !this.sub_nav.nav_3
+            this.sub_nav.class.nav_3 = 'sub_wrap_off'
+          }
+        }
       }
     },
     created() {
@@ -92,7 +125,7 @@
     padding: 5px 0;
     /*margin-bottom: -50px;*/
     transition: all 350ms cubic-bezier(.83, .01, .46, .86);
-    overflow: hidden;
+    // overflow: hidden;
     z-index: 9000;
   }
 
@@ -189,6 +222,48 @@
     content: '';
     display: block;
     clear: both;
+  }
+
+  .sub_wrap {
+    position: absolute;
+    color: #fdfdfd;
+    top: calc(100% + 5px);
+    left: 40%;
+    width: 120px;
+    background: rgba(0,0,0,0.7);
+    line-height: 2.5em;
+    transition: all 200ms ease-in;
+  }
+
+  .sub_wrap_off {
+    position: absolute;
+    color: #fdfdfd;
+    top: calc(100% + 5px);
+    left: 25%;
+    width: 120px;
+    line-height: 2.5em;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 200ms ease-in;
+  }
+
+  .sub_nav{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    color: #efefef;
+    //font-weight: bold;
+    margin-right: 15px;
+    transition: all 350ms cubic-bezier(.83, .01, .46, .86);
+    font-family: Impact, sans-serif;
+    a {
+      color: #efefef;
+      transition: all 350ms cubic-bezier(.83, .01, .46, .86);
+      font-family: Impact, sans-serif;
+      &:hover, &:active {
+        color: #aeaeae;
+      }
+    }
   }
 
   /* Header End and Clear float */

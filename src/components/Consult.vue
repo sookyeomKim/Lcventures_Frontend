@@ -3,8 +3,6 @@
        :style="this.$parent.$data.mix_data.slide_mover"
        @click="$parent.$options.methods.only_close">
 
-    <input type="hidden" v-bind:value="where_am_i = 8">
-
     <!-- Main Context on video wrap -->
     <div class="main_title">
       <h2>항상 고객과 함께 합니다</h2>

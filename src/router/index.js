@@ -7,7 +7,8 @@ import About from '@/components/About'
 import Projects from '@/components/Projects'
 import People from '@/components/People'
 import Consult from '@/components/Consult'
-import LandingBand from '@/components/LandingBand'
+import Commerce from '@/components/Commerce'
+import LandingBand from '@/components/advertisement/LandingBand'
 
 Vue.use(Router)
 
@@ -43,6 +44,11 @@ const router = new Router({
       path: '/consult',
       name: 'consult',
       component: Consult
+    },
+    {
+      path: '/commerce',
+      name: 'commerce',
+      component: Commerce
     },
     {
       path: '/landing/band',
