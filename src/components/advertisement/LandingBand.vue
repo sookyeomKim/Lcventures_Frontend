@@ -102,10 +102,10 @@
           <img src="../../assets/pages/landing/band/190618/desktop/04/04_font.png"/>
         </div>
         <div class="desktop_form_1">
-          <a href="tel:070-8855-8390">
+          <a href="tel:070-8855-8390" @click="activation_analysis('phone')">
             <img src="../../assets/pages/landing/band/190618/mobile/btn_01_phone.png" alt="LCVENTURES Band - landing phone button">
           </a>
-          <a href="mailto:biz@lcventures.co.kr">
+          <a href="mailto:biz@lcventures.co.kr" @click="activation_analysis('email')">
             <img src="../../assets/pages/landing/band/190618/mobile/btn_02_email.png" alt="LCVENTURES Band - landing email button">
           </a>
         </div>
@@ -133,8 +133,23 @@
         })
       })
       this.landing_set()
+
+      // 28 June 2019 installed
+      this.install_analysis_script('naver')
     },
     methods: {
+      install_analysis_script(option) {
+        if(option === 'naver') {
+          let naver_script = document.createElement('script')
+          naver_script.setAttribute('src', '//wcs.naver.net/wcslog.js')
+          document.head.appendChild(naver_script)
+        }
+      },
+      activation_analysis(option) {
+        let _nasa={}
+        _nasa['cnv'] = wcs.cnv('4', option)
+        console.log('Naver analysis script is activated by', option)
+      },
       landing_set () {
         this.$parent.$data.mix_data.video_flag = false
         this.$parent.$data.mix_data.header_flag = false
