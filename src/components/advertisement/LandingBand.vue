@@ -590,7 +590,7 @@
       }
 
       .content_1 {
-        width: 70%;
+        width: 85%;
         margin: 33% auto 0;
 
         .desktop_form_1 {
