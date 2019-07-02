@@ -123,7 +123,6 @@
     },
     watch:{
       $route (to, from){
-        console.log(to, from)
         if (to.path.includes('landing')) {
           this.always = true
           this.handleScroll()
