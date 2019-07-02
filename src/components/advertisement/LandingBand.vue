@@ -7,7 +7,7 @@
     <div v-if="windowWidth < 920" class="image_wrap_mobile" id="image_wrap_mobile">
 
       <section class="mobile_header">
-        <img src="../../assets/pages/landing/band/190618/mobile/header_bg.png" alt="LCVENTURES Band - header image"/>
+        <!--<img src="../../assets/pages/landing/band/190618/mobile/header_bg.png" alt="LCVENTURES Band - header image"/>
 
         <div class="header_contents">
           <div class="header_logo">
@@ -22,7 +22,7 @@
                    alt="LCVENTURES Band - header image"/>
             </router-link>
           </div>
-        </div>
+        </div>-->
 
       </section>
 
@@ -161,7 +161,7 @@
     <div v-else class="image_wrap_desktop" id="image_wrap_desktop">
 
       <section class="desktop_header">
-        <img class="header_bar_img"
+        <!--<img class="header_bar_img"
              src="../../assets/pages/landing/band/290619/desktop/00_main/top_bar.png"
              alt="Header back ground image"/>
 
@@ -173,7 +173,7 @@
                    alt="Header image - LCVENTURES"/>
             </router-link>
           </div>
-        </div>
+        </div>-->
 
       </section>
 
@@ -453,12 +453,12 @@
       },
       landing_set() {
         this.$parent.$data.mix_data.video_flag = false
-        this.$parent.$data.mix_data.header_flag = false
+        // this.$parent.$data.mix_data.header_flag = false
       }
     },
     beforeDestroy() {
       this.$parent.$data.mix_data.video_flag = true
-      this.$parent.$data.mix_data.header_flag = true
+      // this.$parent.$data.mix_data.header_flag = true
     }
   }
 </script>
@@ -507,7 +507,9 @@
 
   /* Header section mobile */
   .mobile_header {
-    margin-bottom: -1%;
+    width: 100%;
+    height: 60px;
+    // margin-bottom: -1%;
     .header_contents {
       padding: 0 2%;
       font-size: 0;
@@ -695,6 +697,7 @@
   /* Header section */
   .desktop_header {
     width: 100%;
+    height: 60px;
 
     .header_bar_img {
       position: absolute;
