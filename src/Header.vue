@@ -51,7 +51,8 @@
           class: {
             nav_3: 'sub_wrap_off'
           }
-        }
+        },
+        always: false
       }
     },
     mounted() {
@@ -61,25 +62,35 @@
           that.windowWidth = window.innerWidth
         })
       })
+      if(this.$router.currentRoute.path.includes('landing')) {
+        this.always = true
+        this.handleScroll()
+      } else {
+        this.always = false
+      }
     },
     methods: {
       handleScroll(event) {
-        if(this.windowWidth > 835) {
-          let marge = (window.innerHeight * 0.85 - 70)
-          let scroll = document.body.scrollTop || document.documentElement.scrollTop
-          if (scroll > marge) {
-            this.$el.style.background = 'rgba(0,0,0,0.7)'
+        if (!this.always) {
+          if(this.windowWidth > 835) {
+            let marge = (window.innerHeight * 0.85 - 70)
+            let scroll = document.body.scrollTop || document.documentElement.scrollTop
+            if (scroll > marge) {
+              this.$el.style.background = 'rgba(0,0,0,0.7)'
+            } else {
+              this.$el.style.background = ''
+            }
           } else {
-            this.$el.style.background = ''
+            let marge = (this.windowWidth * 0.85 - 70)
+            let scroll = document.body.scrollTop || document.documentElement.scrollTop
+            if (scroll > marge) {
+              this.$el.style.background = 'rgba(0,0,0,0.7)'
+            } else {
+              this.$el.style.background = ''
+            }
           }
         } else {
-          let marge = (this.windowWidth * 0.85 - 70)
-          let scroll = document.body.scrollTop || document.documentElement.scrollTop
-          if (scroll > marge) {
-            this.$el.style.background = 'rgba(0,0,0,0.7)'
-          } else {
-            this.$el.style.background = ''
-          }
+          this.$el.style.background = 'rgba(0,0,0,0.7)'
         }
       },
       sub_wrap_on(num) {
@@ -109,6 +120,17 @@
     },
     destroyed() {
       window.removeEventListener('scroll', this.handleScroll)
+    },
+    watch:{
+      $route (to, from){
+        console.log(to, from)
+        if (to.path.includes('landing')) {
+          this.always = true
+          this.handleScroll()
+        } else {
+          this.always = false
+        }
+      }
     }
   }
   /* export */
