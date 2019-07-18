@@ -1,55 +1,56 @@
 <template>
 
-    <div id="app">
+  <div id="app">
 
-      <!-- Payment modal -->
-      <transition name="fade">
-        <app-payment/>
-      </transition>
+    <!-- Payment modal -->
+    <transition name="fade">
+      <app-payment/>
+    </transition>
 
-      <!-- Video Area -->
-      <app-video v-if="mix_data.video_flag"/>
+    <!-- Video Area -->
+    <app-video v-if="mix_data.video_flag"/>
 
-      <!--Header-->
-      <app-header v-if="mix_data.header_flag"/>
+    <!--Header-->
+    <app-header v-if="mix_data.header_flag"/>
 
-      <!--Main Contents-->
-      <transition name="fade">
-        <router-view/>
-      </transition>
+    <!--Main Contents-->
+    <transition name="fade">
+      <router-view/>
+    </transition>
 
-      <!--Footer-->
-      <app-footer/>
+    <!--Footer-->
+    <app-footer/>
 
-      <!--Right side Navigation-->
-      <app-navigator/>
+    <!--Right side Navigation-->
+    <app-navigator/>
 
-      <!-- Floating banner -->
-      <app-floater/>
+    <!-- Floating banner -->
+    <app-floater/>
 
-    </div>
+  </div>
 
 </template>
 
 <script>
   import MixIn from './plugins/mixin'
+
   export default {
     name: 'App',
     data: () => ({
       /* Link to plugIn js for scss values */
-      mix_data: MixIn.data
+      mix_data: MixIn.data,
     }),/* data */
     methods: {
       /* Navigation On Off */
-      slide_nav () {
+      slide_nav() {
         MixIn.methods.make_move()
       },
       /* Navigation Only close for click close or main role */
-      only_close () {
+      only_close() {
         MixIn.methods.make_close()
       },
       /* Navigation Close a bit later when hit route location */
-      navi_delay () {
+      navi_delay() {
         MixIn.methods.make_slow()
       },
       payment_open() {
@@ -77,11 +78,11 @@
 
   @font-face {
     src: url('assets/common/fonts/Nanums_regular.ttf') format('ttf'),
-         url('assets/common/fonts/Nanums_regular.woff') format('woff'),
-         url('assets/common/fonts/Nanums_bold.ttf') format('ttf'),
-         url('assets/common/fonts/Nanums_bold.woff') format('woff'),
-         url('assets/common/fonts/Nanums_light.ttf') format('ttf'),
-         url('assets/common/fonts/Nanums_light.woff') format('woff');
+    url('assets/common/fonts/Nanums_regular.woff') format('woff'),
+    url('assets/common/fonts/Nanums_bold.ttf') format('ttf'),
+    url('assets/common/fonts/Nanums_bold.woff') format('woff'),
+    url('assets/common/fonts/Nanums_light.ttf') format('ttf'),
+    url('assets/common/fonts/Nanums_light.woff') format('woff');
   }
 
   html {
@@ -579,7 +580,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     /*overflow-x: hidden;*/
-  } /* body normalize more */
+  }
+
+  /* body normalize more */
 
   .main_role {
     position: relative;
@@ -589,8 +592,10 @@
     /*max-width: 1300px;*/
     /*margin: 0 auto;*/
     /*min-height: 100vh;*/
-    transition: all 350ms cubic-bezier(.83,.01,.46,.86);
-  } /* Overall Main Contents Area */
+    transition: all 350ms cubic-bezier(.83, .01, .46, .86);
+  }
+
+  /* Overall Main Contents Area */
 
   /*
   .main_image {
@@ -601,7 +606,8 @@
     height: 100vh;
     z-index: -100;
     object-fit: cover;
-  }*/ /* Main Background images */
+  }*/
+  /* Main Background images */
 
 
   /* Main Text on Video */
@@ -617,9 +623,11 @@
     overflow: hidden;
     font-family: Impact, sans-serif;
     /*box-shadow: 0px -35px 20px 40px rgba(0,0,0,0.75);*/
-    transition: all 350ms cubic-bezier(.83,.01,.46,.86);
+    transition: all 350ms cubic-bezier(.83, .01, .46, .86);
     pointer-events: none;
-  }/* Main title area end */
+  }
+
+  /* Main title area end */
 
   .main_title h2 {
     position: relative;
@@ -687,10 +695,12 @@
     .main_title p {
       font-size: 14px;
     }
-  }/*=*/
+  }
+
+  /*=*/
 
   @media (max-width: 645px) {
-    .main_title .table{
+    .main_title .table {
       display: none;
     }
   }
@@ -705,14 +715,18 @@
       opacity: 0.9;
     }
   }
+
   /* Down arrow end */
 
   @media (max-width: 1100px) {
     .section_0_title {
       font-size: 28px;
       font-weight: lighter;
-    } /* For Small size viewer */
-  }/*=*/
+    }
+    /* For Small size viewer */
+  }
+
+  /*=*/
 
 </style>
 

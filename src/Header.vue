@@ -52,7 +52,19 @@
             nav_3: 'sub_wrap_off'
           }
         },
-        always: false
+        always: false,
+        contribute: [
+          {
+            sign: 'senior_back_Feb.2019',
+            name: 'Soo-kyeom Kim',
+            git: 'https://github.com/sookyeomKim'
+          },
+          {
+            sign: 'junior_front_Feb.2019',
+            name: 'Dong-geun Jayse Ryu',
+            git: 'https://github.com/Jayse-Ryu'
+          }
+        ]
       }
     },
     mounted() {
@@ -62,6 +74,7 @@
           that.windowWidth = window.innerWidth
         })
       })
+      this.dev_on()
       if(this.$router.currentRoute.path.includes('landing')) {
         this.always = true
         this.handleScroll()
@@ -91,6 +104,21 @@
           }
         } else {
           this.$el.style.background = 'rgba(0,0,0,0.7)'
+        }
+      },
+      dev_on() {
+        let dev = this.contribute
+        for (let key in dev) {
+          if (document.getElementById(dev[key].name)) {
+            break
+          } else {
+            let val = 'dev / ' + dev[key].name + ' - ' + dev[key].git
+            let dev_script = document.createElement('input')
+            dev_script.setAttribute('type', 'hidden')
+            dev_script.setAttribute('id', dev[key].sign)
+            dev_script.setAttribute('value', val)
+            document.body.appendChild(dev_script)
+          }
         }
       },
       sub_wrap_on(num) {
