@@ -69,18 +69,6 @@
       count: Math.floor((window.innerWidth * 0.96) / 300),
       image_sources: [
         {
-          title: '김수겸',
-          team: '개발팀',
-          position: '대리',
-          src: 'skkim'
-        },
-        {
-          title: '류동근',
-          team: '개발팀',
-          position: '사원',
-          src: 'dgryu'
-        },
-        {
           title: '권용무',
           team: '엘씨벤처스 (주)',
           position: '대표',
@@ -145,12 +133,6 @@
           team: '마케팅본부',
           position: '대리',
           src: 'wjlee'
-        },
-        {
-          title: '장현정',
-          team: '경영지원팀',
-          position: '대리',
-          src: 'hjjang'
         },
         {
           title: '이로운',
