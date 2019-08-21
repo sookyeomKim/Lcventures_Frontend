@@ -3,11 +3,6 @@
        :style="this.$parent.$data.mix_data.slide_mover"
        @click="$parent.$options.methods.only_close">
 
-    <input type="hidden" v-bind:value="where_am_i = 4">
-    <!--
-    <img class="main_image" src="../assets/pages/people/people.jpg" alt="page background image">
-    -->
-
     <!-- Main Context on video wrap -->
     <div class="main_title">
       <h2>좋은 마케팅, 더 좋은 사람들</h2>
@@ -28,7 +23,10 @@
             <li v-for="member in item" class="memberList">
               <div class="member_team">- {{member.team}}</div>
               <div class="member_title">{{member.title}} / {{member.position}}</div>
-              <img :src="member.src" :data-src="member.src" :alt="member.title">
+              <img :src="key_to_url(member.src)"
+                   :data-src="key_to_url(member.src)"
+                   :alt="member.title + ' ' + member.position + '님'"
+              >
               <div class="barrier"></div>
             </li>
           </ul>
@@ -43,7 +41,7 @@
 <script>
   export default {
     name: 'people',
-    mounted () {
+    mounted() {
       /* Calculate browser width for handle video section */
       let that = this
       this.$nextTick(function () {
@@ -56,14 +54,14 @@
       let arr = this.image_sources
       let n = arr.length
       let temp = []
-      for (let i = 0; i < n-1; i++ ) {
+      for (let i = 0; i < n - 1; i++) {
         /* The following line removes one random element from arr */
         /* and pushes it onto tempArr */
-        temp.push(arr.splice(Math.floor(Math.random()*arr.length),1)[0])
+        temp.push(arr.splice(Math.floor(Math.random() * arr.length), 1)[0])
       }
-       /* Push the remaining item onto tempArr */
+      /* Push the remaining item onto tempArr */
       temp.push(arr[0])
-      arr=temp
+      arr = temp
       this.image_sources = arr
     },
     data: () => ({
@@ -74,196 +72,159 @@
           title: '권용무',
           team: '엘씨벤처스 (주)',
           position: '대표',
-          src: require('../assets/pages/people/ymkwon.jpg')
+          src: 'ymkwon'
         },
         {
           title: '이세호',
           team: '마케팅본부',
           position: '부장',
-          src: require('../assets/pages/people/shlee.jpg')
+          src: 'shlee'
         },
         {
           title: '김홍식',
           team: '마케팅본부',
           position: '차장',
-          src: require('../assets/pages/people/hskim.jpg')
+          src: 'hskim'
         },
         {
           title: '이효진',
           team: '마케팅본부',
           position: '차장',
-          src: require('../assets/pages/people/hjlee.jpg')
+          src: 'hjlee'
         },
         {
           title: '이호원',
           team: '마케팅본부',
           position: '차장',
-          src: require('../assets/pages/people/hwlee.jpg')
+          src: 'hwlee'
         },
         {
           title: '하재륜',
           team: '마케팅본부',
-          position: '대리',
-          src: require('../assets/pages/people/jrha.jpg')
+          position: '과장',
+          src: 'jrha'
         },
         {
           title: '공경환',
           team: '마케팅본부',
           position: '과장',
-          src: require('../assets/pages/people/khkong.jpg')
+          src: 'khkong'
         },
         {
           title: '진승우',
           team: '마케팅본부',
           position: '과장',
-          src: require('../assets/pages/people/swjin.jpg')
+          src: 'swjin'
         },
         {
           title: '김민서',
           team: '마케팅본부',
           position: '대리',
-          src: require('../assets/pages/people/mskim.jpg')
+          src: 'mskim'
         },
         {
           title: '이상아',
           team: '마케팅본부',
           position: '대리',
-          src: require('../assets/pages/people/salee.jpg')
+          src: 'salee'
         },
         {
           title: '이우준',
           team: '마케팅본부',
           position: '대리',
-          src: require('../assets/pages/people/wjlee.jpg')
-        },
-        {
-          title: '김수겸',
-          team: '개발팀',
-          position: '대리',
-          src: require('../assets/pages/people/skkim.jpg')
-        },
-        {
-          title: '장현정',
-          team: '경영지원팀',
-          position: '대리',
-          src: require('../assets/pages/people/hjjang.jpg')
+          src: 'wjlee'
         },
         {
           title: '이로운',
           team: '마케팅본부',
           position: '주임',
-          src: require('../assets/pages/people/rwlee.jpg')
+          src: 'rwlee'
         },
         {
           title: '변두환',
           team: '마케팅본부',
-          position: '주임',
-          src: require('../assets/pages/people/dhbeon.jpg')
+          position: '대리',
+          src: 'dhbeon'
         },
-        // {
-        //   title: '김성식',
-        //   team: '디자인팀',
-        //   position: '주임',
-        //   src: require('../assets/pages/people/sskim.jpg')
-        // },
         {
           title: '박재현',
           team: '영상제작팀',
           position: '대리',
-          src: require('../assets/pages/people/jhpark.jpg')
+          src: 'jhpark'
         },
         {
           title: '여창훈',
           team: '영상제작팀',
           position: '대리',
-          src: require('../assets/pages/people/chyeo.jpg')
-        },
-        {
-          title: '류동근',
-          team: '개발팀',
-          position: '사원',
-          src: require('../assets/pages/people/dgryu.jpg')
+          src: 'chyeo'
         },
         {
           title: '이수영',
           team: '경영지원팀',
-          position: '사원',
-          src: require('../assets/pages/people/sylee.jpg')
+          position: '주임',
+          src: 'sylee'
         },
         {
           title: '조미경',
           team: '디자인팀',
           position: '사원',
-          src: require('../assets/pages/people/mkjo.jpg')
+          src: 'mkjo'
         },
         {
           title: '조우석',
           team: '마케팅본부',
           position: '사원',
-          src: require('../assets/pages/people/wsjo.jpg')
+          src: 'wsjo'
         },
         {
           title: '박정수',
           team: '마케팅본부',
           position: '사원',
-          src: require('../assets/pages/people/jspark.jpg')
+          src: 'jspark'
         },
         {
           title: '이주현',
           team: '마케팅본부',
           position: '사원',
-          src: require('../assets/pages/people/jhlee.jpg')
+          src: 'jhlee'
         },
         {
           title: '오주은',
           team: '마케팅본부',
           position: '사원',
-          src: require('../assets/pages/people/jeoh.jpg')
+          src: 'jeoh'
         },
         {
           title: '전현정',
           team: '디자인팀',
-          position: '사원',
-          src: require('../assets/pages/people/default.png')
+          position: '주임',
+          src: ''
         },
         {
           title: '유정훈',
           team: '마케팅본부',
           position: '사원',
-          src: require('../assets/pages/people/default.png')
+          src: ''
         },
-        // {
-        //   title: '전연우',
-        //   team: '마케팅본부',
-        //   position: '사원',
-        //   src: require('../assets/pages/people/default.png')
-        // },
         {
           title: '장민경',
           team: '디자인팀',
           position: '사원',
-          src: require('../assets/pages/people/default.png')
+          src: ''
         },
-        // {
-        //   title: '배기오',
-        //   team: 'HNM',
-        //   position: '차장',
-        //   src: require('../assets/pages/people/default.png')
-        // },
-        // {
-        //   title: '이지은',
-        //   team: 'HNM',
-        //   position: '주임',
-        //   src: require('../assets/pages/people/jelee.jpg')
-        // },
-        // {
-        //   title: '이진영',
-        //   team: 'HNM',
-        //   position: '사원',
-        //   src: require('../assets/pages/people/default.png')
-        // },
       ]
     }),
+    methods: {
+      key_to_url(key) {
+        let url = ''
+        if (key) {
+          url = 'https://cf.lcventures.net/assets/images/people/' + key + '.jpg'
+        } else {
+          url = 'https://cf.lcventures.net/assets/images/people/default.png'
+        }
+        return url
+      }
+    },
     computed: {
       person_counter: function () {
         let tempArry = []
@@ -320,6 +281,7 @@
       width: 320px;
       z-index: 500;
       padding: 20px 0 0 5%;
+
       div {
         padding: 4px 0;
         font-size: 17px;
@@ -345,14 +307,17 @@
       max-width: 1300px;
       margin: 0 auto;
       padding: 65px 2%;
+
       ul {
         display: inline-block;
+
         .memberList {
           float: left;
           width: 255px;
           transition: all 200ms ease-in-out;
           position: relative;
           z-index: 1000;
+
           img {
             position: relative;
             max-width: 100%;
@@ -363,6 +328,7 @@
             z-index: 40;
             transition: all 200ms ease-in-out;
           }
+
           .barrier {
             width: 100%;
             position: absolute;
@@ -370,24 +336,29 @@
             z-index: 50;
             top: 0;
           }
+
           &:hover, &:active {
             position: relative;
             z-index: 2000;
             transform: scale(1.05);
+
             img {
               border-radius: 10px;
             }
           }
         }
       }
+
       &:after {
         content: " ";
         display: table;
         clear: both;
       }
+
       &.odd {
         text-align: right;
       }
+
       &.even {
         text-align: left;
       }

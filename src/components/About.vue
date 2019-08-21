@@ -126,7 +126,7 @@
       windowWidth: window.innerWidth,
       // eslint-disable-next-line
       // Kakao Js app key
-      appKey: 'c7907ca3d547898728698e99b7c45d01',
+      appKey: 'b1d4cf50a04747854633115be07f7ee8',
       // Starting Latitude, Longitude
       center: {lat: 37.543907, lng: 127.046351},
       // Zoom level
