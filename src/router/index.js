@@ -9,6 +9,7 @@ import People from '@/components/People'
 import Consult from '@/components/Consult'
 import Commerce from '@/components/Commerce'
 import LandingBand from '@/components/advertisement/LandingBand'
+import LandingKakao from '@/components/advertisement/LandingKakao'
 
 Vue.use(Router)
 
@@ -54,6 +55,11 @@ const router = new Router({
       path: '/landing/band',
       name: 'landing_band',
       component: LandingBand
+    },
+    {
+      path: '/landing/kakao',
+      name: 'landing_kakao',
+      component: LandingKakao
     }
   ],
   mode: 'history',

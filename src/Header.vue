@@ -19,10 +19,13 @@
         </div>
         <div class="button_middle" @click="$parent.$options.methods.navi_delay">
           <router-link class="button_middle_inner" to="/projects" ><div @mouseenter="sub_wrap_on(3)">PROJECT</div></router-link>
-          <div :class="sub_nav.class.nav_3">
-            <div class="sub_nav" @mouseleave="sub_wrap_off(3)">
+          <div :class="sub_nav.class.nav_3" @mouseleave="sub_wrap_off(3)">
+            <div class="sub_nav">
               <router-link to="/landing/band">SNS & Viral</router-link>
             </div>
+            <!--<div class="sub_nav">
+              <router-link to="/landing/kakao">Kakao</router-link>
+            </div>-->
           </div>
         </div>
         <div class="button_middle" @click="$parent.$options.methods.navi_delay">
