@@ -21,10 +21,10 @@
           <router-link class="button_middle_inner" to="/projects" ><div @mouseenter="sub_wrap_on(3)">PROJECT</div></router-link>
           <div :class="sub_nav.class.nav_3" @mouseleave="sub_wrap_off(3)">
             <div class="sub_nav">
-              <router-link to="/landing/band">SNS & Viral</router-link>
+              <router-link to="/landing/kakao">Kakao</router-link>
             </div>
             <div class="sub_nav">
-              <router-link to="/landing/kakao">Kakao</router-link>
+              <router-link to="/landing/band">Naver Band</router-link>
             </div>
           </div>
         </div>
@@ -304,11 +304,16 @@
     width: 100%;
     height: 40px;
     color: #efefef;
+    text-align: left;
+    padding: 0 0 0 15px;
     //font-weight: bold;
     margin-right: 15px;
     transition: all 350ms cubic-bezier(.83, .01, .46, .86);
     font-family: Impact, sans-serif;
     a {
+      display: block;
+      width: 100%;
+      height: 100%;
       color: #efefef;
       transition: all 350ms cubic-bezier(.83, .01, .46, .86);
       font-family: Impact, sans-serif;

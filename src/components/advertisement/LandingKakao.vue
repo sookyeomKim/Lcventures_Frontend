@@ -439,8 +439,8 @@
         top: 0;
 
         .content_1 {
-          width: 59%;
-          margin: 7% auto 0;
+          width: 58%;
+          margin: 0 auto 0;
         }
       }
     }

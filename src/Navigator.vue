@@ -26,10 +26,10 @@
         <router-link class="small_nav" to="/landing/band">- SA & DA</router-link>
       </li>-->
       <li>
-        <router-link class="small_nav" to="/landing/band">- SNS & Viral</router-link>
+        <router-link class="small_nav" to="/landing/kakao">- Kakao</router-link>
       </li>
       <li>
-        <router-link class="small_nav" to="/landing/kakao">- Kakao</router-link>
+        <router-link class="small_nav" to="/landing/band">- Naver Band</router-link>
       </li>
       <!--<li>
         <router-link class="small_nav" to="/landing/band">- Media</router-link>
