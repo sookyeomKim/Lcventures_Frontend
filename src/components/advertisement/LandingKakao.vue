@@ -3,370 +3,97 @@
        :style="this.$parent.$data.mix_data.slide_mover"
        @click="$parent.$options.methods.only_close">
 
-    <!-- Mobile wrap -->
-    <div v-if="windowWidth < 920" class="image_wrap_mobile" id="image_wrap_mobile">
-
-      <section class="mobile_header">
-        <!--<img src="../../assets/pages/landing/band/190618/mobile/header_bg.png" alt="LCVENTURES Band - header image"/>
-
-        <div class="header_contents">
-          <div class="header_logo">
-            <router-link to="/">
-              <img src="../../assets/pages/landing/band/190618/mobile/header_logo.png"
-                   alt="LCVENTURES Band - header image"/>
-            </router-link>
-          </div>
-          <div class="header_text">
-            <router-link to="/">
-              <img src="../../assets/pages/landing/band/190618/mobile/header_text.png"
-                   alt="LCVENTURES Band - header image"/>
-            </router-link>
-          </div>
-        </div>-->
-
-      </section>
-
-      <section class="mobile_main">
-        <img class="mobile_main_img"
-             src="../../assets/pages/landing/band/290619/mobile/00_main/mobile_main.jpg"
-             alt="Introducing band advertisement product.">
-
-        <div class="main_button_wrap">
-          <div class="main_buttons">
-            <button type="button" class="desktop_button"
-                    @click="main_activation(1)"
-                    @mouseover="main_button('in', 1)"
-                    @mouseleave="main_button('out', 1)">
-              <img v-if="page.activated == 1 || page.hover == 1"
-                   src="../../assets/pages/landing/band/290619/mobile/00_main/btn/btn_on01.png"
-                   alt="Social button on">
-              <img v-else
-                   src="../../assets/pages/landing/band/290619/mobile/00_main/btn/btn_off01.png"
-                   alt="Social button off">
-            </button>
-            <button type="button" class="desktop_button"
-                    @click="main_activation(2)"
-                    @mouseover="main_button('in', 2)"
-                    @mouseleave="main_button('out', 2)">
-              <img v-if="page.activated == 2 || page.hover == 2"
-                   src="../../assets/pages/landing/band/290619/mobile/00_main/btn/btn_on02.png"
-                   alt="Feed button on">
-              <img v-else
-                   src="../../assets/pages/landing/band/290619/mobile/00_main/btn/btn_off02.png"
-                   alt="Feed button">
-            </button>
-            <button type="button" class="desktop_button"
-                    @click="main_activation(3)"
-                    @mouseover="main_button('in', 3)"
-                    @mouseleave="main_button('out', 3)">
-              <img v-if="page.activated == 3 || page.hover == 3"
-                   src="../../assets/pages/landing/band/290619/mobile/00_main/btn/btn_on03.png"
-                   alt="Display button on">
-              <img v-else
-                   src="../../assets/pages/landing/band/290619/mobile/00_main/btn/btn_off03.png"
-                   alt="Display button">
-            </button>
-          </div>
-        </div>
-
-      </section>
-
-      <transition name="fade">
-        <div class="active_wrap active_1" v-if="page.activated == 1" key="active_1">
-
-          <section class="mobile_1">
-            <img src="../../assets/pages/landing/band/290619/mobile/01_social/social_01.png"/>
-          </section>
-
-          <section class="mobile_2">
-            <img src="../../assets/pages/landing/band/290619/mobile/01_social/social_02.jpg"/>
-          </section>
-
-          <section class="mobile_3">
-            <img src="../../assets/pages/landing/band/290619/mobile/01_social/social_03.png"/>
-          </section>
-
-        </div>
-
-        <div class="active_wrap active_2" v-if="page.activated == 2" key="active_2">
-
-          <section class="mobile_1">
-            <img src="../../assets/pages/landing/band/290619/mobile/02_native/01.jpg"/>
-          </section>
-
-          <section class="mobile_2">
-            <img src="../../assets/pages/landing/band/290619/mobile/02_native/02.jpg"/>
-          </section>
-
-          <section class="mobile_3">
-            <img src="../../assets/pages/landing/band/290619/mobile/02_native/03.jpg"/>
-          </section>
-
-        </div>
-
-        <div class="active_wrap active_3" v-if="page.activated == 3" key="active_3">
-
-          <section class="mobile_1">
-            <img src="../../assets/pages/landing/band/290619/mobile/03_display/01.jpg"/>
-          </section>
-
-          <section class="mobile_2">
-            <img src="../../assets/pages/landing/band/290619/mobile/03_display/02.jpg"/>
-          </section>
-
-          <section class="mobile_3">
-            <img src="../../assets/pages/landing/band/290619/mobile/03_display/03.jpg"/>
-          </section>
-
-        </div>
-      </transition>
-
-
-      <section class="mobile_inquiry">
-        <img src="../../assets/pages/landing/band/290619/mobile/00_main/inquiry/inquiry_bg.png"/>
-
-        <div class="contents">
-          <!--<div class="header">
-            <img src="../../assets/pages/landing/band/290619/mobile/00_main/inquiry/inquiry_font.png"/>
-          </div>-->
-
-          <div class="content_1">
-
-            <div class="desktop_form_1">
-
-              <div class="form_button">
-                <a href="tel:070-8855-8390" @click="activation_analysis('mobile-phone')">
-                  <img src="../../assets/pages/landing/band/290619/mobile/00_main/inquiry/btn_tell.png"
-                       alt="LCVENTURES Band - landing phone button">
-                </a>
-              </div>
-              <div class="form_button">
-                <a href="mailto:biz@lcventures.co.kr" @click="activation_analysis('mobile-email')">
-                  <img src="../../assets/pages/landing/band/290619/mobile/00_main/inquiry/btn_email.png"
-                       alt="LCVENTURES Band - landing email button">
-                </a>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-    </div>
-    <!-- /Mobile wrap -->
-
     <!-- Desktop wrap -->
-    <div v-else class="image_wrap_desktop" id="image_wrap_desktop">
+    <div class="image_wrap_desktop" id="image_wrap_desktop">
 
       <section class="desktop_header">
-        <!--<img class="header_bar_img"
-             src="../../assets/pages/landing/band/290619/desktop/00_main/top_bar.png"
-             alt="Header back ground image"/>
-
-        <div class="header_contents">
-          <div class="header_logo">
-            <router-link to="/">
-              <img class="header_logo_img"
-                   src="../../assets/pages/landing/band/290619/desktop/00_main/top_logo.png"
-                   alt="Header image - LCVENTURES"/>
-            </router-link>
-          </div>
-        </div>-->
-
       </section>
 
       <section class="desktop_main">
         <img class="desktop_main_img"
-             src="../../assets/pages/landing/band/290619/desktop/00_main/main_bg.png"
+             src="../../assets/pages/landing/kakao/190320/desktop/00_main/bg_main.jpg"
              alt="Introducing band advertisement product.">
 
-        <div class="main_button_wrap">
-          <div class="main_buttons">
-            <button type="button" class="desktop_button"
-                    @click="main_activation(1)"
-                    @mouseover="main_button('in', 1)"
-                    @mouseleave="main_button('out', 1)">
-              <img v-if="page.activated == 1 || page.hover == 1"
-                   src="../../assets/pages/landing/band/290619/desktop/00_main/btn/btn_on01.png"
-                   alt="Social button on">
-              <img v-else
-                   src="../../assets/pages/landing/band/290619/desktop/00_main/btn/btn_off01.png"
-                   alt="Social button off">
-            </button>
-            <button type="button" class="desktop_button"
-                    @click="main_activation(2)"
-                    @mouseover="main_button('in', 2)"
-                    @mouseleave="main_button('out', 2)">
-              <img v-if="page.activated == 2 || page.hover == 2"
-                   src="../../assets/pages/landing/band/290619/desktop/00_main/btn/btn_on02.png"
-                   alt="Feed button on">
-              <img v-else
-                   src="../../assets/pages/landing/band/290619/desktop/00_main/btn/btn_off02.png"
-                   alt="Feed button">
-            </button>
-            <button type="button" class="desktop_button"
-                    @click="main_activation(3)"
-                    @mouseover="main_button('in', 3)"
-                    @mouseleave="main_button('out', 3)">
-              <img v-if="page.activated == 3 || page.hover == 3"
-                   src="../../assets/pages/landing/band/290619/desktop/00_main/btn/btn_on03.png"
-                   alt="Display button on">
-              <img v-else
-                   src="../../assets/pages/landing/band/290619/desktop/00_main/btn/btn_off03.png"
-                   alt="Display button">
-            </button>
-          </div>
+        <div class="contents">
+          <img
+            class="desktop_main_inner"
+            src="../../assets/pages/landing/kakao/190320/desktop/00_main/main.png"
+            alt="Introducing band advertisement product.">
         </div>
-
       </section>
 
       <transition name="fade">
-        <div class="active_wrap active_1" v-if="page.activated == 1" key="active_1">
+        <div class="active_wrap active_1" key="active_1">
 
           <section class="desktop_1">
-            <img src="../../assets/pages/landing/band/290619/desktop/01_social/01/social_bg01(1920x948).png"/>
+            <img src="../../assets/pages/landing/kakao/190320/desktop/01_section/bg_01.jpg"/>
 
             <div class="contents">
-              <div class="header">
-                <img src="../../assets/pages/landing/band/290619/desktop/01_social/01/social_font01(615x213).png"/>
-              </div>
               <div class="content_1">
-                <img src="../../assets/pages/landing/band/290619/desktop/01_social/01/social_box01(1068x545).png"/>
+                <img src="../../assets/pages/landing/kakao/190320/desktop/01_section/01.png"/>
               </div>
             </div>
           </section>
 
           <section class="desktop_2">
-            <img src="../../assets/pages/landing/band/290619/desktop/01_social/02/social_bg02(1920x1631).png"/>
+            <img src="../../assets/pages/landing/kakao/190320/desktop/02_section/bg_02.jpg"/>
+
             <div class="contents">
-              <div class="header">
-                <img src="../../assets/pages/landing/band/290619/desktop/01_social/02/social_font02.png"/>
-              </div>
               <div class="content_1">
-                <img src="../../assets/pages/landing/band/290619/desktop/01_social/02/social_box02(984x1259).png"/>
+                <img src="../../assets/pages/landing/kakao/190320/desktop/02_section/02.png"/>
               </div>
             </div>
           </section>
 
           <section class="desktop_3">
-            <img src="../../assets/pages/landing/band/290619/desktop/01_social/03/social_bg03(1920x808).png"/>
+            <img src="../../assets/pages/landing/kakao/190320/desktop/03_section/bg_03.jpg"/>
 
             <div class="contents">
-
-              <div class="header">
-                <img src="../../assets/pages/landing/band/290619/desktop/01_social/03/social_font03.png"/>
-              </div>
-
               <div class="content_1">
-                <img src="../../assets/pages/landing/band/290619/desktop/01_social/03/social_box03.png"/>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
-        <div class="active_wrap active_2" v-if="page.activated == 2" key="active_2">
-
-          <section class="desktop_1">
-            <img src="../../assets/pages/landing/band/290619/desktop/02_native/01/native_bg01.png"/>
-
-            <div class="contents">
-              <div class="header">
-                <img src="../../assets/pages/landing/band/290619/desktop/02_native/01/native_font01.png"/>
-              </div>
-              <div class="content_1">
-                <img src="../../assets/pages/landing/band/290619/desktop/02_native/01/native_box01.png"/>
+                <img src="../../assets/pages/landing/kakao/190320/desktop/03_section/03.png"/>
               </div>
             </div>
           </section>
 
-          <section class="desktop_2">
-            <img src="../../assets/pages/landing/band/290619/desktop/02_native/02/native_bg02.png"/>
+          <section class="desktop_4">
+            <img src="../../assets/pages/landing/kakao/190320/desktop/04_1_section/bg_04_1.jpg"/>
+
             <div class="contents">
-              <div class="header">
-                <img src="../../assets/pages/landing/band/290619/desktop/02_native/02/native_font02.png"/>
-              </div>
               <div class="content_1">
-                <img src="../../assets/pages/landing/band/290619/desktop/02_native/02/native_box02.png"/>
+                <img src="../../assets/pages/landing/kakao/190320/desktop/04_1_section/04_1.png"/>
               </div>
             </div>
           </section>
 
-          <section class="desktop_3">
-            <img src="../../assets/pages/landing/band/290619/desktop/02_native/03/native_bg03.png"/>
+          <section class="desktop_5">
+            <img src="../../assets/pages/landing/kakao/190320/desktop/04_2_section/bg_04_2.jpg"/>
 
             <div class="contents">
-
-              <div class="header">
-                <img src="../../assets/pages/landing/band/290619/desktop/02_native/03/native_font03.png"/>
-              </div>
-
               <div class="content_1">
-                <img src="../../assets/pages/landing/band/290619/desktop/02_native/03/native_box03.png"/>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
-        <div class="active_wrap active_3" v-if="page.activated == 3" key="active_3">
-
-          <section class="desktop_1">
-            <img src="../../assets/pages/landing/band/290619/desktop/03_display/01/display_bg01.png"/>
-
-            <div class="contents">
-              <div class="header">
-                <img src="../../assets/pages/landing/band/290619/desktop/03_display/01/display_font01.png"/>
-              </div>
-              <div class="content_1">
-                <img src="../../assets/pages/landing/band/290619/desktop/03_display/01/display_box01.png"/>
+                <img src="../../assets/pages/landing/kakao/190320/desktop/04_2_section/04_2.png"/>
               </div>
             </div>
           </section>
 
-          <section class="desktop_2">
-            <img src="../../assets/pages/landing/band/290619/desktop/03_display/02/display_bg02.png"/>
-            <div class="contents">
-              <div class="header">
-                <img src="../../assets/pages/landing/band/290619/desktop/03_display/02/display_font02.png"/>
-              </div>
-              <div class="content_1">
-                <img src="../../assets/pages/landing/band/290619/desktop/03_display/02/display_box02.png"/>
-              </div>
-            </div>
-          </section>
-
-          <section class="desktop_3">
-            <img src="../../assets/pages/landing/band/290619/desktop/03_display/03/display_bg03.png"/>
+          <section class="desktop_6">
+            <img src="../../assets/pages/landing/kakao/190320/desktop/04_3_section/bg_04_3.jpg"/>
 
             <div class="contents">
-
-              <div class="header">
-                <img src="../../assets/pages/landing/band/290619/desktop/03_display/03/display_font03.png"/>
-              </div>
-
               <div class="content_1">
-                <img src="../../assets/pages/landing/band/290619/desktop/03_display/03/display_box03.png"/>
+                <img src="../../assets/pages/landing/kakao/190320/desktop/04_3_section/04_3.png"/>
               </div>
-
             </div>
-
           </section>
 
         </div>
       </transition>
+
       <section class="desktop_inquiry">
         <img src="../../assets/pages/landing/band/290619/desktop/00_main/inquiry/inquiry_bg.png"/>
 
         <div class="contents">
           <div class="header">
-            <img src="../../assets/pages/landing/band/290619/desktop/00_main/inquiry/inquiry_font.png"/>
+            <img src="../../assets/pages/landing/kakao/190320/desktop/05_section/inquiry_font.png"/>
           </div>
 
           <div class="content_1">
@@ -375,14 +102,14 @@
 
               <div class="form_button">
                 <a href="tel:070-8855-8390" @click="activation_analysis('desktop-phone')">
-                  <img src="../../assets/pages/landing/band/290619/desktop/00_main/inquiry/btn_tell.png"
-                       alt="LCVENTURES Band - landing phone button">
+                  <img src="../../assets/pages/landing/kakao/190320/desktop/05_section/btn_tell_kakao.png"
+                       alt="LCVENTURES Kakao - landing phone button">
                 </a>
               </div>
               <div class="form_button">
                 <a href="mailto:biz@lcventures.co.kr" @click="activation_analysis('desktop-email')">
-                  <img src="../../assets/pages/landing/band/290619/desktop/00_main/inquiry/btn_email.png"
-                       alt="LCVENTURES Band - landing email button">
+                  <img src="../../assets/pages/landing/kakao/190320/desktop/05_section/btn_email_kakao.png"
+                       alt="LCVENTURES Kakao - landing email button">
                 </a>
               </div>
 
@@ -490,199 +217,6 @@
 
   /*
   ====================================================
-  Mobile section
-  ====================================================
-  */
-
-  /* Mobile wrap */
-  #image_wrap_mobile {
-    position: relative;
-    width: 100%;
-    min-width: 320px;
-    max-width: 950px;
-    margin: 0 auto;
-  }
-
-  /* /Mobile wrap */
-
-  /* Header section mobile */
-  .mobile_header {
-    width: 100%;
-    height: 60px;
-    // margin-bottom: -1%;
-    .header_contents {
-      padding: 0 2%;
-      font-size: 0;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      margin-top: 1.5%;
-
-      .header_logo {
-        width: 50%;
-        display: inline-block;
-        vertical-align: middle;
-        text-align: left;
-
-        img {
-          width: 19%;
-        }
-      }
-
-      .header_text {
-        width: 50%;
-        display: inline-block;
-        vertical-align: middle;
-        text-align: right;
-
-        img {
-          width: 45%;
-        }
-      }
-    }
-  }
-  /* /Header section mobile */
-
-  .mobile_main {
-    .mobile_main_img {
-      // position: relative;
-    }
-
-    .main_button_wrap {
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-
-      .main_buttons {
-        /*position: relative;*/
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 5px;
-
-        .desktop_button {
-          position: relative;
-          width: 33.3%;
-          margin: 0 auto;
-          border: none;
-          background: transparent;
-          cursor: pointer;
-          padding: 0 5px;
-
-          img {
-            position: relative;
-            top: 0;
-            left: 0;
-          }
-        }
-      }
-    }
-  }
-
-  .mobile_inquiry {
-    position: relative;
-
-    .contents {
-      position: absolute;
-      width: 100%;
-      top: 0;
-
-      .header {
-        width: 10%;
-        margin: 0 auto 0;
-      }
-
-      .content_1 {
-        width: 85%;
-        margin: 33% auto 0;
-
-        .desktop_form_1 {
-          position: relative;
-
-          .form_button {
-            display: inline-block;
-            width: 50%;
-          }
-        }
-      }
-    }
-  }
-
-
-  /*
-  ===========
-  Active 1
-  ===========
-  */
-  .active_1 {
-    .mobile_1 {
-      position: relative;
-
-      .contents {
-        position: absolute;
-        width: 100%;
-        top: 0;
-
-        .header {
-          width: 32%;
-          margin: 6.6% auto 0;
-        }
-
-        .content_1 {
-          width: 55.6%;
-          margin: 3.9% auto 0;
-        }
-      }
-    }
-
-    .mobile_2 {
-      position: relative;
-
-      .contents {
-        position: absolute;
-        width: 100%;
-        top: 0;
-
-        .header {
-          width: 17.9%;
-          margin: 6.6% auto 0;
-        }
-
-        .content_1 {
-          width: 50%;
-          margin: 4.4% auto 0;
-        }
-      }
-    }
-
-    .mobile_3 {
-      position: relative;
-
-      .contents {
-        position: absolute;
-        width: 100%;
-        top: 0;
-
-        .header {
-          width: 17.8%;
-          margin: 7% auto 0;
-        }
-
-        .content_1 {
-          width: 50%;
-          margin: 3.8% auto 0;
-        }
-      }
-    }
-  }
-
-  /*
-  ====================================================
-   /Mobile section
-  ====================================================
-  */
-
-  /*
-  ====================================================
   Desktop section
   ====================================================
   */
@@ -744,8 +278,18 @@
   /* /Header section */
 
   .desktop_main {
-    .desktop_main_img {
-      // position: relative;
+    position: relative;
+    .contents {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      margin: 0 auto;
+
+      .desktop_main_inner {
+        width: 58%;
+        margin: 0 auto;
+      }
     }
 
     .main_button_wrap {
@@ -754,7 +298,6 @@
       bottom: 0;
 
       .main_buttons {
-        /*position: relative;*/
         width: 50%;
         margin: 0 auto;
 
@@ -820,14 +363,9 @@
         width: 100%;
         top: 0;
 
-        .header {
-          width: 32%;
-          margin: 6.6% auto 0;
-        }
-
         .content_1 {
-          width: 55.6%;
-          margin: 3.9% auto 0;
+          width: 58%;
+          margin: 0 auto 0;
         }
       }
     }
@@ -840,14 +378,9 @@
         width: 100%;
         top: 0;
 
-        .header {
-          width: 17.9%;
-          margin: 6.6% auto 0;
-        }
-
         .content_1 {
-          width: 50%;
-          margin: 4.4% auto 0;
+          width: 58%;
+          margin: 0% auto 0;
         }
       }
     }
@@ -860,148 +393,9 @@
         width: 100%;
         top: 0;
 
-        .header {
-          width: 17.8%;
-          margin: 7% auto 0;
-        }
-
         .content_1 {
-          width: 50%;
-          margin: 3.8% auto 0;
-        }
-      }
-    }
-  }
-
-  /*
-  ===========
-  Active 2
-  ===========
-  */
-  .active_2 {
-    .desktop_1 {
-      position: relative;
-
-      .contents {
-        position: absolute;
-        width: 100%;
-        top: 0;
-
-        .header {
-          width: 29.8%;
-          margin: 6.6% auto 0;
-        }
-
-        .content_1 {
-          width: 39.4%;
-          margin: 3.9% auto 0;
-        }
-      }
-    }
-
-    .desktop_2 {
-      position: relative;
-
-      .contents {
-        position: absolute;
-        width: 100%;
-        top: 0;
-
-        .header {
-          width: 17.8%;
-          margin: 6.6% auto 0;
-        }
-
-        .content_1 {
-          width: 50%;
-          margin: 4.4% auto 0;
-        }
-      }
-    }
-
-    .desktop_3 {
-      position: relative;
-
-      .contents {
-        position: absolute;
-        width: 100%;
-        top: 0;
-
-        .header {
-          width: 17.8%;
-          margin: 7% auto 0;
-        }
-
-        .content_1 {
-          width: 50%;
-          margin: 3.8% auto 0;
-        }
-      }
-    }
-  }
-
-  /*
-  ===========
-  Active 3
-  ===========
-  */
-  .active_3 {
-    .desktop_1 {
-      position: relative;
-
-      .contents {
-        position: absolute;
-        width: 100%;
-        top: 0;
-
-        .header {
-          width: 24.6%;
-          margin: 6.6% auto 0;
-        }
-
-        .content_1 {
-          width: 50%;
-          margin: 3.9% auto 0;
-        }
-      }
-    }
-
-    .desktop_2 {
-      position: relative;
-
-      .contents {
-        position: absolute;
-        width: 100%;
-        top: 0;
-
-        .header {
-          width: 25%;
-          margin: 6.6% auto 0;
-        }
-
-        .content_1 {
-          width: 42.9%;
-          margin: 4.4% auto 0;
-        }
-      }
-    }
-
-    .desktop_3 {
-      position: relative;
-
-      .contents {
-        position: absolute;
-        width: 100%;
-        top: 0;
-
-        .header {
-          width: 24.8%;
-          margin: 7% auto 0;
-        }
-
-        .content_1 {
-          width: 50%;
-          margin: 3.8% auto 0;
+          width: 58%;
+          margin: 0 auto 0;
         }
       }
     }
@@ -1014,23 +408,39 @@
         width: 100%;
         top: 0;
 
-        .header {
-          width: 10%;
+        .content_1 {
+          width: 58%;
           margin: 0 auto 0;
         }
+      }
+    }
+
+    .desktop_5 {
+      position: relative;
+
+      .contents {
+        position: absolute;
+        width: 100%;
+        top: 0;
 
         .content_1 {
-          width: 50%;
-          margin: 3.6% auto 0;
+          width: 58%;
+          margin: 0 auto 0;
+        }
+      }
+    }
 
-          .desktop_form_1 {
-            position: relative;
+    .desktop_6 {
+      position: relative;
 
-            .form_button {
-              display: inline-block;
-              width: 50%;
-            }
-          }
+      .contents {
+        position: absolute;
+        width: 100%;
+        top: 0;
+
+        .content_1 {
+          width: 59%;
+          margin: 7% auto 0;
         }
       }
     }

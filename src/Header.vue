@@ -23,9 +23,9 @@
             <div class="sub_nav">
               <router-link to="/landing/band">SNS & Viral</router-link>
             </div>
-            <!--<div class="sub_nav">
+            <div class="sub_nav">
               <router-link to="/landing/kakao">Kakao</router-link>
-            </div>-->
+            </div>
           </div>
         </div>
         <div class="button_middle" @click="$parent.$options.methods.navi_delay">
