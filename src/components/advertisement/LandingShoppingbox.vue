@@ -554,6 +554,14 @@
             display: inline-block;
             width: 50%;
             padding: 0 6%;
+
+            a {
+              transition: all 200ms ease-out;
+
+              &:hover {
+                filter: brightness(0.9);
+              }
+            }
           }
         }
 
