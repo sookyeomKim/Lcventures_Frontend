@@ -29,6 +29,9 @@
         <router-link class="small_nav" to="/landing/kakao">- Kakao</router-link>
       </li>
       <li>
+        <router-link class="small_nav" to="/landing/shoppingbox">- ShoppingBox</router-link>
+      </li>
+      <li>
         <router-link class="small_nav" to="/landing/band">- Naver Band</router-link>
       </li>
       <!--<li>

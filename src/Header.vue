@@ -24,6 +24,9 @@
               <router-link to="/landing/kakao">Kakao</router-link>
             </div>
             <div class="sub_nav">
+              <router-link to="/landing/shoppingbox">ShoppingBox</router-link>
+            </div>
+            <div class="sub_nav">
               <router-link to="/landing/band">Naver Band</router-link>
             </div>
           </div>

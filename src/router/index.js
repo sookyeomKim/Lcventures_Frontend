@@ -10,6 +10,7 @@ import Consult from '@/components/Consult'
 import Commerce from '@/components/Commerce'
 import LandingBand from '@/components/advertisement/LandingBand'
 import LandingKakao from '@/components/advertisement/LandingKakao'
+import LandingShoppingbox from '@/components/advertisement/LandingShoppingbox'
 
 Vue.use(Router)
 
@@ -60,6 +61,11 @@ const router = new Router({
       path: '/landing/kakao',
       name: 'landing_kakao',
       component: LandingKakao
+    },
+    {
+      path: '/landing/shoppingbox',
+      name: 'landing_shoppingbox',
+      component: LandingShoppingbox
     }
   ],
   mode: 'history',
@@ -73,7 +79,7 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   // eslint-disable-next-line
-  if (to.name == '' || to.name == null) {
+  if (to.name === '' || to.name === null) {
     console.log('to name is none')
     next({name: 'a404'})
   } else {
