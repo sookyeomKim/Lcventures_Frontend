@@ -205,10 +205,10 @@
         }
       },
       resource: {
-        naver: require('../../assets/common/files/180814_lcventures_introduce.pdf'),
-        kakao: require('../../assets/common/files/180814_lcventures_introduce.pdf'),
-        nate: require('../../assets/common/files/180814_lcventures_introduce.pdf'),
-        zum: require('../../assets/common/files/180814_lcventures_introduce.pdf'),
+        naver: require('../../assets/pages/landing/shoppingbox/resources/naver.pdf'),
+        kakao: require('../../assets/pages/landing/shoppingbox/resources/kakao.pdf'),
+        nate: require('../../assets/pages/landing/shoppingbox/resources/nate.pdf'),
+        zum: require('../../assets/pages/landing/shoppingbox/resources/zum.pdf'),
       },
     }),
     mounted() {
@@ -222,21 +222,21 @@
       this.landing_set()
 
       // 28 June 2019 installed
-      this.install_analysis_script('naver')
+      // this.install_analysis_script('naver')
     },
     methods: {
-      install_analysis_script(option) {
-        if (option === 'naver') {
-          let naver_script = document.createElement('script')
-          naver_script.setAttribute('src', '//wcs.naver.net/wcslog.js')
-          document.head.appendChild(naver_script)
-        }
-      },
-      activation_analysis(option) {
-        let _nasa = {}
-        _nasa['cnv'] = wcs.cnv('4', option)
-        console.log('Naver analysis script is activated by', option)
-      },
+      // install_analysis_script(option) {
+      //   if (option === 'naver') {
+      //     let naver_script = document.createElement('script')
+      //     naver_script.setAttribute('src', '//wcs.naver.net/wcslog.js')
+      //     document.head.appendChild(naver_script)
+      //   }
+      // },
+      // activation_analysis(option) {
+      //   let _nasa = {}
+      //   _nasa['cnv'] = wcs.cnv('4', option)
+      //   console.log('Naver analysis script is activated by', option)
+      // },
       main_activation(number) {
         this.page.activated = number
         this.page.hover = 0

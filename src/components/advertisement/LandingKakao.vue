@@ -101,13 +101,13 @@
             <div class="desktop_form_1">
 
               <div class="form_button">
-                <a href="tel:070-8855-8390" @click="activation_analysis('desktop-phone')">
+                <a href="tel:070-8855-8390">
                   <img src="../../assets/pages/landing/kakao/190320/desktop/05_section/btn_tell_kakao.png"
                        alt="LCVENTURES Kakao - landing phone button">
                 </a>
               </div>
               <div class="form_button">
-                <a href="mailto:biz@lcventures.co.kr" @click="activation_analysis('desktop-email')">
+                <a href="mailto:biz@lcventures.co.kr">
                   <img src="../../assets/pages/landing/kakao/190320/desktop/05_section/btn_email_kakao.png"
                        alt="LCVENTURES Kakao - landing email button">
                 </a>
@@ -152,21 +152,21 @@
       this.landing_set()
 
       // 28 June 2019 installed
-      this.install_analysis_script('naver')
+      // this.install_analysis_script('naver')
     },
     methods: {
-      install_analysis_script(option) {
-        if (option === 'naver') {
-          let naver_script = document.createElement('script')
-          naver_script.setAttribute('src', '//wcs.naver.net/wcslog.js')
-          document.head.appendChild(naver_script)
-        }
-      },
-      activation_analysis(option) {
-        let _nasa = {}
-        _nasa['cnv'] = wcs.cnv('4', option)
-        console.log('Naver analysis script is activated by', option)
-      },
+      // install_analysis_script(option) {
+      //   if (option === 'naver') {
+      //     let naver_script = document.createElement('script')
+      //     naver_script.setAttribute('src', '//wcs.naver.net/wcslog.js')
+      //     document.head.appendChild(naver_script)
+      //   }
+      // },
+      // activation_analysis(option) {
+      //   let _nasa = {}
+      //   _nasa['cnv'] = wcs.cnv('4', option)
+      //   console.log('Naver analysis script is activated by', option)
+      // },
       main_activation(number) {
         this.page.activated = number
         this.page.hover = 0
